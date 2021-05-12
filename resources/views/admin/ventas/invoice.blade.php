@@ -110,8 +110,12 @@
                             </p>
 
                             <a href="#" class="btn btn-primary">
-Imprimir
-</a>
+                                Imprimir
+                            </a>
+
+                            <a href="{{route('ventas.index')}}" class="btn btn-success">
+                                Atrás
+                            </a>
                         </div>
                     </div>
                 </div>

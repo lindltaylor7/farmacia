@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,7 @@ Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.inde
 Route::get('reportes/top', [ReporteController::class, 'top'])->name('reportes.top');
 Route::get('reportes/bot', [ReporteController::class, 'bot'])->name('reportes.bot');
 Route::get('reportes/ven', [ReporteController::class, 'ven'])->name('reportes.ven');
+
+Route::get('stock', [StockController::class, 'index'])->name('stock.index');
+Route::get('stock/create', [StockController::class, 'create'])->name('stock.create');
+

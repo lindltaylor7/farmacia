@@ -27,15 +27,15 @@
     </a>
             </li>
 
-            <li class="sidebar-item">
+            <li class="sidebar-item ">
                 <a class="sidebar-link" href="pages-invoice.html">
       <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
     </a>
             </li>
 
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-blank.html">
-      <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+            <li class="sidebar-item {{request()->routeIs('stock.*')? 'active' : ''}}">
+                <a class="sidebar-link" href="{{route('stock.index')}}">
+      <i class="align-middle" data-feather="book"></i> <span class="align-middle">Stocks</span>
     </a>
             </li>
 
