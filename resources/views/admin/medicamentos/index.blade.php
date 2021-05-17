@@ -22,11 +22,14 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Nombre Comercial</th>
-                                    <th class="d-none d-xl-table-cell">Fecha de Vencimiento</th>
-                                    <th class="d-none d-xl-table-cell">Fecha de Caducidad</th>
-                                    <th>Stock</th>
-                                    <th class="d-none d-md-table-cell">Operaciones</th>
+                                    <th>Medicamento</th>
+                                    <th class="d-none d-xl-table-cell">Nombre Genérico</th>
+                                    <th class="d-none d-xl-table-cell">Nombre Comercial</th>
+                                    <th>Presentación</th>
+                                    <th class="d-none d-md-table-cell">Precio de Venta</th>
+                                    <th class="d-none d-md-table-cell">Cantidad</th>
+                                    <th class="d-none d-md-table-cell">Laboratorio</th>
+                                    <th class="d-none d-md-table-cell">Anaquel</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,6 +39,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-success">Done</span></td>
                                     <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Fireball</td>
@@ -43,6 +49,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-danger">Cancelled</span></td>
                                     <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Hades</td>
@@ -50,6 +59,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-success">Done</span></td>
                                     <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Nitro</td>
@@ -57,6 +69,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-warning">In progress</span></td>
                                     <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Phoenix</td>
@@ -64,6 +79,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-success">Done</span></td>
                                     <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project X</td>
@@ -71,6 +89,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-success">Done</span></td>
                                     <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Romeo</td>
@@ -78,6 +99,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-success">Done</span></td>
                                     <td class="d-none d-md-table-cell">Christina Mason</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                                 <tr>
                                     <td>Project Wombat</td>
@@ -85,6 +109,9 @@
                                     <td class="d-none d-xl-table-cell">31/06/2021</td>
                                     <td><span class="badge bg-warning">In progress</span></td>
                                     <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td class="d-none d-md-table-cell">Hola 6</td>
+                                    <td class="d-none d-md-table-cell">Hola 7</td>
+                                    <td class="d-none d-md-table-cell">Hola 8</td>
                                 </tr>
                             </tbody>
                         </table>

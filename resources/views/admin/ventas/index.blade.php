@@ -22,69 +22,87 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Nombre Comercial</th>
-                                    <th class="d-none d-xl-table-cell">Fecha de Atención</th>
-                                    <th class="d-none d-xl-table-cell">Fecha</th>
-                                    <th>Boleta o Factura</th>
-                                    <th class="d-none d-md-table-cell">Agente</th>
+                                    <th>ID</th>
+                                    <th class="d-none d-xl-table-cell">CÓDIGO</th>
+                                    <th class="d-none d-xl-table-cell">CLIENTE</th>
+                                    <th>FECHA</th>
+                                    <th class="d-none d-md-table-cell">UTILIDAD</th>
+                                    <th class="d-none d-md-table-cell">ID_MEDICAMENTO</th>
+                                    <th class="d-none d-md-table-cell">CANTIDAD</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Project Apollo</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
+                                    <td>1</td>
+                                    <td class="d-none d-xl-table-cell">201A</td>
+                                    <td class="d-none d-xl-table-cell">Vanessa Tucker</td>
                                     <td><a href="{{route('ventas.invoice')}}"><span class="badge bg-success">PDF</span></a></td>
-                                    <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                                    <td class="d-none d-md-table-cell">200</td>
+                                    <td class="d-none d-md-table-cell">6</td>
+                                    <td class="d-none d-md-table-cell">7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Fireball</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-danger">Cancelled</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td>2</td>
+                                    <td class="d-none d-xl-table-cell">203A</td>
+                                    <td class="d-none d-xl-table-cell">William Harris</td>
+                                    <td><span class="badge bg-danger">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">205</td>
+                                    <td class="d-none d-md-table-cell">7</td>
+                                    <td class="d-none d-md-table-cell"> 7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Hades</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                                    <td>3</td>
+                                    <td class="d-none d-xl-table-cell">204A</td>
+                                    <td class="d-none d-xl-table-cell">Sharon Lessman</td>
+                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">221</td>
+                                    <td class="d-none d-md-table-cell">8</td>
+                                    <td class="d-none d-md-table-cell">7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Nitro</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-warning">In progress</span></td>
-                                    <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                                    <td>4</td>
+                                    <td class="d-none d-xl-table-cell">202B</td>
+                                    <td class="d-none d-xl-table-cell">Vanessa Tucker</td>
+                                    <td><span class="badge bg-warning">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">230</td>
+                                    <td class="d-none d-md-table-cell">9</td>
+                                    <td class="d-none d-md-table-cell">7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Phoenix</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td>5</td>
+                                    <td class="d-none d-xl-table-cell">203B</td>
+                                    <td class="d-none d-xl-table-cell">William Harris</td>
+                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">240</td>
+                                    <td class="d-none d-md-table-cell">10</td>
+                                    <td class="d-none d-md-table-cell">7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project X</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                                    <td>6</td>
+                                    <td class="d-none d-xl-table-cell">202C</td>
+                                    <td class="d-none d-xl-table-cell">Sharon Lessman</td>
+                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">300</td>
+                                    <td class="d-none d-md-table-cell">11</td>
+                                    <td class="d-none d-md-table-cell">7</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Romeo</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Christina Mason</td>
+                                    <td>7</td>
+                                    <td class="d-none d-xl-table-cell">203C</td>
+                                    <td class="d-none d-xl-table-cell">Christina Mason</td>
+                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">303</td>
+                                    <td class="d-none d-md-table-cell">12</td>
+                                    <td class="d-none d-md-table-cell">8</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Wombat</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-warning">In progress</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
+                                    <td>8</td>
+                                    <td class="d-none d-xl-table-cell">204D</td>
+                                    <td class="d-none d-xl-table-cell">William Harris</td>
+                                    <td><span class="badge bg-warning">20/05/2021</span></td>
+                                    <td class="d-none d-md-table-cell">505</td>
+                                    <td class="d-none d-md-table-cell">13</td>
+                                    <td class="d-none d-md-table-cell">8</td>
                                 </tr>
                             </tbody>
                         </table>
