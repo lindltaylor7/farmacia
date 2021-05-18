@@ -22,87 +22,58 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th class="d-none d-xl-table-cell">Código</th>
                                     <th class="d-none d-xl-table-cell">Cliente</th>
                                     <th class="d-none d-xl-table-cell">Fecha</th>
                                     <th class="d-none d-md-table-cell">Utilidad</th>
                                     <th class="d-none d-md-table-cell">Factura</th>
-                                    <th class="d-none d-md-table-cell">Cantidad</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
                                     <td class="d-none d-xl-table-cell">201A</td>
                                     <td class="d-none d-xl-table-cell">Vanessa Tucker</td>
-                                    <td><a href="{{route('ventas.invoice')}}"><span class="badge bg-success">PDF</span></a></td>
+                                    <td class="d-none d-xl-table-cell">20/05/2021</td>
                                     <td class="d-none d-md-table-cell">200</td>
-                                    <td class="d-none d-md-table-cell">6</td>
-                                    <td class="d-none d-md-table-cell">7</td>
+                                    <td class="d-none d-md-table-cell"><a href="{{route('ventas.invoice')}}"><span class="badge bg-success">Cancelada</span></a></td>
+
                                 </tr>
                                 <tr>
-                                    <td>2</td>
+
                                     <td class="d-none d-xl-table-cell">203A</td>
                                     <td class="d-none d-xl-table-cell">William Harris</td>
-                                    <td><span class="badge bg-danger">20/05/2021</span></td>
+                                    <td class="d-none d-xl-table-cell">20/05/2021</td>
                                     <td class="d-none d-md-table-cell">205</td>
-                                    <td class="d-none d-md-table-cell">7</td>
-                                    <td class="d-none d-md-table-cell"> 7</td>
+                                    <td class="d-none d-md-table-cell"><span class="badge bg-danger">Anulada</span></td>
+
                                 </tr>
                                 <tr>
-                                    <td>3</td>
+
                                     <td class="d-none d-xl-table-cell">204A</td>
                                     <td class="d-none d-xl-table-cell">Sharon Lessman</td>
-                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-xl-table-cell">20/05/2021</td>
                                     <td class="d-none d-md-table-cell">221</td>
-                                    <td class="d-none d-md-table-cell">8</td>
-                                    <td class="d-none d-md-table-cell">7</td>
+                                    <td class="d-none d-md-table-cell"><span class="badge bg-success">Cancelada</span></td>
+
                                 </tr>
                                 <tr>
-                                    <td>4</td>
+
                                     <td class="d-none d-xl-table-cell">202B</td>
                                     <td class="d-none d-xl-table-cell">Vanessa Tucker</td>
-                                    <td><span class="badge bg-warning">20/05/2021</span></td>
+                                    <td class="d-none d-xl-table-cell">20/05/2021</td>
                                     <td class="d-none d-md-table-cell">230</td>
-                                    <td class="d-none d-md-table-cell">9</td>
-                                    <td class="d-none d-md-table-cell">7</td>
+                                    <td class="d-none d-md-table-cell"><span class="badge bg-warning">Observada</span</td>
+
                                 </tr>
                                 <tr>
-                                    <td>5</td>
+
                                     <td class="d-none d-xl-table-cell">203B</td>
                                     <td class="d-none d-xl-table-cell">William Harris</td>
-                                    <td><span class="badge bg-success">20/05/2021</span></td>
+                                    <td class="d-none d-xl-table-cell">20/05/2021</td>
                                     <td class="d-none d-md-table-cell">240</td>
-                                    <td class="d-none d-md-table-cell">10</td>
-                                    <td class="d-none d-md-table-cell">7</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td class="d-none d-xl-table-cell">202C</td>
-                                    <td class="d-none d-xl-table-cell">Sharon Lessman</td>
-                                    <td><span class="badge bg-success">20/05/2021</span></td>
-                                    <td class="d-none d-md-table-cell">300</td>
-                                    <td class="d-none d-md-table-cell">11</td>
-                                    <td class="d-none d-md-table-cell">7</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td class="d-none d-xl-table-cell">203C</td>
-                                    <td class="d-none d-xl-table-cell">Christina Mason</td>
-                                    <td><span class="badge bg-success">20/05/2021</span></td>
-                                    <td class="d-none d-md-table-cell">303</td>
-                                    <td class="d-none d-md-table-cell">12</td>
-                                    <td class="d-none d-md-table-cell">8</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td class="d-none d-xl-table-cell">204D</td>
-                                    <td class="d-none d-xl-table-cell">William Harris</td>
-                                    <td><span class="badge bg-warning">20/05/2021</span></td>
-                                    <td class="d-none d-md-table-cell">505</td>
-                                    <td class="d-none d-md-table-cell">13</td>
-                                    <td class="d-none d-md-table-cell">8</td>
+                                    <td class="d-none d-md-table-cell"><span class="badge bg-success">Cancelada</span></td>
+
                                 </tr>
                             </tbody>
                         </table>

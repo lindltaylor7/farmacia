@@ -22,11 +22,11 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Medicamento</th>
                                     <th class="d-none d-xl-table-cell">Nombre Genérico</th>
                                     <th class="d-none d-xl-table-cell">Nombre Comercial</th>
-                                    <th>Presentación</th>
-                                    <th class="d-none d-md-table-cell">Precio de Venta</th>
+                                    <th class="d-none d-xl-table-cell">Presentación</th>
+                                    <th class="d-none d-xl-table-cell">Concentración</th>
+                                    <th class="d-none d-md-table-cell">Precio</th>
                                     <th class="d-none d-md-table-cell">Cantidad</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
                                     <th class="d-none d-md-table-cell">Anaquel</th>
@@ -34,84 +34,64 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Project Apollo</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Abrilar</td>
+                                    <td class="d-none d-xl-table-cell">Abrilar</td>
+                                    <td class="d-none d-xl-table-cell">Jarabe</td>
+                                    <td class="d-none d-xl-table-cell">35mg/5ml</td>
+                                    <td class="d-none d-md-table-cell">S./5.00</td>
+                                    <td class="d-none d-md-table-cell">20</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">1</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Fireball</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-danger">Cancelled</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Acido acetil salicilico</td>
+                                    <td class="d-none d-xl-table-cell">Aspirina</td>
+                                    <td class="d-none d-xl-table-cell">Tableta</td>
+                                    <td class="d-none d-xl-table-cell">500mg</td>
+                                    <td class="d-none d-md-table-cell">S./2.00</td>
+                                    <td class="d-none d-md-table-cell">30</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">2</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Hades</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Acido valproico</td>
+                                    <td class="d-none d-xl-table-cell">Valcote ER</td>
+                                    <td class="d-none d-xl-table-cell">Tableta</td>
+                                    <td class="d-none d-xl-table-cell">500mg</td>
+                                    <td class="d-none d-md-table-cell">S./5.00</td>
+                                    <td class="d-none d-md-table-cell">30</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">2</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Nitro</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-warning">In progress</span></td>
-                                    <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Acido valproico</td>
+                                    <td class="d-none d-xl-table-cell">Valcote ER</td>
+                                    <td class="d-none d-xl-table-cell">Tableta</td>
+                                    <td class="d-none d-xl-table-cell">200mg</td>
+                                    <td class="d-none d-md-table-cell">S./5.00</td>
+                                    <td class="d-none d-md-table-cell">30</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">2</td>
                                 </tr>
                                 <tr>
-                                    <td>Project Phoenix</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Albendazol</td>
+                                    <td class="d-none d-xl-table-cell">-</td>
+                                    <td class="d-none d-xl-table-cell">Tableta Masticable</td>
+                                    <td class="d-none d-xl-table-cell">-</td>
+                                    <td class="d-none d-md-table-cell">S./2.00</td>
+                                    <td class="d-none d-md-table-cell">30</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">2</td>
                                 </tr>
                                 <tr>
-                                    <td>Project X</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
-                                </tr>
-                                <tr>
-                                    <td>Project Romeo</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td class="d-none d-md-table-cell">Christina Mason</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
-                                </tr>
-                                <tr>
-                                    <td>Project Wombat</td>
-                                    <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                    <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                    <td><span class="badge bg-warning">In progress</span></td>
-                                    <td class="d-none d-md-table-cell">William Harris</td>
-                                    <td class="d-none d-md-table-cell">Hola 6</td>
-                                    <td class="d-none d-md-table-cell">Hola 7</td>
-                                    <td class="d-none d-md-table-cell">Hola 8</td>
+                                    <td class="d-none d-xl-table-cell">Alprazolam</td>
+                                    <td class="d-none d-xl-table-cell">Alpaz</td>
+                                    <td class="d-none d-xl-table-cell">Tableta</td>
+                                    <td class="d-none d-xl-table-cell">0.5mg</td>
+                                    <td class="d-none d-md-table-cell">S./2.00</td>
+                                    <td class="d-none d-md-table-cell">30</td>
+                                    <td class="d-none d-md-table-cell">Bayern</td>
+                                    <td class="d-none d-md-table-cell">2</td>
                                 </tr>
                             </tbody>
                         </table>
