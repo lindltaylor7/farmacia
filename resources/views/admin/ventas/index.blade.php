@@ -22,13 +22,13 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th class="d-none d-xl-table-cell">CÓDIGO</th>
-                                    <th class="d-none d-xl-table-cell">CLIENTE</th>
-                                    <th>FECHA</th>
-                                    <th class="d-none d-md-table-cell">UTILIDAD</th>
-                                    <th class="d-none d-md-table-cell">ID_MEDICAMENTO</th>
-                                    <th class="d-none d-md-table-cell">CANTIDAD</th>
+                                    <th>Id</th>
+                                    <th class="d-none d-xl-table-cell">Código</th>
+                                    <th class="d-none d-xl-table-cell">Cliente</th>
+                                    <th class="d-none d-xl-table-cell">Fecha</th>
+                                    <th class="d-none d-md-table-cell">Utilidad</th>
+                                    <th class="d-none d-md-table-cell">Factura</th>
+                                    <th class="d-none d-md-table-cell">Cantidad</th>
                                 </tr>
                             </thead>
                             <tbody>

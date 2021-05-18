@@ -22,12 +22,12 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>NOMBRE DEL MEDICAMENTO</th>
-                                    <th class="d-none d-xl-table-cell">CANTIDAD</th>
-                                    <th class="d-none d-xl-table-cell">ANAQUEL</th>
-                                    <th>FECHA DE INGRESO</th>
-                                    <th class="d-none d-md-table-cell">FECHA DE VENCIMIENTO</th>
+                                    <th>Id</th>
+                                    <th>Medicamento</th>
+                                    <th class="d-none d-xl-table-cell">Cantidad</th>
+                                    <th class="d-none d-xl-table-cell">Anaquel</th>
+                                    <th class="d-none d-xl-table-cell">Fecha de Ingreso</th>
+                                    <th class="d-none d-md-table-cell">Fecha de Vencimiento</th>
                                 </tr>
                             </thead>
                             <tbody>
