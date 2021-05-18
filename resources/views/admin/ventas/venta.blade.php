@@ -6,12 +6,18 @@
 <main class="content">
     <div class="container-fluid p-0">
 
-        <h1 class="h3 mb-3">Ventas</h1>
+
+            <h1 class="h3 mb-3">Buscar Clientes</h1>
+            <div class="d-flex justify-content-between">
+                <input type="text" class="d-inline form-control mb-3 w-75" placeholder="Buscar Dni">
+                <a href="" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Buscar Cliente</a>
+            </div>
+            <h1 class="h3 mb-3">Ventas</h1>
             <div class="d-flex justify-content-between">
                 <input type="text" class="d-inline form-control mb-3 w-75" placeholder="Buscar">
-                <a href="{{route('admin.create')}}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Añadir</a>
+                
             </div>
-
+            
 
         <div class="row">
             <div class="col-12">

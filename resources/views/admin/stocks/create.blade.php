@@ -27,6 +27,30 @@
                                         <input type="text" class="form-control" id="inputUsername" placeholder="Nombre Comercial">
                                     </div>
                                     <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Medicamento</label>
+                                        <select class="form-control" id="inputUsername" name="medicamento" size="2" multiple>
+
+                                            <option>Ibuprofeno</option>
+                                            
+                                            <option>Amoxicilina</option>
+                                            
+                                            <option>Aspirina</option>
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Cantidad</label>
+                                        <input type="number" class="form-control" id="inputUsername" placeholder="Cantidad">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Fecha De Ingreso</label>
+                                        <input type="date" class="form-control" id="inputUsername" placeholder="">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Fecha De Vencimiento</label>
+                                        <input type="date" class="form-control" id="inputUsername" placeholder="">
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="">Descripción</label>
                                         <textarea rows="2" class="form-control" id="inputBio" placeholder="Descripción del medicamento"></textarea>
                                     </div>
