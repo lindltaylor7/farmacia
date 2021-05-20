@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MedicamentoController;
+use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\VentaController;
@@ -19,4 +20,8 @@ Route::get('reportes/ven', [ReporteController::class, 'ven'])->name('reportes.ve
 
 Route::get('stock', [StockController::class, 'index'])->name('stock.index');
 Route::get('stock/create', [StockController::class, 'create'])->name('stock.create');
+
+Route::get('principal', [PrincipalController::class, 'index'])->name('principal.index');
+Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
+Route::get('principal/editar_2', [PrincipalController::class, 'editar_2'])->name('principal.editar_2');
 
