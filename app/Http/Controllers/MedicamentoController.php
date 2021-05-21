@@ -59,7 +59,7 @@ class MedicamentoController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
@@ -83,5 +83,10 @@ class MedicamentoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all(Request $request){
+        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')->get();
+        return json_encode($medicamentos);
     }
 }

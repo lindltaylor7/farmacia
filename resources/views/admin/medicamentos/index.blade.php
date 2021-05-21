@@ -36,21 +36,21 @@
                             <tbody id="dynamic-row">
                                 @foreach($medicamentos as $medicamento)
                                     <tr>
-                                        <td>{{$medicamento->nombre_generico}}</td>
-                                        <td>{{$medicamento->nombre_comercial}}</td>
-                                        <td>{{$medicamento->presentacion}}</td>
-                                        <td>{{$medicamento->concentracion}}</td>
-                                        <td>{{$medicamento->precio}}</td>
-                                        <td>{{$medicamento->cantidad}}</td>
-                                        <td>{{$medicamento->laboratorio}}</td>
-                                        <td>{{$medicamento->anaquel}}</td>
+                                        <td>{{$medicamento->n_generico}}</td>
+                                        <td>{{$medicamento->n_comercial}}</td>
+                                        <td>{{$medicamento->present}}</td>
+                                        <td>{{$medicamento->concent}}</td>
+                                        <td>S./2.00</td>
+                                        <td>20</td>
+                                        <td>{{$medicamento->lab}}</td>
+                                        <td>1</td>
                                         <td>
-                                            <button class="btn btn-success">Editar</button>
-                                            <button class="btn btn-danger">Eliminar</button>
+                                            <button class="btn btn-success"><i class="align-middle" data-feather="edit-2"></i></button>
+                                            <button class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach
-                            
+
                             </tbody>
                         </table>
                     </div>
