@@ -30,69 +30,27 @@
                                     <th class="d-none d-md-table-cell">Cantidad</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
                                     <th class="d-none d-md-table-cell">Anaquel</th>
+                                    <th class="d-none d-md-table-cell">Modificar</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Abrilar</td>
-                                    <td class="d-none d-xl-table-cell">Abrilar</td>
-                                    <td class="d-none d-xl-table-cell">Jarabe</td>
-                                    <td class="d-none d-xl-table-cell">35mg/5ml</td>
-                                    <td class="d-none d-md-table-cell">S./5.00</td>
-                                    <td class="d-none d-md-table-cell">20</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">1</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Acido acetil salicilico</td>
-                                    <td class="d-none d-xl-table-cell">Aspirina</td>
-                                    <td class="d-none d-xl-table-cell">Tableta</td>
-                                    <td class="d-none d-xl-table-cell">500mg</td>
-                                    <td class="d-none d-md-table-cell">S./2.00</td>
-                                    <td class="d-none d-md-table-cell">30</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Acido valproico</td>
-                                    <td class="d-none d-xl-table-cell">Valcote ER</td>
-                                    <td class="d-none d-xl-table-cell">Tableta</td>
-                                    <td class="d-none d-xl-table-cell">500mg</td>
-                                    <td class="d-none d-md-table-cell">S./5.00</td>
-                                    <td class="d-none d-md-table-cell">30</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Acido valproico</td>
-                                    <td class="d-none d-xl-table-cell">Valcote ER</td>
-                                    <td class="d-none d-xl-table-cell">Tableta</td>
-                                    <td class="d-none d-xl-table-cell">200mg</td>
-                                    <td class="d-none d-md-table-cell">S./5.00</td>
-                                    <td class="d-none d-md-table-cell">30</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Albendazol</td>
-                                    <td class="d-none d-xl-table-cell">-</td>
-                                    <td class="d-none d-xl-table-cell">Tableta Masticable</td>
-                                    <td class="d-none d-xl-table-cell">-</td>
-                                    <td class="d-none d-md-table-cell">S./2.00</td>
-                                    <td class="d-none d-md-table-cell">30</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-none d-xl-table-cell">Alprazolam</td>
-                                    <td class="d-none d-xl-table-cell">Alpaz</td>
-                                    <td class="d-none d-xl-table-cell">Tableta</td>
-                                    <td class="d-none d-xl-table-cell">0.5mg</td>
-                                    <td class="d-none d-md-table-cell">S./2.00</td>
-                                    <td class="d-none d-md-table-cell">30</td>
-                                    <td class="d-none d-md-table-cell">Bayern</td>
-                                    <td class="d-none d-md-table-cell">2</td>
-                                </tr>
+                                @foreach($medicamentos as $medicamento)
+                                    <tr>
+                                        <td>{{$medicamento->nombre_generico}}</td>
+                                        <td>{{$medicamento->nombre_comercial}}</td>
+                                        <td>{{$medicamento->presentacion}}</td>
+                                        <td>{{$medicamento->concentracion}}</td>
+                                        <td>{{$medicamento->precio}}</td>
+                                        <td>{{$medicamento->cantidad}}</td>
+                                        <td>{{$medicamento->laboratorio}}</td>
+                                        <td>{{$medicamento->anaquel}}</td>
+                                        <td>
+                                            <button class="btn btn-success">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            
                             </tbody>
                         </table>
                     </div>

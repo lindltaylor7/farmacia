@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medicamento;
 use Illuminate\Http\Request;
+
 
 class MedicamentoController extends Controller
 {
@@ -13,7 +15,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        return view('admin.medicamentos.index');
+        $medicamentos=Medicamento::all();
+        return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
     /**
@@ -56,7 +59,7 @@ class MedicamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
