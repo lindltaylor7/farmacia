@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', [MedicamentoController::class, 'index'])->name('admin.index');
 Route::get('medicamentos/create', [MedicamentoController::class, 'create'])->name('admin.create');
+Route::post('medicamentos/all', [MedicamentoController::class, 'all'])->name('medicamentos.all');
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
 Route::get('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
 Route::get('ventas/invoice', [VentaController::class, 'invoice'])->name('ventas.invoice');
