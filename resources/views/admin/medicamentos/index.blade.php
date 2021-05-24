@@ -18,19 +18,19 @@
                 <div class="card">
                     <div class="card-header">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th class="d-none d-xl-table-cell">Nombre Genérico</th>
-                                    <th class="d-none d-xl-table-cell">Nombre Comercial</th>
-                                    <th class="d-none d-xl-table-cell">Presentación</th>
-                                    <th class="d-none d-xl-table-cell">Concentración</th>
+                                    <th class="d-none d-md-table-cell">Nombre Genérico</th>
+                                    <th class="d-none d-md-table-cell">Nombre Comercial</th>
+                                    <th class="d-none d-md-table-cell">Presentación</th>
+                                    <th class="d-none d-md-table-cell">Concentración</th>
                                     <th class="d-none d-md-table-cell">Precio</th>
                                     <th class="d-none d-md-table-cell">Cantidad</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
                                     <th class="d-none d-md-table-cell">Anaquel</th>
-                                    <th class="d-none d-md-table-cell">Modificar</th>
+                                    <th class="d-none d-md-table-cell">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody id="dynamic-row">
@@ -45,8 +45,8 @@
                                         <td>{{$medicamento->lab}}</td>
                                         <td>1</td>
                                         <td>
-                                            <button class="btn btn-success"><i class="align-middle" data-feather="edit-2"></i></button>
-                                            <button class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

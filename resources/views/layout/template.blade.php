@@ -10,6 +10,7 @@
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://unpkg.com/feather-icons"></script>
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>@yield('title')</title>

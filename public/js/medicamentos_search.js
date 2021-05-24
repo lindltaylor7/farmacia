@@ -24,9 +24,9 @@ $(document).ready(function(){
                 $('#dynamic-row').html('');
 
                 $.each(res, function(index, value){
-                    tableRow = '<tr><td class="d-none d-xl-table-cell">'+value.n_generico+'</td><td class="d-none d-xl-table-cell">'+value.n_comercial+'</td><td class="d-none d-xl-table-cell">'+value.present+'</td><td class="d-none d-xl-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">S./5.00</td><td class="d-none d-md-table-cell">20</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell">1</td><td><button class="btn btn-success"><i class="align-middle" data-feather="edit-2"></i></button><button class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button></td></tr>';
-
+                    tableRow = '<tr><td class="d-none d-md-table-cell">'+value.n_generico+'</td><td class="d-none d-md-table-cell">'+value.n_comercial+'</td><td class="d-none d-md-table-cell">'+value.present+'</td><td class="d-none d-md-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">S./5.00</td><td class="d-none d-md-table-cell">20</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell">1</td><td><a href="#"><i class="align-middle" data-feather="edit-2"></i></a><a href="#"><i class="align-middle" data-feather="trash"></i></a></td></tr>';
                     $('#dynamic-row').append(tableRow);
+                    feather.replace();
                 });
 
 
