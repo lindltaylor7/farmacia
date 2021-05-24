@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Costo Unitario</label>
-                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Venta">
+                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Costo unitario">
                                     </div>
                                 </div>
 
@@ -67,11 +67,11 @@
                                 <div class="row">
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Porcentaje de Utilidad</label>
-                                        <input type="number" name="utilidad" class="form-control" id="inputUsername" placeholder="Porcentaje">
+                                        <input type="number" name="utilidad" class="form-control" id="inputUsername" placeholder="Porcentaje de Utilidad">
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta Unitario</label>
-                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de compra">
+                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Venta Unitario">
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta por Caja</label>
