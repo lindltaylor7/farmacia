@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Medicamento extends Model
+class Precio extends Model
 {
-    protected $fillable=['n_generico','n_comercial', 'concent', 'present', 'lab', 'img', 'nro_caja'];
-    
+    protected $fillable = ['p_unitario', 'p_costo', 'p_caja', 'utilidad', 'p_venta_caja', 'medicamento_id'];
     use HasFactory;
 }

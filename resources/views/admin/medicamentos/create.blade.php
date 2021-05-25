@@ -15,7 +15,8 @@
                         <h5 class="card-title mb-0">Ingrese los datos del medicamento</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form method="post" action="{{route('medicamentos.store')}}">
+                        @csrf
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="mb-3">
@@ -31,6 +32,16 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Presentación</label>
                                         <input type="text" name="present" class="form-control" id="inputUsername" placeholder="Presentación">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Concentración</label>
+                                        <input type="text" name="concent" class="form-control" id="inputUsername" placeholder="Presentación">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Número De Caja</label>
+                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Presentación">
                                     </div>
 
 
@@ -71,7 +82,7 @@
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta Unitario</label>
-                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Venta Unitario">
+                                        <input type="number" name="p_unitario" class="form-control" id="inputUsername" placeholder="Precio de Venta Unitario">
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta por Caja</label>
@@ -85,6 +96,7 @@
 
                             </div>
                             <br>
+                            <a class="btn btn-info" href="{{route('admin.index')}}">Cancelar</a>
                             <button type="submit" class="btn btn-primary">Agregar</button>
                         </form>
 

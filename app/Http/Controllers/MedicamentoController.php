@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
+use App\Models\Precio;
 use Illuminate\Http\Request;
 
 
@@ -37,7 +38,25 @@ class MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'n_generico' => 'required',
+            'nro_caja'   => 'required',
+            'p_unitario' => 'required',
+            'p_costo'    => 'required',
+            'p_caja'     => 'required',
+            'utilidad'   => 'required'
+        ]);
+
+        $medicamento=Medicamento::create($request->all());
+
+        $request->merge([
+            'medicamento_id'=>$medicamento->id
+        ]);
+
+        $precio=Precio::create($request->all());
+        
+        return redirect(route('admin.index'));
     }
 
     /**
