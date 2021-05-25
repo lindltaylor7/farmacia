@@ -69,9 +69,10 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $upd_med = Medicamento::where('id', $request->get('id_med'))->update(request()->except(['_token','id_med']));
+        return redirect()->back();
     }
 
     /**
@@ -88,5 +89,16 @@ class MedicamentoController extends Controller
     public function all(Request $request){
         $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')->get();
         return json_encode($medicamentos);
+    }
+
+    public function infoedit(Request $request){
+        $medicamentos = Medicamento::where('id',$request->get('id'))->get();
+        return json_encode($medicamentos);
+    }
+
+    public function delmedic(Request $request){
+        $del_med = Medicamento::where('id',$request->get('id'))->delete();
+
+        return $del_med;
     }
 }

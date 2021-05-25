@@ -2,6 +2,7 @@
 
 @section('title', 'Inicio')
 
+
 @section('content')
 <main class="content">
     <div class="container-fluid p-0">
@@ -35,7 +36,7 @@
                             </thead>
                             <tbody id="dynamic-row">
                                 @foreach($medicamentos as $medicamento)
-                                    <tr>
+                                    <tr id="row{{$medicamento->id}}">
                                         <td>{{$medicamento->n_generico}}</td>
                                         <td>{{$medicamento->n_comercial}}</td>
                                         <td>{{$medicamento->present}}</td>
@@ -45,19 +46,20 @@
                                         <td>{{$medicamento->lab}}</td>
                                         <td>1</td>
                                         <td>
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                                            <a href="#" class="btn-editar" id="{{$medicamento->id}}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="align-middle" data-feather="edit-2"></i></a>
+                                            <a href="#" class="btn-eliminar" id="{{$medicamento->id}}"><i class="align-middle" data-feather="trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+@include('admin.medicamentos.modal')
 </main>
 @endsection
+
+
