@@ -80,3 +80,7 @@
     </div>
 </main>
 @endsection
+
+@section('javascript')
+    <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
+@endsection

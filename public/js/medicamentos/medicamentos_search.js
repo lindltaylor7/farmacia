@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
         $.ajax({
-            url:"admin/medicamentos/all",
+            url:"../admin/medicamentos/all",
             type: "POST",
             dataType: 'json',
             data:{
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 
                         $.ajax({
-                            url:"admin/medicamentos/infoedit",
+                            url:"../admin/medicamentos/infoedit",
                             type: "POST",
                             dataType: 'json',
                             data:{
@@ -65,7 +65,7 @@ $(document).ready(function(){
                         var id = $(this).attr("id")
                        if(confirm("Desea eliminar este medicamento?")){
                             $.ajax({
-                                url:"admin/medicamentos/delmedic",
+                                url:"../admin/medicamentos/delmedic",
                                 type: "POST",
                                 dataType: 'json',
                                 data:{

@@ -6,7 +6,7 @@ $(document).ready(function(){
         var id = $(this).attr('id')
 
         $.ajax({
-            url:"admin/medicamentos/infoedit",
+            url:"../admin/medicamentos/infoedit",
             type: "POST",
             dataType: 'json',
             data:{

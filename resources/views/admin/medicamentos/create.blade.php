@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Costo Unitario</label>
-                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Costo unitario">
+                                        <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio de Costo unitario">
                                     </div>
                                 </div>
 
@@ -78,19 +78,19 @@
                                 <div class="row">
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Porcentaje de Utilidad</label>
-                                        <input type="number" name="utilidad" class="form-control" id="inputUsername" placeholder="Porcentaje de Utilidad">
+                                        <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Porcentaje de Utilidad">
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta Unitario</label>
-                                        <input type="number" name="p_unitario" class="form-control" id="inputUsername" placeholder="Precio de Venta Unitario">
+                                        <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta Unitario" readonly>
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Venta por Caja</label>
-                                        <input type="number" name="p_venta_caja" class="form-control" id="inputUsername" placeholder="Precio de venta por caja">
+                                        <input type="number" name="p_venta_caja" class="form-control" id="inputUsername" placeholder="Precio de Costo por caja">
                                     </div>
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="inputUsername">Precio de Costo por Caja</label>
-                                        <input type="number" name="p_caja" class="form-control" id="inputUsername" placeholder="Precio de costo por caja">
+                                        <input type="number" name="p_caja" class="form-control" id="inputUsername" placeholder="Precio de Venta por caja" readonly>
                                     </div>
                                 </div>
 
@@ -107,4 +107,8 @@
 
     </div>
 </main>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/medicamentos/math_precios.js') }}"></script>
 @endsection

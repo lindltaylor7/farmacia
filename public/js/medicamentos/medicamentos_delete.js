@@ -3,7 +3,7 @@ $(document).ready(function(){
         var id = $(this).attr("id")
        if(confirm("Desea eliminar este medicamento?")){
             $.ajax({
-                url:"admin/medicamentos/delmedic",
+                url:"../admin/medicamentos/delmedic",
                 type: "POST",
                 dataType: 'json',
                 data:{

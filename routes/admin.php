@@ -8,7 +8,8 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('', [InicioController::class, 'index'])->name('inicio.index');
+Route::post('all', [InicioController::class, 'all'])->name('inicio.all');
 
 Route::get('medicamentos', [MedicamentoController::class, 'index'])->name('admin.index');
 Route::get('medicamentos/create', [MedicamentoController::class, 'create'])->name('admin.create');
@@ -35,5 +36,5 @@ Route::get('principal', [PrincipalController::class, 'index'])->name('principal.
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
 Route::get('principal/editar_2', [PrincipalController::class, 'editar_2'])->name('principal.editar_2');
 
-Route::get('', [InicioController::class, 'index'])->name('inicio.index');
+
 
