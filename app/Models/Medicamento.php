@@ -10,5 +10,9 @@ class Medicamento extends Model
 {
     protected $fillable=['n_generico','n_comercial', 'concent', 'present', 'lab', 'img', 'nro_caja'];
     
+    public function stock(){
+        return $this->belongsTo('App\Models\Stock');
+    }
+
     use HasFactory;
 }

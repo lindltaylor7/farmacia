@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
-use App\Models\Stock;
 use Illuminate\Http\Request;
 
 
-
-class StockController extends Controller
+class InicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')->orderBy('medicamentos.n_generico', 'asc')->get();
-        return view('admin.stocks.index', compact('stocks'));
+        $medicamentos=Medicamento::all();
+        return view('admin.inicio.index', compact('medicamentos'));
     }
 
     /**
@@ -28,8 +26,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        $medicamentos=Medicamento::all();
-        return view('admin.stocks.create', compact('medicamentos'));
+        //
     }
 
     /**
@@ -39,19 +36,8 @@ class StockController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        $request->validate([
-            'cantidad' => 'required',
-            'anaquel'   => 'required',
-            'f_vencimiento' => 'required',
-            'f_ingreso'    => 'required',
-        ]);
-
-        $stock=Stock::create($request->all());
-    
-        return redirect(route('stock.index'));
-
-
+    {
+        //
     }
 
     /**

@@ -31,7 +31,7 @@
                 <p class="texto-nav-2">Más Vendidos</p>
                 <p class="texto-nav-3">Ofertas</p>
                 <p class="texto-nav-4">Contacto</p>
-                <a href="{{route('admin.index')}}"><p class="texto-nav-4">Admin</p></a>
+                <a href="{{route('inicio.index')}}"><p class="texto-nav-4">Admin</p></a>
             </div>
 
         </nav>
