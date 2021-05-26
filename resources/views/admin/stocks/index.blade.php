@@ -22,7 +22,7 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                    
                                     <th>Medicamento</th>
                                     <th class="d-none d-xl-table-cell">Cantidad</th>
                                     <th class="d-none d-xl-table-cell">Anaquel</th>
@@ -31,70 +31,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Ibuprofeno</td>  
-                                    <td class="d-none d-xl-table-cell">20</td>
-                                    <td class="d-none d-xl-table-cell">Uno</td>
-                                    <td><span class="badge bg-success">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Ibuprofeno</td> 
-                                    <td class="d-none d-xl-table-cell">32</td>
-                                    <td class="d-none d-xl-table-cell">Uno</td>
-                                    <td><span class="badge bg-danger">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Ibuprofeno</td> 
-                                    <td class="d-none d-xl-table-cell">31</td>
-                                    <td class="d-none d-xl-table-cell">Dos</td>
-                                    <td><span class="badge bg-success">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Amoxicilina</td> 
-                                    <td class="d-none d-xl-table-cell">25</td>
-                                    <td class="d-none d-xl-table-cell">Uno</td>
-                                    <td><span class="badge bg-warning">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Amoxicilina</td>
-                                    <td class="d-none d-xl-table-cell">26</td>
-                                    <td class="d-none d-xl-table-cell">Dos</td>
-                                    <td><span class="badge bg-success">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Ibuprofeno</td>
-                                    <td class="d-none d-xl-table-cell">22</td>
-                                    <td class="d-none d-xl-table-cell">Dos</td>
-                                    <td><span class="badge bg-success">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Vitamina A</td>
-                                    <td class="d-none d-xl-table-cell">24</td>
-                                    <td class="d-none d-xl-table-cell">Dos</td>
-                                    <td><span class="badge bg-success">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Vitamina B</td>
-                                    <td class="d-none d-xl-table-cell">25</td>
-                                    <td class="d-none d-xl-table-cell">Dos</td>
-                                    <td><span class="badge bg-warning">01/01/2021</span></td>
-                                    <td class="d-none d-md-table-cell">04/03/2023</td>
-                                </tr>
+                                @foreach($stocks as $stock)
+                                    <tr>
+                                        <td>{{$stock->medicamento->n_generico}}</td>
+                                        <td>{{$stock->cantidad}}</td>
+                                        <td>{{$stock->anaquel}}</td>
+                                        <td>{{$stock->f_ingreso}}</td>
+                                        <td>{{$stock->f_vencimiento}}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

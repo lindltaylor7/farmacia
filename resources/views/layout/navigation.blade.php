@@ -9,6 +9,12 @@
                 Páginas
             </li>
 
+            <li class="sidebar-item {{request()->routeIs('inicio.*')? 'active' : ''}}">
+                <a class="sidebar-link" href="{{route('inicio.index')}}">
+      <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Inicio</span>
+    </a>
+            </li>
+
             <li class="sidebar-item {{request()->routeIs('principal.*')? 'active' : ''}}">
                 <a class="sidebar-link" href="{{route('principal.index')}}">
       <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Principal</span>
