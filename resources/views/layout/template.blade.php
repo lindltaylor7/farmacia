@@ -39,6 +39,7 @@
     <script src="{{asset('js/medicamentos_create.js')}}"></script>
 	<script src="{{asset('js/medicamentos_search.js')}}"></script>
     <script src="{{asset('js/medicamentos_delete.js')}}"></script>
+    <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
 </body>
 
 </html>

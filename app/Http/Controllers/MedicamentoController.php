@@ -55,7 +55,7 @@ class MedicamentoController extends Controller
         ]);
 
         $precio=Precio::create($request->all());
-        
+
         return redirect(route('admin.index'));
     }
 
@@ -106,7 +106,9 @@ class MedicamentoController extends Controller
     }
 
     public function all(Request $request){
-        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')->get();
+        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')
+                                    ->orWhere('n_comercial','like','%'.$request->get('search').'%')
+                                    ->get();
         return json_encode($medicamentos);
     }
 

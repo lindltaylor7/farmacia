@@ -25,12 +25,10 @@
                                 <tr>
                                     <th class="d-none d-md-table-cell">Nombre Genérico</th>
                                     <th class="d-none d-md-table-cell">Nombre Comercial</th>
-                                    <th class="d-none d-md-table-cell">Presentación</th>
                                     <th class="d-none d-md-table-cell">Concentración</th>
-                                    <th class="d-none d-md-table-cell">Precio</th>
-                                    <th class="d-none d-md-table-cell">Cantidad</th>
+                                    <th class="d-none d-md-table-cell">Presentación</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
-                                    <th class="d-none d-md-table-cell">Anaquel</th>
+                                    <th class="d-none d-md-table-cell">Nro por Caja</th>
                                     <th class="d-none d-md-table-cell">Opciones</th>
                                 </tr>
                             </thead>
@@ -39,12 +37,10 @@
                                     <tr id="row{{$medicamento->id}}">
                                         <td>{{$medicamento->n_generico}}</td>
                                         <td>{{$medicamento->n_comercial}}</td>
-                                        <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->concent}}</td>
-                                        <td>S./2.00</td>
-                                        <td>20</td>
+                                        <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->lab}}</td>
-                                        <td>1</td>
+                                        <td>{{$medicamento->nro_caja}}</td>
                                         <td>
                                             <a href="#" class="btn-editar" id="{{$medicamento->id}}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="align-middle" data-feather="edit-2"></i></a>
                                             <a href="#" class="btn-eliminar" id="{{$medicamento->id}}"><i class="align-middle" data-feather="trash"></i></a>
