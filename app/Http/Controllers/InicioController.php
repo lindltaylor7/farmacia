@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class InicioController extends Controller
@@ -15,7 +16,9 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $medicamentos=Medicamento::all();
+
+        $medicamentos = Medicamento::all();
+
         return view('admin.inicio.index', compact('medicamentos'));
     }
 
@@ -83,5 +86,13 @@ class InicioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all(Request $request)
+    {
+        $medicamentos = Medicamento::where('n_generico', 'like', '%' . $request->get('search') . '%')
+            ->orWhere('n_comercial', 'like', '%' . $request->get('search') . '%')
+            ->get();
+        return json_encode($medicamentos);
     }
 }

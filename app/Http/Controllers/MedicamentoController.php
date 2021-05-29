@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medicamento;
 use App\Models\Precio;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
-
+use Illuminate\Support\Facades\Storage;
 
 class MedicamentoController extends Controller
 {
@@ -17,8 +16,7 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        $medicamentos=Medicamento::paginate(5);
-        //Paginator::useBootstrap();
+        $medicamentos=Medicamento::paginate(10);
         return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
@@ -50,6 +48,20 @@ class MedicamentoController extends Controller
             'utilidad'   => 'required'
         ]);
 
+        if($request->file('foto')){
+            $url = Storage::put('medicamentos', $request->file('foto'));
+
+           /*  return $url; */
+
+            $request->merge([
+                'img'=>$url
+            ]);
+
+
+
+            $medicamento = Medicamento::create($request->all());
+        }
+
         $medicamento=Medicamento::create($request->all());
 
         $request->merge([
@@ -57,7 +69,7 @@ class MedicamentoController extends Controller
         ]);
 
         $precio=Precio::create($request->all());
-        
+
         return redirect(route('admin.index'));
     }
 
@@ -90,9 +102,10 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $upd_med = Medicamento::where('id', $request->get('id_med'))->update(request()->except(['_token','id_med']));
+        return redirect()->back();
     }
 
     /**
@@ -107,7 +120,20 @@ class MedicamentoController extends Controller
     }
 
     public function all(Request $request){
-        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')->get();
+        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')
+                                    ->orWhere('n_comercial','like','%'.$request->get('search').'%')
+                                    ->get();
         return json_encode($medicamentos);
+    }
+
+    public function infoedit(Request $request){
+        $medicamentos = Medicamento::where('id',$request->get('id'))->get();
+        return json_encode($medicamentos);
+    }
+
+    public function delmedic(Request $request){
+        $del_med = Medicamento::where('id',$request->get('id'))->delete();
+
+        return $del_med;
     }
 }

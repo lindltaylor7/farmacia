@@ -9,8 +9,8 @@
 
             <h1 class="h3 mb-3">Buscar Cliente</h1>
             <div class="d-flex justify-content-between">
-                <input type="text" class="d-inline form-control mb-3 w-75" placeholder="Ingrese el DNI del cliente">
-                <a href="" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="search"></i> Buscar Cliente</a>
+                <input type="text" class="d-inline form-control mb-3 w-75" id="search_dni" placeholder="Ingrese el DNI del cliente">
+                <a id="btn_dni" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="search"></i> Buscar Cliente</a>
             </div>
             <h1 class="h3 mb-3">Ventas</h1>
             <div class="d-flex justify-content-between">
@@ -26,7 +26,7 @@
                         <h5 class="card-title mb-0">Cesta de Productos</h5>
                     </div>
                     <div class="card-body">
-                        <p><strong>Cliente:</strong>Jhon Doe</p>
+                        <p><strong>Cliente:</strong><p id="nombre_cliente"></p></p>
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
@@ -79,4 +79,8 @@
 
     </div>
 </main>
+@endsection
+
+@section('javascript')
+    <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
 @endsection

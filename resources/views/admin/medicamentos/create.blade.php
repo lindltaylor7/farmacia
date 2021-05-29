@@ -15,7 +15,7 @@
                         <h5 class="card-title mb-0">Ingrese los datos del medicamento</h5>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{route('medicamentos.store')}}">
+                        <form method="post" action="{{route('medicamentos.store')}}" enctype="multipart/form-data">
                         @csrf
                             <div class="row">
                                 <div class="col-md-8">
@@ -51,11 +51,11 @@
 
                                 <div class="col-md-4">
                                     <div class="text-center">
-                                        <img alt="Charles Hall" src="{{asset('img/medic2.jpg')}}" class="rounded-circle img-responsive mt-2" width="128" height="128" />
+                                        <img alt="Charles Hall" src="{{asset('img/medic2.jpg')}}" id="picture" class="rounded-circle img-responsive mt-2" width="128" height="128" />
                                         <div class="mt-2">
-                                            <label for="img">
+                                            <label for="foto">
                                                 <span class="btn btn-primary" aria-hidden="true">Subir Imagen</span>
-                                                <input type="file" name="img" accept="image/*" id="img" style="display:none">
+                                                <input type="file" name="foto" accept="image/*" id="foto" style="display:none">
                                             </label>
                                         </div>
                                         <small>Suba la imagen del medicamento (Opcional)</small>
@@ -68,30 +68,56 @@
                                         <input type="text" name="lab" class="form-control" id="inputUsername" placeholder="Laboratorio">
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <label class="form-label" for="inputUsername">Precio de Costo Unitario</label>
-                                        <input type="number" name="p_costo" class="form-control" id="inputUsername" placeholder="Precio de Costo unitario">
-                                    </div>
+                                        <label class="form-label" for="p_costo">Precio de Costo Unitario</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                              </div>
+                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio de Costo unitario">
+                                        </div>
+                                      </div>
                                 </div>
 
 
 
                                 <div class="row">
                                     <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="inputUsername">Porcentaje de Utilidad</label>
-                                        <input type="number" name="utilidad" class="form-control" id="inputUsername" placeholder="Porcentaje de Utilidad">
+                                        <label class="form-label" for="utilidad">Porcentaje de Utilidad</label>
+                                        <div class="input-group">
+                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">%</span>
+                                              </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="inputUsername">Precio de Venta Unitario</label>
-                                        <input type="number" name="p_unitario" class="form-control" id="inputUsername" placeholder="Precio de Venta Unitario">
-                                    </div>
-                                    <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="inputUsername">Precio de Venta por Caja</label>
-                                        <input type="number" name="p_venta_caja" class="form-control" id="inputUsername" placeholder="Precio de venta por caja">
-                                    </div>
-                                    <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="inputUsername">Precio de Costo por Caja</label>
-                                        <input type="number" name="p_caja" class="form-control" id="inputUsername" placeholder="Precio de costo por caja">
-                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label" for="p_unitario">Precio de Venta Unitario</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                              </div>
+                                              <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                              </div>
+                                              <input type="number" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
+
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <label class="form-label" for="p_venta_caja">Precio de Venta por Caja</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                              </div>
+                                              <input type="number" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
+                                        </div>
+                                      </div>
                                 </div>
 
                             </div>
@@ -107,4 +133,9 @@
 
     </div>
 </main>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/medicamentos/math_precios.js') }}"></script>
+    <script src="{{ asset('js/medicamentos/img_create.js') }}"></script>
 @endsection

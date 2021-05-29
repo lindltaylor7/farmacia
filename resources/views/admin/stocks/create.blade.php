@@ -19,18 +19,15 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-8">
-                                   
+
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Medicamento</label>
-                                        <select class="form-control" id="inputUsername" name="medicamento_id">
-
-                                            @foreach($medicamentos as $medicamento)
-                                                <option value="{{$medicamento->id}}">
-                                                    {{$medicamento->n_generico}}
-                                                </option>
-                                            @endforeach
-                                            
-                                        </select>
+                                        <input type="text" class="form-control" id="search" placeholder="Buscar medicamento">
+                                        <table class="table table-hover table-sm">
+                                            <tbody class="border border-primary" id="medicamentos_select">
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" name="medicamento_id" id="medicamento_id">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Cantidad</label>
@@ -61,4 +58,8 @@
 
     </div>
 </main>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/stocks/selectpicker.js') }}"></script>
 @endsection

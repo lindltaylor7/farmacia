@@ -39,7 +39,7 @@ class StockController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $request->validate([
             'cantidad' => 'required',
             'anaquel'   => 'required',
@@ -48,7 +48,7 @@ class StockController extends Controller
         ]);
 
         $stock=Stock::create($request->all());
-    
+
         return redirect(route('stock.index'));
 
 
@@ -97,5 +97,13 @@ class StockController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all(Request $request){
+        $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')
+                        ->orderBy('medicamentos.n_generico', 'asc')
+                        ->where('n_generico','like', '%' . $request->get('search') . '%')
+                        ->get();
+        return json_encode($stocks);
     }
 }

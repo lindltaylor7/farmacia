@@ -8,7 +8,7 @@
 
         <h1 class="h3 mb-3">Inicio</h1>
             <div class="d-flex justify-content-between">
-                <input type="text" class="d-inline form-control mb-3 w-75" id="search_med" placeholder="Buscar">
+                <input type="text" class="d-inline form-control mb-3 w-75" id="search_index" placeholder="Buscar">
                 <a href="{{route('admin.create')}}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i></a>
             </div>
 
@@ -30,17 +30,17 @@
                                     <th class="d-none d-md-table-cell">Cantidad</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
                                     <th class="d-none d-md-table-cell">Anaquel</th>
-                                    
+
                                 </tr>
                             </thead>
-                            <tbody id="dynamic-row">
+                            <tbody id="dynamic-row-index">
                                 @foreach($medicamentos as $medicamento)
                                     <tr>
                                         <td>{{$medicamento->n_generico}}</td>
                                         <td>{{$medicamento->n_comercial}}</td>
                                         <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->concent}}</td>
-                                        <td>S./2.00</td>
+                                        <td>S./{{$medicamento->precio->p_unitario}}</td>
                                         <td>20</td>
                                         <td>{{$medicamento->lab}}</td>
                                         <td>1</td>
@@ -56,4 +56,7 @@
 
     </div>
 </main>
+@endsection
+@section('javascript')
+    <script src="{{ asset('js/inicio/search.js') }}"></script>
 @endsection

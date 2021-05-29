@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Precio extends Model
 {
-    protected $fillable = ['p_unitario', 'p_costo', 'p_caja', 'utilidad', 'p_venta_caja', 'medicamento_id'];
     use HasFactory;
+
+    protected $fillable = ['p_unitario', 'p_costo', 'p_caja', 'utilidad', 'p_venta_caja', 'medicamento_id'];
+
+    public function medicamento(){
+        return $this->belongsTo('App\Models\Medicamento');
+    }
+
 }

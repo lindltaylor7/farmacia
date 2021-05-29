@@ -9,9 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Medicamento extends Model
 {
     protected $fillable=['n_generico','n_comercial', 'concent', 'present', 'lab', 'img', 'nro_caja'];
-    
+
     public function stock(){
-        return $this->belongsTo('App\Models\Stock');
+        return $this->hasMany('App\Models\Stock');
+    }
+
+    public function precio(){
+        return $this->hasOne('App\Models\Precio');
     }
 
     use HasFactory;
