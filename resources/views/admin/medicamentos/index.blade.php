@@ -53,7 +53,9 @@
 
                             </tbody>
                         </table>
+                        
                     </div>
+                    {{$medicamentos->links('pagination::bootstrap-4')}}
                 </div>
             </div>
         </div>

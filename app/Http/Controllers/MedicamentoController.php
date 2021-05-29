@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medicamento;
 use App\Models\Precio;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 
 class MedicamentoController extends Controller
@@ -16,7 +17,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        $medicamentos=Medicamento::all();
+        $medicamentos=Medicamento::paginate(5);
+        //Paginator::useBootstrap();
         return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
