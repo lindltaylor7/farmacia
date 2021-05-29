@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medicamento;
 use App\Models\Precio;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 
 class MedicamentoController extends Controller
 {
@@ -16,7 +16,7 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        $medicamentos=Medicamento::all();
+        $medicamentos=Medicamento::paginate(10);
         return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
@@ -47,6 +47,20 @@ class MedicamentoController extends Controller
             'p_caja'     => 'required',
             'utilidad'   => 'required'
         ]);
+
+        if($request->file('foto')){
+            $url = Storage::put('medicamentos', $request->file('foto'));
+
+           /*  return $url; */
+
+            $request->merge([
+                'img'=>$url
+            ]);
+
+
+
+            $medicamento = Medicamento::create($request->all());
+        }
 
         $medicamento=Medicamento::create($request->all());
 

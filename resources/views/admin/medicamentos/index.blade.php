@@ -21,7 +21,7 @@
                         <div class="card-header">
                         </div>
                         <div class="card-body table-responsive">
-                            <table class="table table-hover my-0">
+                            <table class="table table-hover my-0 mb-3">
                                 <thead>
                                     <tr>
                                         <th class="d-none d-md-table-cell">Nombre Genérico</th>
@@ -53,6 +53,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$medicamentos->links()}}
                         </div>
                     </div>
                 </div>

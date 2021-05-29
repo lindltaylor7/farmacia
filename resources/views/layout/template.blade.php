@@ -14,12 +14,13 @@
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>@yield('title')</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <!-- CSS only -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -35,9 +36,8 @@
 		</div>
 	</div>
 
-	<script src="{{asset('js/app.js')}}"></script>
 
+    <script src="{{asset('js/app.js')}}"></script>
     @yield('javascript')
-
 </body>
 </html>
