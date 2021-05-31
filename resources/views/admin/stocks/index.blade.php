@@ -32,18 +32,15 @@
                             </thead>
                             <tbody id="dynamic-row">
                                 @foreach($stocks as $stock)
-                                    <tr>
+                                    <tr id="row{{$stock->id}}">
                                         <td>{{$stock->medicamento->n_generico}}</td>
                                         <td>{{$stock->cantidad}}</td>
                                         <td>{{$stock->anaquel}}</td>
                                         <td>{{date('d/m/Y', strtotime($stock->f_ingreso))}}</td>
                                         <td>{{date('d/m/Y', strtotime($stock->f_vencimiento))}}</td>
                                         <td>
-                                            <a href="#" class="btn-editar" id="{{ $stock->id }}"
-                                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                    class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#" class="btn-eliminar" id="{{ $stock->id }}"><i
-                                                    class="align-middle" data-feather="trash"></i></a>
+                                            <a href="#" class="btn-editar" id="{{ $stock->id }}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="align-middle" data-feather="edit-2"></i></a>
+                                            <a href="#" class="btn-eliminar" id="{{ $stock->id }}"><i class="align-middle" data-feather="trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -53,11 +50,13 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @include('admin.stocks.modal')
 </main>
 @endsection
 
 @section('javascript')
     <script src="{{ asset('js/stocks/stocks_search.js') }}"></script>
+    <script src="{{ asset('js/stocks/stocks_delete.js') }}"></script>
+    <script src="{{ asset('js/stocks/stocks_update.js') }}"></script>
 @endsection

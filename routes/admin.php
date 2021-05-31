@@ -31,6 +31,9 @@ Route::get('stock', [StockController::class, 'index'])->name('stock.index');
 Route::get('stock/create', [StockController::class, 'create'])->name('stock.create');
 Route::post('stock/store', [StockController::class, 'store'])->name('stock.store');
 Route::post('stock/all', [StockController::class, 'all'])->name('stock.all');
+Route::post('stock/delstock', [StockController::class, 'delstock'])->name('stock.delete');
+Route::post('stock/update', [StockController::class, 'update'])->name('stock.update');
+Route::post('stock/infoedit', [StockController::class, 'infoedit']);
 
 Route::get('principal', [PrincipalController::class, 'index'])->name('principal.index');
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
