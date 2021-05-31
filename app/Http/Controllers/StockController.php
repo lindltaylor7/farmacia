@@ -17,7 +17,9 @@ class StockController extends Controller
      */
     public function index()
     {
-        $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')->orderBy('medicamentos.n_generico', 'asc')->get();
+        $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')
+        ->orderBy('medicamentos.n_generico', 'asc')
+        ->get('stocks.*');
         return view('admin.stocks.index', compact('stocks'));
     }
 
@@ -83,9 +85,10 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $upd_stock = Stock::where('id', $request->get('id_stock'))->update(request()->except(['_token','id_']));
+        return redirect()->back();
     }
 
     /**
@@ -100,10 +103,22 @@ class StockController extends Controller
     }
 
     public function all(Request $request){
-        $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')
-                        ->orderBy('medicamentos.n_generico', 'asc')
+        $stocks=Stock::select('stocks.*','medicamentos.n_generico')
+                        ->leftJoin('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')
                         ->where('n_generico','like', '%' . $request->get('search') . '%')
+                        ->orderBy('medicamentos.n_generico', 'asc')
                         ->get();
+
         return json_encode($stocks);
+    }
+
+    public function delstock(Request $request){
+        $stock = Stock::where('id','=',$request->get('id'))->delete();
+        return $stock;
+    }
+
+    public function infoedit(Request $request){
+        $stock = Stock::where('id',$request->get('id'))->get();
+        return json_encode($stock);
     }
 }
