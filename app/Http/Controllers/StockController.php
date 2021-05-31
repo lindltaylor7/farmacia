@@ -87,7 +87,7 @@ class StockController extends Controller
      */
     public function update(Request $request)
     {
-        $upd_stock = Stock::where('id', $request->get('id_stock'))->update(request()->except(['_token','id_']));
+        $upd_stock = Stock::where('id', $request->get('id_stock'))->update(request()->except(['_token','id_stock']));
         return redirect()->back();
     }
 
