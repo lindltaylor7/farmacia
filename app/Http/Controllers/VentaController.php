@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Venta;
 use Illuminate\Http\Request;
+
 
 class VentaController extends Controller
 {
@@ -13,7 +15,9 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('admin.ventas.index');
+        $ventas=Venta::all();
+        return view('admin.ventas.index', compact('ventas'));
+
     }
 
     /**
