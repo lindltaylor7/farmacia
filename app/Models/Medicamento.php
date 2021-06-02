@@ -18,5 +18,9 @@ class Medicamento extends Model
         return $this->hasOne('App\Models\Precio');
     }
 
+    public function detail(){
+        return $this->hasMany('App\Models\Detail');
+    }
+
     use HasFactory;
 }

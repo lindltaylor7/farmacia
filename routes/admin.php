@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\PrincipalController;
@@ -19,9 +21,15 @@ Route::post('medicamentos/delmedic', [MedicamentoController::class, 'delmedic'])
 Route::post('medicamentos/update', [MedicamentoController::class, 'update'])->name('medicamentos.update');
 Route::post('medicamentos/store', [MedicamentoController::class, 'store'])->name('medicamentos.store');
 
+Route::post('clientes/store', [ClienteController::class, 'store'])->name('clientes.store');
+
+Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
+
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
 Route::get('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
 Route::get('ventas/invoice', [VentaController::class, 'invoice'])->name('ventas.invoice');
+Route::get('ventas/{id}', [VentaController::class, 'show'])->name('ventas.show');
+
 Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.index');
 Route::get('reportes/top', [ReporteController::class, 'top'])->name('reportes.top');
 Route::get('reportes/bot', [ReporteController::class, 'bot'])->name('reportes.bot');
