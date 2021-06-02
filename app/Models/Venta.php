@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Venta extends Model
 {
-    use HasFactory;
 
+    use HasFactory;
+    protected $fillable = ['codigo', 'utilidad', 'fecha', 'cliente_id'];
     public function cliente(){
         return $this->belongsTo('App\Models\Cliente');
     }
+
+    
+
 }

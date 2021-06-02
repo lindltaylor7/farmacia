@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
-
-    public function venta(){
+    protected $fillable = ['name', 'dni'];
+    public function ventas(){
         return $this->hasMany('App\Models\Venta');
     }
 }
