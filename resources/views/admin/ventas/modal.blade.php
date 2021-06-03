@@ -11,6 +11,7 @@
                 <p id="info_medic"></p>
                 <input type="hidden" name="medicamento_id" id="medicamento_id">
                 <input type="hidden" name="venta_id" id="venta_id" value="{{$id}}">
+                <input type="hidden" name="price" id="price">
                 <div class="form-group">
                     <label for="">Cantidad</label>
                     <input type="number" name="cantidad" id="cantidad" class="form-control">

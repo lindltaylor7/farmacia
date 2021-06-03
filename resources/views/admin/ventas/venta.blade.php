@@ -5,14 +5,6 @@
 @section('content')
 <main class="content">
     <div class="container-fluid p-0">
-
-
-            <h1 class="h3 mb-3">Buscar Cliente</h1>
-            <div class="d-flex justify-content-between">
-                <input type="text" class="d-inline form-control mb-3 w-75" id="search_dni" placeholder="Ingrese el DNI del cliente">
-
-                <a id="btn_dni" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="search"></i> Buscar Cliente</a>
-            </div>
             <h1 class="h3 mb-3">Ventas</h1>
             <div id="container-search" class="d-flex flex-column justify-content-between">
                 <input type="text" class="d-inline form-control w-100" id="search" placeholder="Buscar producto">
@@ -30,7 +22,7 @@
                         <h5 class="card-title mb-0">Cesta de Productos {{$id}}</h5>
                     </div>
                     <div class="card-body">
-                        <p><strong>Cliente:</strong><p id="nombre_cliente"></p></p>
+                        <p><strong>Cliente:</strong>{{$cliente->name}}</p>
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
@@ -84,6 +76,6 @@
 @endsection
 
 @section('javascript')
-    <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
+    <script src="{{ asset('js/ventas/detail_modal.js') }}"></script>
     <script src="{{ asset('js/ventas/selectpicker.js') }}"></script>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Detail;
 
 use App\Models\Venta;
@@ -27,14 +28,9 @@ class VentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $venta = Venta::create([
-            'codigo' => null,
-            'utilidad' => null,
-            'fecha' => null,
-            'cliente_id'=>null
-        ]);
+        $venta = Venta::create($request->all());
 
         return redirect()->route('ventas.show',['id'=> $venta->id]);
 
@@ -60,8 +56,10 @@ class VentaController extends Controller
      */
     public function show($id)
     {
+        $venta = Venta::where('id',$id)->first();
         $details = Detail::where('venta_id', $id)->get();
-        return view('admin.ventas.venta',compact('id','details'));
+        $cliente = Cliente::where('id',$venta->cliente_id)->first();
+        return view('admin.ventas.venta',compact('id','details','cliente'));
     }
 
     /**

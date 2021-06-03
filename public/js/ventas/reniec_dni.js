@@ -15,10 +15,10 @@ $(document).ready(function(){
                     $.each(res, function(key, value){
                         console.log(key)
                         if(key == 'data'){
-                            $('#nombre_cliente').html(value.nombre_completo)
+                            $('#nombre_cliente').val(value.nombre_completo)
                             $.ajax({
 
-                                url:"../clientes/store",
+                                url:"./clientes/store",
                                 type: "POST",
                                 dataType: 'json',
                                 data:{
@@ -31,9 +31,10 @@ $(document).ready(function(){
                                 },
                                 success:function(res){
 
-                                    console.log('user insertado')
-
+                                    alert('user insertado')
                                     console.log(res)
+                                    $('#cliente_id').val(res)
+
                                 }
 
                                 })

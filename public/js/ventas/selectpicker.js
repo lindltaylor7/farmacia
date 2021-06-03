@@ -14,7 +14,7 @@ $(document).ready(function(){
        var search = $(this).val()
        $('#medicamentos_select').trigger("click")
         $.ajax({
-            url:"../medicamentos/all",
+            url:"../medicamentos/medPrice",
             type: "POST",
             dataType: 'json',
             data:{
@@ -30,12 +30,13 @@ $(document).ready(function(){
                 $('#medicamentos_select').html('');
 
                 $.each(res, function(index, value){
-                    list = '<tr><td><a class="search-link" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
+                    list = '<tr><td><a class="search-link" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
                     $('#medicamentos_select').append(list);
 
                     $('.search-link').on('click', function(){
                         $('#medicamento_id').val($(this).attr('id'));
                         $('#info_medic').html($(this).text())
+                        $('#price').val($(this).data('price'))
                     })
                 });
 

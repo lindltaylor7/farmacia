@@ -9,8 +9,7 @@
         <h1 class="h3 mb-3">Ventas</h1>
             <div class="d-flex justify-content-between">
                 <input type="text" id="input_1" class="d-inline form-control mb-3 w-75" placeholder="Buscar por código">
-                <a href="{{route('ventas.create')}}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Venta</a>
-                <a href="#" id="prueba" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Prueba</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#clientModal" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i>Venta</a>
             </div>
 
 
@@ -55,12 +54,13 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @include('admin.ventas.clientmodal')
 </main>
 @endsection
 
 @section('javascript')
+    <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
     <script src="{{ asset('js/ventas/prueba.js') }}"></script>
 @endsection
 

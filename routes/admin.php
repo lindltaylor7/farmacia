@@ -20,13 +20,14 @@ Route::post('medicamentos/infoedit', [MedicamentoController::class, 'infoedit'])
 Route::post('medicamentos/delmedic', [MedicamentoController::class, 'delmedic']);
 Route::post('medicamentos/update', [MedicamentoController::class, 'update'])->name('medicamentos.update');
 Route::post('medicamentos/store', [MedicamentoController::class, 'store'])->name('medicamentos.store');
+Route::post('medicamentos/medPrice', [MedicamentoController::class, 'medPrice'])->name('medicamentos.medPrice');
 
 Route::post('clientes/store', [ClienteController::class, 'store'])->name('clientes.store');
 
 Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
 
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
-Route::get('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
+Route::post('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
 Route::get('ventas/invoice', [VentaController::class, 'invoice'])->name('ventas.invoice');
 Route::get('ventas/{id}', [VentaController::class, 'show'])->name('ventas.show');
 
