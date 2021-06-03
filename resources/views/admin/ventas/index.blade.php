@@ -38,14 +38,15 @@
                                         <td>{{$venta->cliente->name}}</td>
                                         <td>{{$venta->fecha}}</td>
                                         <td>{{$venta->utilidad}}</td>
-                                        <td>
-                                            <select>
-                                                <option><a href="{{route('ventas.invoice')}}"><span class="badge bg-success">Cancelada Link</span></a></option>
-                                                <option><span class="badge bg-danger">Anulada</span></option>
-                                                <option><span class="badge bg-success">Cancelada</span></option>
-                                                <option><span class="badge bg-warning">Observada</span></option>
-                                            </select>
-                                        </td>
+                                        
+                                            @if($venta->id%2==0)
+                                                <td><a href="{{route('ventas.invoice')}}"><span class="badge bg-warning">Cancelada Link</span></a></td>
+                                            @elseif($venta->id%3==0)
+                                                <td><span class="badge bg-danger">Anulada</span></td>
+                                            @else
+                                                <td><span class="badge bg-success">Cancelada</span></td>
+                                            @endif
+                                    
                                     </tr>
                                 @endforeach
                             </tbody>

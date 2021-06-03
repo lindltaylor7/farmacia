@@ -25,6 +25,7 @@ Route::post('medicamentos/medPrice', [MedicamentoController::class, 'medPrice'])
 Route::post('clientes/store', [ClienteController::class, 'store'])->name('clientes.store');
 
 Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
+Route::delete('detail/destroy/{id}', [DetailController::class, 'destroy'])->name('detail.destroy');
 
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
 Route::post('ventas/create', [VentaController::class, 'create'])->name('ventas.create');

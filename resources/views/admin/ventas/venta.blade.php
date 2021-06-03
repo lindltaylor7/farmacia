@@ -53,11 +53,21 @@
                                     $prod = $detail->cantidad*$detail->medicamento->precio->p_unitario;
                                     $sum = $sum + $prod;
                                     @endphp
-                                    <td class="d-none d-md-table-cell"><i class="align-middle" data-feather="edit-2"></i><i class="align-middle" data-feather="trash"></i></td>
+                                    <td class="d-none d-md-table-cell">
+                                        <form action="{{route('detail.destroy', $detail->id)}}" method="POST">
+                                            <i class="align-middle" data-feather="edit-2"></i>
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </td>
+
                                 </tr>
 
                                 @endforeach
-
+                                
                             </tbody>
                         </table>
                         <div class="text-center mt-3">

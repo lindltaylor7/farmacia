@@ -82,6 +82,9 @@ class DetailController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $detail= Detail::find($id);
+        $detail->delete();
+        return redirect()->back();
+        //Detail $detail
     }
 }
