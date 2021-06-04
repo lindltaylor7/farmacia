@@ -54,12 +54,13 @@
                                     $sum = $sum + $prod;
                                     @endphp
                                     <td class="d-none d-md-table-cell">
-                                        <form action="{{route('detail.destroy', $detail->id)}}" method="POST">
-                                            <i class="align-middle" data-feather="edit-2"></i>
+
+                                        <button class="btn btn-primary" id="btn-edit-detail" data-cant="{{$detail->cantidad}}" data-price="{{$detail->medicamento->precio->p_unitario}}" value="{{$detail->id}}" data-bs-toggle="modal" data-bs-target="#editModal"><i class="align-middle" data-feather="edit-2"></i></button>
+                                        <form action="{{route('detail.destroy', $detail->id)}}" class="d-inline" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger">
-                                                Eliminar
+                                                <i class="align-middle" data-feather="trash"></i>
                                             </button>
                                         </form>
                                     </td>
@@ -67,12 +68,25 @@
                                 </tr>
 
                                 @endforeach
-                                
+
                             </tbody>
                         </table>
-                        <div class="text-center mt-3">
-                            <p>TOTAL S./@php echo $sum @endphp</p>
-                            <a href="{{route('ventas.invoice')}}" class="btn btn-primary mt-3">Finalizar Venta</a>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{route('ventas.invoice')}}" method="post" class="form-inline">
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <label for="total">Total</label>
+                                        <input type="number" name="total" class="form-control" id="total" value="@php echo $sum @endphp" readonly>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mx-3">Finalizar Venta</button>
+                                  </form>
+
+                            </div>
+
+
 
                         </div>
 
@@ -83,9 +97,11 @@
     </div>
 </main>
 @include('admin.ventas.modal')
+@include('admin.ventas.editmodal')
 @endsection
 
 @section('javascript')
     <script src="{{ asset('js/ventas/detail_modal.js') }}"></script>
     <script src="{{ asset('js/ventas/selectpicker.js') }}"></script>
+    <script src="{{ asset('js/ventas/edit_modal.js') }}"></script>
 @endsection

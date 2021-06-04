@@ -69,9 +69,10 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $detail = Detail::where('id', $request->get('detail_id'))->update(request()->except(['_token','detail_id','price']));
+        return redirect()->back();
     }
 
     /**

@@ -34,7 +34,7 @@ $(document).ready(function(){
                     $('#medicamentos_select').append(list);
 
                     $('.search-link').on('click', function(){
-                        $('#medicamento_id').val($(this).attr('id'));
+                        $('#medicamento_id').val($(this).attr('id'))
                         $('#info_medic').html($(this).text())
                         $('#price').val($(this).data('price'))
                     })

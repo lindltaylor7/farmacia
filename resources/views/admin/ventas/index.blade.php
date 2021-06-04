@@ -34,11 +34,11 @@
 
                                 @foreach($ventas as $venta)
                                     <tr>
-                                        <td>{{$venta->codigo}}</td>
+                                        <td>{{$venta->id}}</td>
                                         <td>{{$venta->cliente->name}}</td>
                                         <td>{{$venta->fecha}}</td>
                                         <td>{{$venta->utilidad}}</td>
-                                        
+
                                             @if($venta->id%2==0)
                                                 <td><a href="{{route('ventas.invoice')}}"><span class="badge bg-warning">Cancelada Link</span></a></td>
                                             @elseif($venta->id%3==0)
@@ -46,7 +46,7 @@
                                             @else
                                                 <td><span class="badge bg-success">Cancelada</span></td>
                                             @endif
-                                    
+
                                     </tr>
                                 @endforeach
                             </tbody>
