@@ -13,18 +13,18 @@
                     <div class="card">
                         <div class="card-body m-sm-3 m-md-5">
                             <div class="mb-4">
-                                Hola <strong>Jhon Doe</strong>,
+                                Hola <strong>{{$cliente->name}}</strong>,
                                 <br /> Este es el recibo por el pago de <strong>S./50.00</strong> (PEN).
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="text-muted">Codigo No.</div>
-                                    <strong>741037024</strong>
+                                    <strong>{{$venta->id}}</strong>
                                 </div>
                                 <div class="col-md-6 text-md-end">
                                     <div class="text-muted">Fecha</div>
-                                    <strong>18 de Mayo del 2021 - 03:45 pm</strong>
+                                    <strong>{{$venta->fecha}}</strong>
                                 </div>
                             </div>
 
@@ -34,7 +34,7 @@
                                 <div class="col-md-6">
                                     <div class="text-muted">Cliente</div>
                                     <strong>
-                                        Jhon Doe
+                                        {{$cliente->name}}
                                     </strong>
 
                                 </div>
@@ -52,25 +52,17 @@
                                     <tr>
                                         <th>Descripción</th>
                                         <th>Cantidad</th>
-                                        <th class="text-end">Monto</th>
+                                        <th class="text-end">Utilidad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>AdminKit Demo Theme Customization</td>
-                                        <td>2</td>
-                                        <td class="text-end">$150.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Monthly Subscription </td>
-                                        <td>3</td>
-                                        <td class="text-end">S./25.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Additional Service</td>
-                                        <td>1</td>
-                                        <td class="text-end">S./100.00</td>
-                                    </tr>
+                                    @foreach($details as $detail)
+                                        <tr>
+                                            <td>{{$detail->medicamento->n_generico}}</td>
+                                            <td>{{$detail->cantidad}}</td>
+                                            <td class="text-end">S/{{$detail->utilidad}}</td>
+                                        </tr>
+                                    @endforeach
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th>Subtotal </th>
@@ -100,8 +92,8 @@
                                 <a href="#" class="btn btn-primary">
                                     Imprimir
                                 </a>
-
-                                <a href="{{ route('ventas.create') }}" class="btn btn-success">
+                            
+                                <a href="{{route('ventas.show',$id)}}" class="btn btn-success">
                                     Atrás
                                 </a>
                             </div>

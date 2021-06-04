@@ -29,7 +29,7 @@ Route::delete('detail/destroy/{id}', [DetailController::class, 'destroy'])->name
 
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
 Route::post('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
-Route::get('ventas/invoice', [VentaController::class, 'invoice'])->name('ventas.invoice');
+Route::get('ventas/invoice/{id}', [VentaController::class, 'invoice'])->name('ventas.invoice');
 Route::get('ventas/{id}', [VentaController::class, 'show'])->name('ventas.show');
 
 Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.index');

@@ -72,7 +72,7 @@
                         </table>
                         <div class="text-center mt-3">
                             <p>TOTAL S./@php echo $sum @endphp</p>
-                            <a href="{{route('ventas.invoice')}}" class="btn btn-primary mt-3">Finalizar Venta</a>
+                            <a href="{{route('ventas.invoice', $id)}}" class="btn btn-primary mt-3">Finalizar Venta</a>
 
                         </div>
 

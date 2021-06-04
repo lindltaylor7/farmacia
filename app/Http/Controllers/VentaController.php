@@ -97,7 +97,11 @@ class VentaController extends Controller
     }
 
 
-    public function invoice(){
-        return view('admin.ventas.invoice');
+    public function invoice($id){
+        
+        $venta = Venta::where('id',$id)->first();
+        $details = Detail::where('venta_id', $id)->get();
+        $cliente = Cliente::where('id',$venta->cliente_id)->first();
+        return view('admin.ventas.invoice', compact('cliente', 'venta', 'details', 'id'));
     }
 }

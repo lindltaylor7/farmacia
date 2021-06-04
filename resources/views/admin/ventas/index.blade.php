@@ -40,7 +40,7 @@
                                         <td>{{$venta->utilidad}}</td>
                                         
                                             @if($venta->id%2==0)
-                                                <td><a href="{{route('ventas.invoice')}}"><span class="badge bg-warning">Cancelada Link</span></a></td>
+                                                <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-warning">Cancelada Link</span></a></td>
                                             @elseif($venta->id%3==0)
                                                 <td><span class="badge bg-danger">Anulada</span></td>
                                             @else
