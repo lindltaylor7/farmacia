@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="text-muted">Codigo No.</div>
-                                    <strong>{{$venta->id}}</strong>
+                                    <strong>B-00{{$venta->id}}</strong>
                                 </div>
                                 <div class="col-md-6 text-md-end">
                                     <div class="text-muted">Fecha</div>
@@ -52,7 +52,7 @@
                                     <tr>
                                         <th>Descripción</th>
                                         <th>Cantidad</th>
-                                        <th class="text-end">Utilidad</th>
+                                        <th class="text-end">Costo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,7 +92,7 @@
                                 <a href="#" class="btn btn-primary">
                                     Imprimir
                                 </a>
-                            
+
                                 <a href="{{route('ventas.show',$id)}}" class="btn btn-success">
                                     Atrás
                                 </a>

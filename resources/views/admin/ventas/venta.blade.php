@@ -7,7 +7,7 @@
     <div class="container-fluid p-0">
             <h1 class="h3 mb-3">Ventas</h1>
             <div id="container-search" class="d-flex flex-column justify-content-between">
-                <input type="text" class="d-inline form-control w-100" id="search" placeholder="Buscar producto">
+                <input type="text" class="d-inline form-control w-100" value="" id="search" placeholder="Buscar producto">
                 <table class="table table-hover table-sm">
                     <tbody class="border border-primary" id="medicamentos_select">
                     </tbody>
@@ -31,6 +31,7 @@
                                     <th class="d-none d-xl-table-cell">Fecha de Vencimiento</th>
                                     <th class="d-none d-xl-table-cell">Cantidad</th>
                                     <th class="d-none d-xl-table-cell">Precio</th>
+                                    <th class="d-none d-xl-table-cell">Subtotal</th>
                                     <th class="d-none d-md-table-cell">Operaciones</th>
                                 </tr>
                             </thead>
@@ -48,11 +49,17 @@
                                         @endforeach
                                     </td>
                                     <td>{{$detail->cantidad}}</td>
-                                    <td>S./{{$detail->medicamento->precio->p_unitario}}</td>
-                                    @php
-                                    $prod = $detail->cantidad*$detail->medicamento->precio->p_unitario;
-                                    $sum = $sum + $prod;
-                                    @endphp
+                                    @if ($detail->tipo == 0)
+                                        <td>S./{{number_format($detail->medicamento->precio->p_unitario,2,'.',"")}}</td>
+                                    @else
+                                        <td>S./{{number_format($detail->medicamento->precio->p_venta_caja,2,'.',"")}}</td>
+                                    @endif
+
+
+                                     <td class="d-none d-xl-table-cell">S./{{number_format($detail->utilidad,2,'.',"")}}</td>
+                                     @php
+                                     $sum = $sum + $detail->utilidad;
+                                     @endphp
                                     <td class="d-none d-md-table-cell">
 
                                         <button class="btn btn-primary" id="btn-edit-detail" data-cant="{{$detail->cantidad}}" data-price="{{$detail->medicamento->precio->p_unitario}}" value="{{$detail->id}}" data-bs-toggle="modal" data-bs-target="#editModal"><i class="align-middle" data-feather="edit-2"></i></button>
@@ -77,10 +84,12 @@
 
                             </div>
                             <div class="col-md-6">
-                                <form action="{{route('ventas.invoice')}}" method="post" class="form-inline">
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <label for="total">Total</label>
-                                        <input type="number" name="total" class="form-control" id="total" value="@php echo $sum @endphp" readonly>
+                                <form action="{{route('ventas.update',$id)}}" method="post" class="form-inline">
+                                    @csrf
+                                    <label for="total" class="mx-sm-3">TOTAL</label>
+                                    <div class="input-group mx-sm-3 mb-2">
+                                        <span class="input-group-text" id="basic-addon1">S./</span>
+                                        <input type="number" name="total" class="form-control" id="total" value="@php echo number_format($sum,2,'.',"") @endphp" readonly>
                                     </div>
                                     <button type="submit" class="btn btn-primary mx-3">Finalizar Venta</button>
                                   </form>

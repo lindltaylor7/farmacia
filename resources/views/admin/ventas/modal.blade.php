@@ -11,14 +11,26 @@
                 <p id="info_medic"></p>
                 <input type="hidden" name="medicamento_id" id="medicamento_id">
                 <input type="hidden" name="venta_id" id="venta_id" value="{{$id}}">
-                <input type="hidden" name="price" id="price">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="tipo" id="cajaCheck">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Venta por caja
+                    </label>
+                  </div>
                 <div class="form-group">
                     <label for="">Cantidad</label>
                     <input type="number" name="cantidad" id="cantidad" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="">Utilidad</label>
-                    <input type="number" name="utilidad" id="utilidad" class="form-control">
+                <label for="price">Precio</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">S./</span>
+                    <input type="number" name="price" id="price" class="form-control" readonly>
+                    <input type="number" name="pricebox" id="pricebox" class="form-control" readonly>
+                </div>
+                <label for="utilidad">Sub-total</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">S./</span>
+                    <input type="number" step=".01" name="utilidad" id="utilidad" class="form-control" readonly>
                 </div>
                 <div class="d-grid gap-2 mt-2">
                     <input type="submit" value="Agregar" class="btn btn-primary">

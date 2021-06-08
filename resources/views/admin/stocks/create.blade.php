@@ -30,8 +30,12 @@
                                         <input type="hidden" name="medicamento_id" id="medicamento_id">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputUsername">Cantidad</label>
-                                        <input type="number" name="cantidad" class="form-control" id="inputUsername" placeholder="Cantidad">
+                                        <label class="form-label" for="inputUsername">Cantidad de cajas</label>
+                                        <input type="number" name="cantidad" class="form-control" id="inputUsername" placeholder="Cantidad de cajas">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Lote</label>
+                                        <input type="number" name="lote" class="form-control" id="inputUsername" placeholder="Nro de Lote">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Anaquel</label>

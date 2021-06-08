@@ -6,8 +6,11 @@ $(document).ready(function(){
 
         var utl = cant * price
 
-        $('#utilidad').val(utl)
+        console.log(utl.toFixed(2))
+        $('#utilidad').val(utl.toFixed(2))
 
     })
+
+
 
 })

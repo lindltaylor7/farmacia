@@ -137,7 +137,7 @@ class MedicamentoController extends Controller
         return $del_med;
     }
     public function medPrice(Request $request){
-        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario')
+        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario','precios.p_venta_caja')
                                     ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
                                     ->where('n_generico','like','%'.$request->get('search').'%')
                                     ->orWhere('n_comercial','like','%'.$request->get('search').'%')

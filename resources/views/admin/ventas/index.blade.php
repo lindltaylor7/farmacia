@@ -26,7 +26,7 @@
                                     <th class="d-none d-xl-table-cell">Cliente</th>
                                     <th class="d-none d-xl-table-cell">Fecha</th>
                                     <th class="d-none d-md-table-cell">Utilidad</th>
-                                    <th class="d-none d-md-table-cell">Factura</th>
+                                    <th class="d-none d-md-table-cell">Venta</th>
 
                                 </tr>
                             </thead>
@@ -37,15 +37,11 @@
                                         <td>{{$venta->id}}</td>
                                         <td>{{$venta->cliente->name}}</td>
                                         <td>{{$venta->fecha}}</td>
-                                        <td>{{$venta->utilidad}}</td>
+                                        <td>S./{{$venta->utilidad}}</td>
 
-                                            @if($venta->id%2==0)
-                                                <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-warning">Cancelada Link</span></a></td>
-                                            @elseif($venta->id%3==0)
-                                                <td><span class="badge bg-danger">Anulada</span></td>
-                                            @else
-                                                <td><span class="badge bg-success">Cancelada</span></td>
-                                            @endif
+
+                                                <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-success">Exitosa</span></a></td>
+
 
                                     </tr>
                                 @endforeach

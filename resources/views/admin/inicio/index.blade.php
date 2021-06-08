@@ -41,9 +41,27 @@
                                         <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->concent}}</td>
                                         <td>S./{{$medicamento->precio->p_unitario}}</td>
-                                        <td>20</td>
+                                        <td>
+                                            @php
+                                                $s=0;
+                                            @endphp
+                                            @foreach ($medicamento->stock as $stock)
+                                            @php
+                                                $s=$s+$stock->cantidad;
+                                            @endphp
+                                            @endforeach
+                                            @php
+                                                echo $s;
+                                            @endphp
+                                        </td>
                                         <td>{{$medicamento->lab}}</td>
-                                        <td>1</td>
+                                        <td>
+                                            @foreach ($medicamento->stock as $stock)
+
+                                            - {{$stock->anaquel}} <br>
+
+                                            @endforeach
+                                        </td>
                                     </tr>
                                 @endforeach
 

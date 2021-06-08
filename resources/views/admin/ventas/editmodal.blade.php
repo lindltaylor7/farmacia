@@ -10,14 +10,17 @@
                 @csrf
                 <p id="info_medic"></p>
                 <input type="hidden" name="detail_id" id="detail_id">
-                <input type="hidden" name="price" id="price_edit">
                 <div class="form-group">
                     <label for="">Cantidad</label>
                     <input type="number" name="cantidad" id="cantidad_edit" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Utilidad</label>
-                    <input type="number" name="utilidad" id="utilidad_edit" class="form-control">
+                    <label for="">Precio</label>
+                    <input type="number" name="price" id="price_edit" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="">Costo</label>
+                    <input type="number" step="any" name="utilidad" id="utilidad_edit" class="form-control">
                 </div>
                 <div class="d-grid gap-2 mt-2">
                     <input type="submit" value="Editar" class="btn btn-primary">

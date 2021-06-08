@@ -9,7 +9,7 @@ class Stock extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['cantidad', 'anaquel', 'f_vencimiento', 'f_ingreso', 'medicamento_id'];
+    protected $fillable = ['cantidad', 'anaquel', 'f_vencimiento', 'f_ingreso', 'lote', 'medicamento_id'];
 
     public function medicamento(){
         return $this->belongsTo('App\Models\Medicamento');

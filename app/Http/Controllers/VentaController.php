@@ -82,7 +82,8 @@ class VentaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $upd_med = Venta::where('id', $id)->update(['utilidad'=>$request->get('total')]);
+        return redirect()->route('ventas.invoice',['id'=> $id]);
     }
 
     /**
@@ -98,7 +99,7 @@ class VentaController extends Controller
 
 
     public function invoice($id){
-        
+
         $venta = Venta::where('id',$id)->first();
         $details = Detail::where('venta_id', $id)->get();
         $cliente = Cliente::where('id',$venta->cliente_id)->first();

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail extends Model
 {
-    protected $fillable = ['cantidad', 'utilidad','venta_id','medicamento_id'];
+    protected $fillable = ['cantidad', 'utilidad','venta_id','medicamento_id','tipo'];
     use HasFactory;
 
     public function medicamento(){
