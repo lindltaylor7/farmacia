@@ -45,7 +45,7 @@
                                     <td class="d-none d-xl-table-cell">{{$detail->medicamento->n_comercial}}</td>
                                     <td class="d-none d-xl-table-cell">
                                         @foreach ($detail->medicamento->stock as $stock)
-                                        {{date('d/m/Y', strtotime($stock->f_vencimiento))}}
+                                        {{date('d/m/Y', strtotime($stock->f_vencimiento))}}<br>
                                         @endforeach
                                     </td>
                                     <td>{{$detail->cantidad}}</td>
