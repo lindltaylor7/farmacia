@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
+use App\Models\Stock;
+use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ReporteController extends Controller
 {
@@ -13,7 +18,8 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        return view('admin.reportes.index');
+        $ventas=Venta::all();
+        return view('admin.reportes.index', compact('ventas'));
     }
 
     /**
@@ -83,15 +89,19 @@ class ReporteController extends Controller
     }
 
     public function top(){
-        return view('admin.reportes.top');
+        $tops=Detail::select('medicamento_id', DB::raw('sum(details.cantidad) as total'))->groupBy('details.medicamento_id')->orderBy('total', 'desc')->get();
+        return view('admin.reportes.top', compact('tops'));
+
     }
 
     public function bot(){
-        return view('admin.reportes.bot');
+        $bots=Detail::select('medicamento_id', DB::raw('sum(details.cantidad) as total'))->groupBy('details.medicamento_id')->orderBy('total', 'asc')->get();
+        return view('admin.reportes.bot', compact('bots'));
     }
 
     public function ven(){
-        return view('admin.reportes.ven');
+        $vens=Stock::select('medicamento_id','f_vencimiento')->where('f_vencimiento', '>', 'now()')->orderBy('f_vencimiento', 'asc')->get();
+        return view('admin.reportes.ven', compact('vens'));
     }
 
 

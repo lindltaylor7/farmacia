@@ -89,7 +89,7 @@
                             <div class="text-center">
 
 
-                                <a href="{{route('vistapdf.vista',$id)}}" class="btn btn-primary">
+                                <a href="{{route('generarpdf.reporte',$id)}}" class="btn btn-primary">
                                     Imprimir
                                 </a>
 

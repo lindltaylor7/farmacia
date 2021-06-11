@@ -4,10 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+        @font-face{
+            font-family:'Roboto', sans-serif;
+            src: url('fuentes/Roboto-Light.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body{
+            background-color:white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #container{
+            margin: 150px auto;
+            width: 600px;
+        }
+
+        table{
+            width: 100%;
+            background-color:white;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td{
+            border: solid 1px black;
+            padding: 15px;
+        }
+
+        thead{
+            background-color:#246355;
+            border-bottom: solid 1px black;
+            color: white;
+        }
+
+        tr:nth-child(even){
+            background-color: #ddd;
+        }
+        tr:hover td{
+            background-color:#369681;
+            color: white;
+        }
+        .columna{
+            text-align: center;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <main class="content">
+    <main class="container">
         <div class="container-fluid p-0">
 
             <h1 class="h3 mb-3">Boleta de venta</h1>
@@ -62,9 +111,9 @@
                                 <tbody>
                                     @foreach($details as $detail)
                                         <tr>
-                                            <td>{{$detail->medicamento->n_generico}}</td>
-                                            <td>{{$detail->cantidad}}</td>
-                                            <td class="text-end">S/{{$detail->utilidad}}</td>
+                                            <td class="columna">{{$detail->medicamento->n_generico}}</td>
+                                            <td class="columna">{{$detail->cantidad}}</td>
+                                            <td class="columna">S/{{$detail->utilidad}}</td>
                                         </tr>
                                     @endforeach
                                     <tr>
@@ -89,18 +138,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-
-                            <div class="text-center">
-
-
-                                <a href="#" class="btn btn-primary">
-                                    Imprimir
-                                </a>
-
-                                <a href="{{route('ventas.show',$id)}}" class="btn btn-success">
-                                    Atrás
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
