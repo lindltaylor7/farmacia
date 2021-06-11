@@ -40,7 +40,7 @@
                                         <td>S./{{$venta->utilidad}}</td>
 
 
-                                                <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-success">Exitosa</span></a></td>
+                                        <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-success">Exitosa</span></a></td>
 
 
                                     </tr>
@@ -58,6 +58,5 @@
 
 @section('javascript')
     <script src="{{asset('js/ventas/reniec_dni.js')}}"></script>
-    <script src="{{ asset('js/ventas/prueba.js') }}"></script>
 @endsection
 

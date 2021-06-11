@@ -122,7 +122,7 @@
 
                             </div>
                             <br>
-                            <a class="btn btn-info" href="{{route('admin.index')}}">Cancelar</a>
+                            <a class="btn btn-info" href="{{route('medicamentos.index')}}">Cancelar</a>
                             <button type="submit" class="btn btn-primary">Agregar</button>
                         </form>
 

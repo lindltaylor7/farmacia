@@ -10,7 +10,7 @@
             <h1 class="h3 mb-3">Medicamentos</h1>
             <div class="d-flex justify-content-between">
                 <input type="text" class="d-inline form-control mb-3 w-75" id="search_med" placeholder="Buscar">
-                <a href="{{ route('admin.create') }}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle"
+                <a href="{{ route('medicamentos.create') }}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle"
                         data-feather="plus"></i>Agregar Medicamento</a>
             </div>
 
@@ -59,7 +59,7 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div>
         </div>

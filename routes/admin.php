@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('', [InicioController::class, 'index'])->name('inicio.index');
 Route::post('all', [InicioController::class, 'all'])->name('inicio.all');
 
-Route::get('medicamentos', [MedicamentoController::class, 'index'])->name('admin.index');
-Route::get('medicamentos/create', [MedicamentoController::class, 'create'])->name('admin.create');
+Route::get('medicamentos', [MedicamentoController::class, 'index'])->name('medicamentos.index');
+Route::get('medicamentos/create', [MedicamentoController::class, 'create'])->name('medicamentos.create');
 Route::post('medicamentos/all', [MedicamentoController::class, 'all'])->name('medicamentos.all');
 Route::post('medicamentos/infoedit', [MedicamentoController::class, 'infoedit']);
 Route::post('medicamentos/delmedic', [MedicamentoController::class, 'delmedic']);

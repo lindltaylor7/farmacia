@@ -9,7 +9,12 @@
         <h1 class="h3 mb-3">Inicio</h1>
             <div class="d-flex justify-content-between">
                 <input type="text" class="d-inline form-control mb-3 w-75" id="search_index" placeholder="Buscar">
-                <a href="{{route('admin.create')}}" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="plus"></i></a>
+                <div class="buttons-space">
+                    <a href="{{route('medicamentos.create')}}" title="Añadir Medicamento" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="box"></i></a>
+                    <a href="{{route('ventas.index')}}" data-bs-toggle="modal" data-bs-target="#clientModal" title="Vender" class="d-inline h-75 btn btn-success btn-lg"><i class="align-middle" data-feather="dollar-sign"></i></a>
+                    <a href="{{route('stock.create')}}" title="Agregar Stock" class="d-inline h-75 btn btn-secondary btn-lg"><i class="align-middle" data-feather="bar-chart"></i></a>
+                    <a href="{{route('reportes.ven')}}" title="Agregar Stock" class="d-inline h-75 btn btn-info btn-lg"><i class="align-middle" data-feather="book"></i></a>
+                </div>
             </div>
 
 
@@ -40,28 +45,10 @@
                                         <td>{{$medicamento->n_comercial}}</td>
                                         <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->concent}}</td>
-                                        <td>S./{{$medicamento->precio->p_unitario}}</td>
-                                        <td>
-                                            @php
-                                                $s=0;
-                                            @endphp
-                                            @foreach ($medicamento->stock as $stock)
-                                            @php
-                                                $s=$s+$stock->cantidad;
-                                            @endphp
-                                            @endforeach
-                                            @php
-                                                echo $s;
-                                            @endphp
-                                        </td>
+                                        <td>S./{{number_format($medicamento->precio->p_unitario, 2, ".", '')}}</td>
+                                        <td>{{$medicamento->total}}</td>
                                         <td>{{$medicamento->lab}}</td>
-                                        <td>
-                                            @foreach ($medicamento->stock as $stock)
-
-                                            - {{$stock->anaquel}} <br>
-
-                                            @endforeach
-                                        </td>
+                                        <td><span class="badge bg-primary">{{$medicamento->anaquel}}</span></td>
                                     </tr>
                                 @endforeach
 
@@ -71,10 +58,11 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @include('admin.inicio.clientmodal')
 </main>
 @endsection
 @section('javascript')
     <script src="{{ asset('js/inicio/search.js') }}"></script>
+    <script src="{{ asset('js/inicio/reniec_dni.js') }}"></script>
 @endsection

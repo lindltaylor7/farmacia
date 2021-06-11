@@ -38,7 +38,7 @@
 
 
                     <div class="d-grid gap-2 mt-2">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Ir a la Cesta" class="btn btn-primary">
                     </div>
                 </form>
             </div>
