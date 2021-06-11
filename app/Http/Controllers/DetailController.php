@@ -35,8 +35,16 @@ class DetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        //return $request;
+        if($request->get('tipo')){
+            $request->merge([
+                'tipo' => 1
+            ]);
+        }else{
+            $request->input('tipo', 0);
+        }
+
         $detail = Detail::create($request->except(['_token']));
         return redirect()->back();
     }
@@ -70,10 +78,9 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $detail = Detail::where('id', $request->get('detail_id'))->update(request()->except(['_token','detail_id','price']));
-        return redirect()->back();
+        //
     }
 
     /**
@@ -89,4 +96,5 @@ class DetailController extends Controller
         return redirect()->back();
         //Detail $detail
     }
+
 }
