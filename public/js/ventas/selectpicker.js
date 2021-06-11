@@ -30,12 +30,17 @@ $(document).ready(function(){
                 $('#medicamentos_select').html('');
 
                 $.each(res, function(index, value){
-                    list = '<tr><td><a class="search-link" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
-                    $('#medicamentos_select').append(list);
+                    if(value.sumatoria != null){
+                        list = '<tr><td><a class="search-link" data-cant="'+value.sumatoria+'" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
+                        $('#medicamentos_select').append(list);
+                    }
+
+
 
 
 
                     $('.search-link').on('click', function(){
+                        $('#cant_stock').val($(this).data('cant'))
                         $('#medicamento_id').val($(this).attr('id'))
                         $('#info_medic').html($(this).text())
                         $('#price').val($(this).data('price').toFixed(2))

@@ -20,6 +20,13 @@
                 <div class="form-group">
                     <label for="">Cantidad</label>
                     <input type="number" name="cantidad" id="cantidad" class="form-control">
+                    <div class="invalid-feedback" id="ad-danger">
+                        La cantidad solicitada excede al stock
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Cantidad en Stock</label>
+                    <input type="number" id="cant_stock" class="form-control" readonly>
                 </div>
                 <label for="price">Precio</label>
                 <div class="input-group">
@@ -33,7 +40,7 @@
                     <input type="number" step=".01" name="utilidad" id="utilidad" class="form-control" readonly>
                 </div>
                 <div class="d-grid gap-2 mt-2">
-                    <input type="submit" value="Agregar" class="btn btn-primary">
+                    <input type="submit" value="Agregar" id="btn-agregar" class="btn btn-primary">
                   </div>
             </form>
         </div>
