@@ -45,12 +45,6 @@
                 </a>
             </li>
 
-            <li class="sidebar-item ">
-                <a class="sidebar-link" href="pages-invoice.html">
-                    <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
-                </a>
-            </li>
-
             <li class="sidebar-item">
                 <a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>

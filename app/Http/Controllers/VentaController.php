@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Detail;
-
+use App\Models\Stock;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -84,8 +84,58 @@ class VentaController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+       $details = Detail::where('venta_id',$id)->get();
+
+       //return $details;
+
+       foreach($details as $detail){
+
+        $stock = Stock::where('medicamento_id', $detail->medicamento_id)->where('status',1)->orderBy('f_vencimiento')->first();
+
+
+        if($stock->cantidad - $detail->cantidad > 0){
+
+
+            $stock = Stock::where('id',$stock->id)->update(["cantidad" => $stock->cantidad - $detail->cantidad]);
+            echo " cantidad suplied no inhabilitar stock";
+
+        }else if($stock->cantidad - $detail->cantidad == 0){
+            $stock = Stock::where('id',$stock->id)->update(["cantidad" => $stock->cantidad - $detail->cantidad, "status" => 0]);
+            echo " cantidad suplied y stock inhabilitado";
+        }
+        else{
+
+            $pedido = $detail->cantidad - $stock->cantidad;
+            $stock = Stock::where('id',$stock->id)->update(["cantidad" => 0, "status" => 0]);
+
+            while ($pedido > 0){
+
+                $newstock = Stock::where('medicamento_id', $detail->medicamento_id)->where('status',1)->orderBy('f_vencimiento')->first();
+                $pedido = $pedido - $newstock->cantidad;
+                if($pedido > 0){
+                    $newstock = Stock::where('id',$newstock->id)->update(["cantidad" => 0, "status" => 0]);
+                    echo "traer otro stock";
+                }else{
+                    $newstock->update(["cantidad" => $pedido*-1]);
+                    echo " fin";
+                    break;
+                }
+            }
+
+        }
+
+
+
+       }
+
+
+
         $upd_med = Venta::where('id', $id)->update(['utilidad'=>$request->get('total')]);
         return redirect()->route('ventas.invoice',['id'=> $id]);
+
+
     }
 
     /**
@@ -101,7 +151,7 @@ class VentaController extends Controller
 
 
     public function invoice($id){
-        
+
         $venta = Venta::where('id',$id)->first();
         $details = Detail::where('venta_id', $id)->get();
         $cliente = Cliente::where('id',$venta->cliente_id)->first();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 
@@ -34,8 +35,8 @@ class DetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {//return $request;
+    public function store(Request $request){
+        //return $request;
         if($request->get('tipo')){
             $request->merge([
                 'tipo' => 1
@@ -43,7 +44,7 @@ class DetailController extends Controller
         }else{
             $request->input('tipo', 0);
         }
-        
+
         $detail = Detail::create($request->except(['_token']));
         return redirect()->back();
     }

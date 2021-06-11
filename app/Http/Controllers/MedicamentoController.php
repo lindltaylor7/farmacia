@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medicamento;
 use App\Models\Precio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class MedicamentoController extends Controller
@@ -137,10 +138,12 @@ class MedicamentoController extends Controller
         return $del_med;
     }
     public function medPrice(Request $request){
-        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario','precios.p_venta_caja')
+        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario','precios.p_venta_caja','stocks.cantidad', DB::raw('sum(stocks.cantidad) as sumatoria'))
                                     ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
+                                    ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
                                     ->where('n_generico','like','%'.$request->get('search').'%')
                                     ->orWhere('n_comercial','like','%'.$request->get('search').'%')
+                                    ->groupBy('stocks.medicamento_id')
                                     ->get();
         return json_encode($medicamentos);
     }
