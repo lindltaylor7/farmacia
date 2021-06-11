@@ -36,14 +36,18 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Concentración</label>
-                                        <input type="text" name="concent" class="form-control" id="inputUsername" placeholder="Presentación">
+                                        <input type="text" name="concent" class="form-control" id="inputUsername" placeholder="Concentración">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Número De Caja</label>
-                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Presentación">
+                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número de caja">
                                     </div>
 
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Laboratorio</label>
+                                        <input type="text" name="lab" class="form-control" id="inputUsername" placeholder="Laboratorio">
+                                    </div>
 
                                 </div>
 
@@ -63,11 +67,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-8 mb-3">
-                                        <label class="form-label" for="inputUsername">Laboratorio</label>
-                                        <input type="text" name="lab" class="form-control" id="inputUsername" placeholder="Laboratorio">
-                                    </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_costo">Precio de Costo Unitario</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -76,29 +76,33 @@
                                             <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio de Costo unitario">
                                         </div>
                                       </div>
-                                </div>
-
-
-
-                                <div class="row">
+                                    
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="utilidad">Porcentaje de Utilidad</label>
                                         <div class="input-group">
                                             <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">%</span>
-                                              </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_unitario">Precio de Venta Unitario</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">S./</span>
-                                              </div>
+                                            </div>
                                               <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
                                         </div>
-                                      </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row">
+                                    
                                       <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
                                         <div class="input-group">
@@ -109,12 +113,23 @@
 
                                         </div>
                                       </div>
+
+                                      <div class="col-sm-3 mb-3">
+                                        <label class="form-label" for="utilidad">Porcentaje de Utilidad por Caja</label>
+                                        <div class="input-group">
+                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">%</span>
+                                            </div>
+                                        </div>
+                                      </div>
+
                                       <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_venta_caja">Precio de Venta por Caja</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">S./</span>
-                                              </div>
+                                            </div>
                                               <input type="number" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
                                         </div>
                                       </div>
