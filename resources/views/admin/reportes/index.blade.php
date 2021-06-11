@@ -16,7 +16,18 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title mb-4">Ingresos</h5>
-                                <h1 class="mt-1 mb-3">S./24.300</h1>
+                                <?php
+                                $i=0;
+                                $suma=0;
+                                ?>
+                                @foreach($ventas as $venta)
+                                    <?php
+
+                                        $i=$venta->utilidad;
+                                        $suma=$suma+$i;
+                                    ?>
+                                @endforeach
+                                <h1 class="mt-1 mb-3">S./<?php echo number_format($suma, 2, ".", '')?></h1>
                                 <div class="mb-1">
                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
                                     <span class="text-muted">Esta Semana</span>
@@ -46,7 +57,7 @@
                                 <h5 class="card-title mb-0">Reporte</h5>
                             </div>
                             <div class="card-body text-center">
-                                <img src="{{asset('img/avatars/avatar-4.jpg')}}" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                <img src="{{asset('img/avatars/mas.png')}}" alt="mas vendidos" class="img-fluid rounded-circle mb-2" width="128" height="128" />
                                 <h5 class="card-title mb-0">Medicamentos</h5>
                                 <div class="text-muted mb-2">Más Vendidos</div>
 
@@ -65,7 +76,7 @@
                                 <h5 class="card-title mb-0">Reporte</h5>
                             </div>
                             <div class="card-body text-center">
-                                <img src="{{asset('img/avatars/avatar-4.jpg')}}" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                <img src="{{asset('img/avatars/menos.png')}}" alt="menos vendidos" class="img-fluid rounded-circle mb-2" width="128" height="128" />
                                 <h5 class="card-title mb-0">Medicamentos</h5>
                                 <div class="text-muted mb-2">Menos Vendidos</div>
 
@@ -84,7 +95,7 @@
                                 <h5 class="card-title mb-0">Reporte</h5>
                             </div>
                             <div class="card-body text-center">
-                                <img src="{{asset('img/avatars/avatar-4.jpg')}}" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                <img src="{{asset('img/avatars/caducidad.jpg')}}" alt="fecha de vencimiento" class="img-fluid rounded-circle mb-2" width="128" height="128" />
                                 <h5 class="card-title mb-0">Medicamentos</h5>
                                 <div class="text-muted mb-2">Por caducar</div>
 
