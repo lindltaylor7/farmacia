@@ -17,7 +17,12 @@ class InicioController extends Controller
     public function index()
     {
 
-        $medicamentos = Medicamento::all();
+        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario',DB::raw('sum(stocks.cantidad) as total'))
+                                    ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
+                                    ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
+                                    ->groupBy('stocks.medicamento_id')
+                                    ->orderBy('medicamentos.n_generico')
+                                    ->get();
 
         return view('admin.inicio.index', compact('medicamentos'));
     }
@@ -90,9 +95,15 @@ class InicioController extends Controller
 
     public function all(Request $request)
     {
-        $medicamentos = Medicamento::where('n_generico', 'like', '%' . $request->get('search') . '%')
-            ->orWhere('n_comercial', 'like', '%' . $request->get('search') . '%')
-            ->get();
+        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario',DB::raw('sum(stocks.cantidad) as total'))
+                                    ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
+                                    ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
+                                    ->groupBy('stocks.medicamento_id')
+                                    ->orderBy('medicamentos.n_generico')
+                                    ->where('n_generico', 'like', '%' . $request->get('search') . '%')
+                                    ->orWhere('n_comercial', 'like', '%' . $request->get('search') . '%')
+                                    ->get();
+
         return json_encode($medicamentos);
     }
 }

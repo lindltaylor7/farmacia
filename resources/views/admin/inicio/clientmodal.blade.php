@@ -21,7 +21,7 @@
                                 data-feather="search"></i> Buscar</a>
                         </div>
 
-                        <input type="text" name="nombre_cliente" style="text-transform:uppercase;" id="nombre_cliente" class="form-control mt-1" readonly>
+                        <input type="text" name="nombre_cliente" placeholder="Nombre del Cliente" style="text-transform:uppercase;" id="nombre_cliente" class="form-control mt-1" required readonly>
                     </div>
 
                     <div class="form-check">
@@ -38,7 +38,7 @@
 
 
                     <div class="d-grid gap-2 mt-2">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Ir a la Cesta" class="btn btn-primary">
                     </div>
                 </form>
             </div>

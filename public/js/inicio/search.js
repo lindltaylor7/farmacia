@@ -23,7 +23,10 @@ $(document).ready(function(){
                 $('#dynamic-row-index').html('');
 
                 $.each(res, function(index, value){
-                    tableRow = '<tr id=row'+value.id+'><td class="d-none d-md-table-cell">'+value.n_generico+'</td><td class="d-none d-md-table-cell">'+value.n_comercial+'</td><td class="d-none d-md-table-cell">'+value.present+'</td><td class="d-none d-md-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">S./2.00</td><td class="d-none d-md-table-cell">20</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell">1</td></tr>';
+                    if(value.total == null){
+                        value.total = 0
+                    }
+                    tableRow = '<tr id=row'+value.id+'><td class="d-none d-md-table-cell">'+value.n_generico+'</td><td class="d-none d-md-table-cell">'+value.n_comercial+'</td><td class="d-none d-md-table-cell">'+value.present+'</td><td class="d-none d-md-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">S./'+value.p_unitario.toFixed(2)+'</td><td class="d-none d-md-table-cell">'+value.total+'</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell"><span class="badge bg-primary">'+value.anaquel+'</span></td></tr>';
                     $('#dynamic-row-index').append(tableRow);
                 });
 

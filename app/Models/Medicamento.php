@@ -10,7 +10,7 @@ class Medicamento extends Model
 {
     protected $fillable=['n_generico','n_comercial', 'concent', 'present', 'lab', 'img', 'nro_caja'];
 
-    public function stock(){
+    public function stocks(){
         return $this->hasMany('App\Models\Stock');
     }
 

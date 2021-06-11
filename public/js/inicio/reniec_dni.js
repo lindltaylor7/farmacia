@@ -18,7 +18,7 @@ $(document).ready(function(){
                             $('#nombre_cliente').val(value.nombre_completo)
                             $.ajax({
 
-                                url:"./clientes/store",
+                                url:"./admin/clientes/store",
                                 type: "POST",
                                 dataType: 'json',
                                 data:{
@@ -31,7 +31,7 @@ $(document).ready(function(){
                                 },
                                 success:function(res){
 
-                                    alert('user insertado')
+                                    alert('Cliente insertado')
                                     console.log(res)
                                     $('#cliente_id').val(res)
 
