@@ -34,17 +34,17 @@
                                         <input type="number" name="cantidad" class="form-control" id="inputUsername" placeholder="Cantidad de cajas">
                                     </div>
                                     <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Número de cajas</label>
+                                        <input type="number" name="numero" class="form-control" id="inputUsername" placeholder="Número de cajas">
+                                    </div>
+                                    <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Lote</label>
                                         <input type="number" name="lote" class="form-control" id="inputUsername" placeholder="Nro de Lote">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputUsername">Anaquel</label>
-                                        <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Anaquel">
-                                    </div>
-                                    <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Fecha De Ingreso</label>
                                         <input type="date" name="f_ingreso" class="form-control" id="inputUsername" placeholder="">
-                                    </div>
+                                    </>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Fecha De Vencimiento</label>
                                         <input type="date" name="f_vencimiento" class="form-control" id="inputUsername" placeholder="">
