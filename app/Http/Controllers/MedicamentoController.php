@@ -71,7 +71,7 @@ class MedicamentoController extends Controller
 
         $precio=Precio::create($request->all());
 
-        return redirect(route('admin.index'));
+        return redirect(route('medicamentos.index'));
     }
 
     /**

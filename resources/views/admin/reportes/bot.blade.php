@@ -17,15 +17,15 @@
                         <table class="table table-hover my-0">
                             <thead>
                                 <tr>
-                                    <th>Ventas</th>
                                     <th>Nombre de medicamentos</th>
+                                    <th>Ventas</th>
                                 </tr>
                             </thead>
                             <tbody>
                               @foreach($bots as $bot)
                                 <tr>
-                                    <td>{{$bot->total}}</td>
                                     <td>{{$bot->medicamento->n_generico}}</td>
+                                    <td>{{$bot->total}}</td>
                                 </tr>
                               @endforeach
                             </tbody>

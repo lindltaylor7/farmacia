@@ -117,7 +117,7 @@
                                       <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="utilidad">Porcentaje de Utilidad por Caja</label>
                                         <div class="input-group">
-                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
+                                            <input type="number" name="utilidad_caja" class="form-control" id="utilidad_caja" placeholder="Utilidad por caja">
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">%</span>
                                             </div>

@@ -36,9 +36,9 @@
                                     <tr>
                                         <td>{{$venta->id}}</td>
                                         <td>{{$venta->cliente->name}}</td>
-                                        <td>{{$venta->fecha}}</td>
-                                        <td>S./{{$venta->utilidad}}</td>
-
+                                        <td>{{date('d/m/Y', strtotime($venta->fecha))}}</td>
+                                        <td>S./{{number_format($venta->utilidad, 2, ".", '')}}</td>
+                                        
 
                                         <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-success">Exitosa</span></a></td>
 

@@ -14,7 +14,21 @@
                         <div class="card-body m-sm-3 m-md-5">
                             <div class="mb-4">
                                 Hola <strong>{{$cliente->name}}</strong>,
-                                <br /> Este es el recibo por el pago de <strong>S./50.00</strong> (PEN).
+                                    @php
+                                        $suma=0;
+                                     @endphp
+                                    @foreach($details as $detail)
+                                        @php
+                                            $suma=$suma+$detail->utilidad;
+                                        @endphp
+                                    @endforeach
+                                    @php
+                                            $igv=($suma*18)/100;
+                                    @endphp
+                                    @php
+                                    $total=$suma+$igv;
+                                    @endphp
+                                <br /> Este es el recibo por el pago de <strong>S/.{{number_format($total, 2, ".", '')}}</strong> (PEN).
                             </div>
 
                             <div class="row">
@@ -24,7 +38,7 @@
                                 </div>
                                 <div class="col-md-6 text-md-end">
                                     <div class="text-muted">Fecha</div>
-                                    <strong>{{$venta->fecha}}</strong>
+                                    <strong>{{date('d/m/Y', strtotime($venta->fecha))}}</strong>
                                 </div>
                             </div>
 
@@ -56,32 +70,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                   
                                     @foreach($details as $detail)
                                         <tr>
                                             <td>{{$detail->medicamento->n_generico}}</td>
                                             <td>{{$detail->cantidad}}</td>
-                                            <td class="text-end">S/{{$detail->utilidad}}</td>
+                                            <td class="text-end">S/{{number_format($detail->utilidad, 2, ".", '')}}</td>
                                         </tr>
+                                        
                                     @endforeach
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th>Subtotal </th>
-                                        <th class="text-end">S./275.00</th>
+                                        <th class="text-end">S/{{number_format($suma, 2, ".", '')}}</th>
                                     </tr>
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th>IGV(18%) </th>
-                                        <th class="text-end">S./8.00</th>
+                                        
+                                        <th class="text-end">S/{{number_format($igv, 2, ".", '')}}</th>
                                     </tr>
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th>Descuento </th>
-                                        <th class="text-end">5%</th>
+                                        <th class="text-end">0%</th>
                                     </tr>
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th>Total </th>
-                                        <th class="text-end">S./268.85</th>
+                                        <th class="text-end">S/{{number_format($total, 2, ".", '')}}</th>
                                     </tr>
                                 </tbody>
                             </table>
