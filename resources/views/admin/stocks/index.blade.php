@@ -34,10 +34,9 @@
                                     <tr id="row{{$stock->id}}">
                                         <td>{{$stock->medicamento->n_generico}}</td>
                                         <td>{{$stock->cantidad}}</td>
-<<<<<<< HEAD
+
                                         <td>{{$stock->medicamento->anaquel}}</td>
-=======
->>>>>>> 437118568ea6be3beca6bd6c70bbb4c7d477ac0f
+
                                         <td>{{date('d/m/Y', strtotime($stock->f_ingreso))}}</td>
                                         <td>{{date('d/m/Y', strtotime($stock->f_vencimiento))}}</td>
                                         <td>
