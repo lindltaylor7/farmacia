@@ -17,7 +17,7 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        $medicamentos=Medicamento::paginate(10);
+        $medicamentos = Medicamento::paginate(10);
         return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
@@ -49,13 +49,13 @@ class MedicamentoController extends Controller
             'utilidad'   => 'required'
         ]);
 
-        if($request->file('foto')){
+        if ($request->file('foto')) {
             $url = Storage::put('medicamentos', $request->file('foto'));
 
-           /*  return $url; */
+            /*  return $url; */
 
             $request->merge([
-                'img'=>$url
+                'img' => $url
             ]);
 
 
@@ -63,13 +63,13 @@ class MedicamentoController extends Controller
             $medicamento = Medicamento::create($request->all());
         }
 
-        $medicamento=Medicamento::create($request->all());
+        $medicamento = Medicamento::create($request->all());
 
         $request->merge([
-            'medicamento_id'=>$medicamento->id
+            'medicamento_id' => $medicamento->id
         ]);
 
-        $precio=Precio::create($request->all());
+        $precio = Precio::create($request->all());
 
         return redirect(route('medicamentos.index'));
     }
@@ -93,7 +93,6 @@ class MedicamentoController extends Controller
      */
     public function edit($id)
     {
-
     }
 
     /**
@@ -105,7 +104,7 @@ class MedicamentoController extends Controller
      */
     public function update(Request $request)
     {
-        $upd_med = Medicamento::where('id', $request->get('id_med'))->update(request()->except(['_token','id_med']));
+        $upd_med = Medicamento::where('id', $request->get('id_med'))->update(request()->except(['_token', 'id_med']));
         return redirect()->back();
     }
 
@@ -120,32 +119,47 @@ class MedicamentoController extends Controller
         //
     }
 
-    public function all(Request $request){
-        $medicamentos = Medicamento::where('n_generico','like','%'.$request->get('search').'%')
-                                    ->orWhere('n_comercial','like','%'.$request->get('search').'%')
-                                    ->get();
+    public function all(Request $request)
+    {
+        $medicamentos = Medicamento::where('n_generico', 'like', '%' . $request->get('search') . '%')
+            ->orWhere('n_comercial', 'like', '%' . $request->get('search') . '%')
+            ->get();
         return json_encode($medicamentos);
     }
 
-    public function infoedit(Request $request){
-        $medicamentos = Medicamento::where('id',$request->get('id'))->get();
+    public function infoedit(Request $request)
+    {
+        $medicamentos = Medicamento::where('id', $request->get('id'))->get();
         return json_encode($medicamentos);
     }
 
-    public function delmedic(Request $request){
-        $del_med = Medicamento::where('id',$request->get('id'))->delete();
+    public function delmedic(Request $request)
+    {
+        $del_med = Medicamento::where('id', $request->get('id'))->delete();
 
         return $del_med;
     }
-    public function medPrice(Request $request){
-        $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario','precios.p_venta_caja','stocks.cantidad', DB::raw('sum(stocks.cantidad) as sumatoria'))
-                                    ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
-                                    ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
-                                    ->where('n_generico','like','%'.$request->get('search').'%')
-                                    ->orWhere('n_comercial','like','%'.$request->get('search').'%')
-                                    ->groupBy('stocks.medicamento_id')
-                                    ->get();
+    public function medPrice(Request $request)
+    {
+        $medicamentos = Medicamento::select('medicamentos.*', 'precios.p_unitario', 'precios.p_venta_caja', 'stocks.cantidad', DB::raw('sum(stocks.cantidad) as sumatoria'))
+            ->leftJoin('precios', 'precios.medicamento_id', '=', 'medicamentos.id')
+            ->leftJoin('stocks', 'stocks.medicamento_id', '=', 'medicamentos.id')
+            ->where('n_generico', 'like', '%' . $request->get('search') . '%')
+            ->orWhere('n_comercial', 'like', '%' . $request->get('search') . '%')
+            ->groupBy('stocks.medicamento_id')
+            ->get();
         return json_encode($medicamentos);
     }
+    public function precios(Request $request){
+        $precios = Precio::where('medicamento_id',$request->get('id'))->first();
 
+        return json_encode($precios);
+    }
+
+    public function preciosUpd(Request $request){
+
+        $precio = Precio::where('id',$request->get('id_precio'))->update(request()->except(['_token', 'id_precio']));
+
+        return redirect(route('medicamentos.index'));
+    }
 }

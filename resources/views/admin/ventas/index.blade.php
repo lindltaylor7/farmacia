@@ -26,8 +26,8 @@
                                     <th class="d-none d-xl-table-cell">Cliente</th>
                                     <th class="d-none d-xl-table-cell">Fecha</th>
                                     <th class="d-none d-md-table-cell">Utilidad</th>
-                                    <th class="d-none d-md-table-cell">Venta</th>
-
+                                    <th class="d-none d-md-table-cell">Boleta</th>
+                                    <th class="d-none d-md-table-cell">Detalle</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,10 +37,18 @@
                                         <td>{{$venta->id}}</td>
                                         <td>{{$venta->cliente->name}}</td>
                                         <td>{{date('d/m/Y', strtotime($venta->fecha))}}</td>
-                                        <td>S./{{number_format($venta->utilidad, 2, ".", '')}}</td>
-                                        
 
-                                        <td><a href="{{route('ventas.show', $venta->id)}}"><span class="badge bg-success">Exitosa</span></a></td>
+
+
+                                        <td>S./{{$venta->utilidad}}</td>
+                                        <td>
+                                            @if ($venta->status == 1)
+                                                <a href="{{route('generarpdf.reporte', $venta->id)}}"><span class="badge bg-success">Emitida</span></a>
+                                            @else
+                                                <a href="{{route('generarpdf.reporte', $venta->id)}}"><span class="badge bg-danger">Anulada</span></a>
+                                            @endif
+                                        </td>
+                                        <td><a href="{{route('ventas.show', $venta->id)}}">Ver más</a></td>
 
 
                                     </tr>

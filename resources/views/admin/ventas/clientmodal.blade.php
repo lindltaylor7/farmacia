@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="cajaCheck">
+                        <input class="form-check-input" name="check" type="checkbox" id="cajaCheck">
                         <label class="form-check-label" for="flexCheckDefault">
                           Sin DNI
                         </label>
@@ -38,7 +38,7 @@
 
 
                     <div class="d-grid gap-2 mt-2">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                        <input type="submit" value="Ir a la cesta" class="btn btn-primary">
                     </div>
                 </form>
             </div>

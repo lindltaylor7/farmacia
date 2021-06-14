@@ -31,7 +31,7 @@ $(document).ready(function(){
                                 },
                                 success:function(res){
 
-                                    alert('user insertado')
+                                    alert('Usuario insertado')
                                     console.log(res)
                                     $('#cliente_id').val(res)
 

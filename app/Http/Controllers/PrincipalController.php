@@ -99,6 +99,6 @@ class PrincipalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

@@ -5,17 +5,17 @@ $(document).ready(function(){
 
         var p_venta = parseFloat(p_costo) + parseFloat(utilidad*p_costo/100)
 
-        $('#p_unitario').val(p_venta);
+        $('#p_unitario').val(p_venta.toFixed(2));
         console.log(p_venta)
     });
 
-    $('#p_caja').on('keyup', function(){
-        var p_caja= $(this).val()
-        var utilidad = $('#utilidad').val()
+    $('#utilidad_caja').on('keyup', function(){
+        var p_caja= $('#p_caja').val();
+        var utilidad_caja = $('#utilidad_caja').val()
 
-        var p_venta_caja = parseFloat(p_caja) + parseFloat(utilidad*p_caja/100)
+        var p_venta_caja = parseFloat(p_caja) + parseFloat(utilidad_caja*p_caja/100)
 
-        $('#p_venta_caja').val(p_venta_caja);
+        $('#p_venta_caja').val(p_venta_caja.toFixed(2));
         console.log(p_venta_caja)
     });
 

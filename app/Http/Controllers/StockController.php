@@ -19,6 +19,7 @@ class StockController extends Controller
     {
         $stocks=Stock::join('medicamentos', 'medicamentos.id', '=', 'stocks.medicamento_id')
         ->orderBy('medicamentos.n_generico', 'asc')
+        ->where('status',1)
         ->get('stocks.*');
         return view('admin.stocks.index', compact('stocks'));
     }
@@ -42,11 +43,15 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'cantidad' => 'required',
-            'anaquel'   => 'required',
             'f_vencimiento' => 'required',
             'f_ingreso'    => 'required',
+        ]);
+
+        $request->merge([
+            "status" => 1
         ]);
 
         $stock=Stock::create($request->all());

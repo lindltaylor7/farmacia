@@ -30,13 +30,14 @@ $(document).ready(function(){
                 $('#medicamentos_select').html('');
 
                 $.each(res, function(index, value){
-                    list = '<tr><td><a class="search-link" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+'</a></td></tr>'
+                    list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+'</a></td></tr>'
                     $('#medicamentos_select').append(list);
                 });
 
                 $('.search-link').on('click', function(){
                     $('#search').val($(this).text())
                     $('#medicamento_id').val($(this).attr('id'))
+                    $('#cant_caja').val($(this).data('nbox'))
                     $('#medicamentos_select').hide()
                 })
 
@@ -44,6 +45,13 @@ $(document).ready(function(){
 
             });
     });
+
+    $('#cajas').on('keyup',function(){
+        var cajas = $(this).val()
+        var cant_caja = $('#cant_caja').val()
+
+        $('#cantidad').val(cajas*cant_caja)
+    })
 });
 
 

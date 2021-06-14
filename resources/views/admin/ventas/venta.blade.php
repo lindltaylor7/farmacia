@@ -6,14 +6,15 @@
 <main class="content">
     <div class="container-fluid p-0">
             <h1 class="h3 mb-3">Ventas</h1>
+            @if ($venta->utilidad == null)
             <div id="container-search" class="d-flex flex-column justify-content-between">
-                <input type="text" class="d-inline form-control w-100" value="" id="search" placeholder="Buscar producto">
+                <input type="text" class="d-inline form-control w-100" autocomplete="off" id="search" placeholder="Buscar producto">
                 <table class="table table-hover table-sm">
                     <tbody class="border border-primary" id="medicamentos_select">
                     </tbody>
                 </table>
             </div>
-
+            @endif
 
         <div class="row">
             <div class="col-12">
@@ -32,7 +33,9 @@
                                     <th class="d-none d-xl-table-cell">Cantidad</th>
                                     <th class="d-none d-xl-table-cell">Precio</th>
                                     <th class="d-none d-xl-table-cell">Subtotal</th>
+                                    @if ($venta->utilidad == null)
                                     <th class="d-none d-md-table-cell">Operaciones</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,7 +63,8 @@
                                      @php
                                      $sum = $sum + $detail->utilidad;
                                      @endphp
-                                    <td class="d-none d-md-table-cell">
+                                     @if ($venta->utilidad == null)
+                                     <td class="d-none d-md-table-cell">
 
                                         <button class="btn btn-primary" id="btn-edit-detail" data-cant="{{$detail->cantidad}}" data-price="{{$detail->medicamento->precio->p_unitario}}" value="{{$detail->id}}" data-bs-toggle="modal" data-bs-target="#editModal"><i class="align-middle" data-feather="edit-2"></i></button>
                                         <form action="{{route('detail.destroy', $detail->id)}}" class="d-inline" method="POST">
@@ -71,6 +75,8 @@
                                             </button>
                                         </form>
                                     </td>
+                                     @endif
+
 
                                 </tr>
 
@@ -89,10 +95,15 @@
                                     <label for="total" class="mx-sm-3">TOTAL</label>
                                     <div class="input-group mx-sm-3 mb-2">
                                         <span class="input-group-text" id="basic-addon1">S./</span>
+
                                         <input type="number" name="total" class="form-control" id="total" value="@php echo number_format($sum,2,'.',"") @endphp" readonly>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mx-3">Finalizar Venta</button>
-                                  </form>
+                                    @if ($venta->utilidad == null)
+                                        <button type="submit" class="btn btn-primary mx-3">Finalizar Venta</button>
+                                    @endif
+
+                                    <a href="{{route('generarpdf.reporte',$id)}}" class="btn btn-success">Ver Boleta</a>
+                                </form>
 
                             </div>
 

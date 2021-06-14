@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="cajaCheck">
+                        <input class="form-check-input" name="check" type="checkbox" id="cajaCheck">
                         <label class="form-check-label" for="flexCheckDefault">
                           Sin DNI
                         </label>
