@@ -21,12 +21,15 @@ Route::post('medicamentos/delmedic', [MedicamentoController::class, 'delmedic'])
 Route::post('medicamentos/update', [MedicamentoController::class, 'update'])->name('medicamentos.update');
 Route::post('medicamentos/store', [MedicamentoController::class, 'store'])->name('medicamentos.store');
 Route::post('medicamentos/medPrice', [MedicamentoController::class, 'medPrice'])->name('medicamentos.medPrice');
+Route::post('medicamentos/precios', [MedicamentoController::class, 'precios'])->name('medicamentos.precios');
+Route::post('medicamentos/updprecios', [MedicamentoController::class, 'preciosUpd'])->name('medicamentos.prec_upd');
 
 Route::post('clientes/store', [ClienteController::class, 'store'])->name('clientes.store');
 
 Route::post('detail/store',[DetailController::class,'store'])->name('detail.store');
 Route::post('detail/update',[DetailController::class,'update'])->name('detail.update');
 Route::delete('detail/destroy/{id}', [DetailController::class, 'destroy'])->name('detail.destroy');
+Route::post('detail/infoedit', [DetailController::class, 'infoedit']);
 
 Route::get('ventas', [VentaController::class, 'index'])->name('ventas.index');
 Route::post('ventas/create', [VentaController::class, 'create'])->name('ventas.create');
@@ -49,6 +52,7 @@ Route::post('stock/all', [StockController::class, 'all'])->name('stock.all');
 Route::post('stock/delstock', [StockController::class, 'delstock'])->name('stock.delete');
 Route::post('stock/update', [StockController::class, 'update'])->name('stock.update');
 Route::post('stock/infoedit', [StockController::class, 'infoedit']);
+
 
 Route::get('principal', [PrincipalController::class, 'index'])->name('principal.index');
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');

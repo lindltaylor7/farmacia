@@ -45,6 +45,9 @@
                                             <td>{{ $medicamento->lab }}</td>
                                             <td>{{ $medicamento->nro_caja }}</td>
                                             <td>
+                                                <a href="#" class="btn-price" id="{{ $medicamento->id }}"
+                                                    data-bs-toggle="modal" data-bs-target="#priceModal"><i
+                                                        class="align-middle" data-feather="dollar-sign"></i></a>
                                                 <a href="#" class="btn-editar" id="{{ $medicamento->id }}"
                                                     data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                                         class="align-middle" data-feather="edit-2"></i></a>
@@ -64,10 +67,12 @@
             </div>
         </div>
         @include('admin.medicamentos.modal')
+        @include('admin.medicamentos.pricemodal')
     </main>
 @endsection
 
 @section('javascript')
+    <script src="{{ asset('js/medicamentos/medicamentos_price.js') }}"></script>
     <script src="{{ asset('js/medicamentos/medicamentos_update.js') }}"></script>
     <script src="{{ asset('js/medicamentos/medicamentos_search.js') }}"></script>
     <script src="{{ asset('js/medicamentos/medicamentos_delete.js') }}"></script>

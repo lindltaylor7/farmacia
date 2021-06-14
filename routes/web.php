@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
+
+Route::get('login',[InicioController::class , 'login'])->name('login');
+Route::get('register',[InicioController::class , 'register'])->name('register');
+Route::post('save',[InicioController::class , 'save'])->name('save');
+Route::post('check',[InicioController::class,'check'])->name('check');
+Route::get('logout',[InicioController::class , 'logout'])->name('logout');

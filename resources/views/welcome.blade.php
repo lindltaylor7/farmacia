@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/index.css')}}"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/index.css')}}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <title>Farmacia</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
+
 <body>
     <div id="container-1">
         <header>
-            <img class="imagen-header" src="{{asset('img/imagen.png')}}"/>
+            <img class="imagen-header" src="{{asset('img/imagen.png')}}" />
             <p class="texto-header">example@gmail.com</p>
-            <img class="imagen-header" src="{{asset('img/imagen_2.png')}}"/>
+            <img class="imagen-header" src="{{asset('img/imagen_2.png')}}" />
             <p class="texto-header">123 76834 656</p>
-            <img class="imagen-header" src="{{asset('img/imagen_3.png')}}"/>
+            <img class="imagen-header" src="{{asset('img/imagen_3.png')}}" />
             <p class="texto-header">9AM to 6PM (Sun - Fri) Sat Off</p>
-            <img class="imagen-header_2" src="{{asset('img/imagen_4.png')}}"/>
+            <img class="imagen-header_2" src="{{asset('img/imagen_4.png')}}" />
         </header>
 
         <nav class="nav-1">
             <div class="logo-nav-1">
-                <img class="imagen-nav" src="{{asset('img/imagen_5.png')}}"/>
-                <p>Pharmacy</p>
+                <img class="imagen-nav" src="{{asset('img/imagen-exce-1.png')}}" width="300" height="50" />
+                <p>Botica</p>
             </div>
             <div class="nav-links">
-                <p class="texto-nav-1">Inicio</p>
-                <p class="texto-nav-2">Más Vendidos</p>
-                <p class="texto-nav-3">Ofertas</p>
-                <p class="texto-nav-4">Contacto</p>
-                <a href="{{route('inicio.index')}}"><p class="texto-nav-4">Admin</p></a>
+                <p class="texto-nav-1"><a href="#">Inicio</a></p>
+                <p class="texto-nav-3"><a href="#ofertas">Ofertas</a></p>
+                <p class="texto-nav-2"><a href="#top-ventas">Más Vendidos</a></p>
+                <p class="texto-nav-4"><a href="#footer">Contacto</a></p>
+                <a href="{{route('login')}}">
+                    <p class="texto-nav-4">Admin</p>
+                </a>
             </div>
 
         </nav>
@@ -40,7 +50,7 @@
             <div class="frases-nav-2">
                 <p class="texto-big"><b>Online Pharmacy For <br> Qulity Medicines <br> and Medical test Kits</b></p>
                 <p class="texto-big-2"><b>Up To 25% Off</b></p>
-                <button class="boton-nav-2"type="button">Ver más</button>
+                <button class="boton-nav-2" type="button">Ver más</button>
             </div>
             <div class="frases-nav-2-1">
             </div>
@@ -53,7 +63,7 @@
             <div class="">
                 <button id="boton-footer" class="botfoot-2">
                     986 576 321
-                 </button>
+                </button>
                 <button id="boton-footer" class="botfoot-1">
                     Celular:
                 </button>
@@ -61,64 +71,66 @@
 
         </div>
 
-        <h1 class="title">Ofertas</h1>
-        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor pelican incididunt ut labore et dolore magna aliqua.</p>
+        <h1 class="title" id="ofertas">Ofertas</h1>
+        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor pelican
+            incididunt ut labore et dolore magna aliqua.</p>
 
         <div class="row-1">
 
-                <div class="medicine">
-                    <img src="{{asset('img/medic1.jpg')}}" class="img-medicine" alt="">
-                    <p class="title-medicine">Diabetic Pill</p>
-                    <div class="row-card">
-                        <div class="col-1">
+            <div class="medicine">
+                <img src="{{asset('img/medic1.jpg')}}" class="img-medicine" alt="">
+                <p class="title-medicine">Diabetic Pill</p>
+                <div class="row-card">
+                    <div class="col-1">
                         <p class="offer">50% Off</p>
-                        </div>
-                        <div class="col-1">
-                                <del>$50.00</del>
-                            <p class="new-price">$25.00</p>
-                        </div>
                     </div>
-                    <hr>
-                    <button class="btn-buy">Reserva Ahora</button>
+                    <div class="col-1">
+                        <del>$50.00</del>
+                        <p class="new-price">$25.00</p>
+                    </div>
                 </div>
+                <hr>
+                <button class="btn-buy">Reserva Ahora</button>
+            </div>
 
-                <div class="medicine">
-                    <img src="{{asset('img/medic2.jpg')}}" class="img-medicine" alt="">
-                    <p class="title-medicine">Waitloss Pill</p>
-                    <div class="row-card">
-                        <div class="col-1">
+            <div class="medicine">
+                <img src="{{asset('img/medic2.jpg')}}" class="img-medicine" alt="">
+                <p class="title-medicine">Waitloss Pill</p>
+                <div class="row-card">
+                    <div class="col-1">
                         <p class="offer">50% Off</p>
-                        </div>
-                        <div class="col-1">
-                                <del>$50.00</del>
-                            <p class="new-price">$25.00</p>
-                        </div>
                     </div>
-                    <hr>
-                    <button class="btn-buy">Reserva Ahora</button>
+                    <div class="col-1">
+                        <del>$50.00</del>
+                        <p class="new-price">$25.00</p>
+                    </div>
                 </div>
+                <hr>
+                <button class="btn-buy">Reserva Ahora</button>
+            </div>
 
-                <div class="medicine">
-                    <img src="{{asset('img/medic3.jpg')}}" class="img-medicine" alt="">
-                    <p class="title-medicine">Vitamin Tablet</p>
-                    <div class="row-card">
-                        <div class="col-1">
+            <div class="medicine">
+                <img src="{{asset('img/medic3.jpg')}}" class="img-medicine" alt="">
+                <p class="title-medicine">Vitamin Tablet</p>
+                <div class="row-card">
+                    <div class="col-1">
                         <p class="offer">50% Off</p>
-                        </div>
-                        <div class="col-1">
-                                <del>$50.00</del>
-                            <p class="new-price">$25.00</p>
-                        </div>
                     </div>
-                    <hr>
-                    <button class="btn-buy">Reserva Ahora</button>
+                    <div class="col-1">
+                        <del>$50.00</del>
+                        <p class="new-price">$25.00</p>
+                    </div>
                 </div>
+                <hr>
+                <button class="btn-buy">Reserva Ahora</button>
+            </div>
 
 
         </div>
 
-        <h1 class="title">Medicamentos mas vendidos</h1>
-        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor pelican incididunt ut labore et dolore magna aliqua.</p>
+        <h1 class="title" id="top-ventas">Medicamentos mas vendidos</h1>
+        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor pelican
+            incididunt ut labore et dolore magna aliqua.</p>
 
         <div class="row-2">
 
@@ -170,11 +182,12 @@
             </div>
 
         </div>
-        <footer>
+        <footer id="footer">
             <div class="footer-2">
                 <div class="div" class="div-1">
                     <img src="{{asset('img/imagen-exce-1.png')}}" class="logo-footer">
-                    <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit, sed do eiusmod<br> tempor pelican incididunt ut labore<br> et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit, sed do eiusmod<br> tempor pelican
+                        incididunt ut labore<br> et dolore magna aliqua.</p>
                 </div>
 
                 <div class="div" class="div-2">
@@ -209,4 +222,5 @@
         </footer>
 
 </body>
+
 </html>

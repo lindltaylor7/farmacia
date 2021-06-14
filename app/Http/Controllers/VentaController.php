@@ -32,7 +32,25 @@ class VentaController extends Controller
      */
     public function create(Request $request)
     {
-        $venta = Venta::create($request->all());
+
+        if($request->get('check')){
+
+            $cliente = Cliente::create([
+                "name" => strtoupper($request->get('nombre_cliente')),
+                "dni" => '-'
+            ]);
+
+            $request->merge([
+                "cliente_id" => $cliente->id
+            ]);
+
+            $venta = Venta::create($request->all());
+        }else{
+            $venta = Venta::create($request->all());
+        }
+
+
+
 
         return redirect()->route('ventas.show',['id'=> $venta->id]);
 
@@ -61,7 +79,7 @@ class VentaController extends Controller
         $venta = Venta::where('id',$id)->first();
         $details = Detail::where('venta_id', $id)->get();
         $cliente = Cliente::where('id',$venta->cliente_id)->first();
-        return view('admin.ventas.venta',compact('id','details','cliente'));
+        return view('admin.ventas.venta',compact('id','details','cliente','venta'));
     }
 
     /**
@@ -132,7 +150,7 @@ class VentaController extends Controller
 
 
 
-        $upd_med = Venta::where('id', $id)->update(['utilidad'=>$request->get('total')]);
+        $upd_med = Venta::where('id', $id)->update(['utilidad'=>$request->get('total'),'status'=>1]);
         return redirect()->route('ventas.invoice',['id'=> $id]);
 
 

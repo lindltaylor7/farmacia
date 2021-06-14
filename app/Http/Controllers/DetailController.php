@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Detail;
 use App\Models\Stock;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class DetailController extends Controller
 {
@@ -78,9 +78,10 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $deatil = Detail::where('id', $request->get('detail_id'))->update(request()->except(['_token', 'detail_id']));
+        return redirect()->back();
     }
 
     /**
@@ -95,6 +96,17 @@ class DetailController extends Controller
         $detail->delete();
         return redirect()->back();
         //Detail $detail
+    }
+
+    public function infoedit(Request $request){
+        $detail = Detail::select('details.*','precios.p_unitario', 'precios.p_venta_caja','medicamentos.nro_caja',DB::raw('sum(stocks.cantidad) as total'))
+                        ->leftJoin('precios','precios.medicamento_id','=','details.medicamento_id')
+                        ->leftJoin('medicamentos','medicamentos.id','=','details.medicamento_id')
+                        ->leftJoin('stocks','stocks.medicamento_id','=','details.medicamento_id')
+                        ->groupBy('medicamento_id')
+                        ->where('details.id',$request->get('id'))
+                        ->first();
+        return json_encode($detail);
     }
 
 }

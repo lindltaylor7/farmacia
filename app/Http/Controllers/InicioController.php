@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Hash;
 
 class InicioController extends Controller
 {
@@ -20,6 +21,7 @@ class InicioController extends Controller
         $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario',DB::raw('sum(stocks.cantidad) as total'))
                                     ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
                                     ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
+                                    ->where('stocks.cantidad','!=',null)
                                     ->groupBy('stocks.medicamento_id')
                                     ->orderBy('medicamentos.n_generico')
                                     ->get();
@@ -105,5 +107,53 @@ class InicioController extends Controller
                                     ->get();
 
         return json_encode($medicamentos);
+    }
+
+
+    public function login(){
+        return view('login');
+    }
+
+    public function register(){
+        return view('register');
+    }
+
+    public function save(Request $request){
+
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users',
+            'password'=>'required'
+        ]);
+
+       $request->merge([
+           'password' => Hash::make($request->get('password'))
+       ]);
+
+       $user = User::create($request->all());
+       return redirect()->route('login');
+    }
+
+    public function check(Request $request){
+        $request->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        $user = User::where('email',$request->get('email'))->first();
+
+        if($user){
+            if(Hash::check($request->get('password'), $user->password)){
+                return redirect()->route('inicio.index');
+            }else{
+                return back()->withInput()->with('info','Contraseña incorrecta');
+            }
+        }else{
+            return back()->withInput()->with('info','Este usuario no ha sido registrado');
+        }
+    }
+
+    public function logout(){
+        return redirect()->route('index');
     }
 }

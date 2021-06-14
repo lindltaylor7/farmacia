@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     $('#medicamentos_select').hide()
+    $('#cant_caja').hide()
 
     $('#search').on('click', function(){
         $('#medicamentos_select').show()
@@ -31,19 +32,16 @@ $(document).ready(function(){
 
                 $.each(res, function(index, value){
                     if(value.sumatoria != null){
-                        list = '<tr><td><a class="search-link" data-cant="'+value.sumatoria+'" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
+                        list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" data-cant="'+value.sumatoria+'" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
                         $('#medicamentos_select').append(list);
                     }
-
-
-
-
 
                     $('.search-link').on('click', function(){
                         $('#cant_stock').val($(this).data('cant'))
                         $('#medicamento_id').val($(this).attr('id'))
                         $('#info_medic').html($(this).text())
                         $('#price').val($(this).data('price').toFixed(2))
+                        $('#nro_caja').val($(this).data('nbox'))
 
                         $('#pricebox').hide()
 
@@ -53,14 +51,19 @@ $(document).ready(function(){
                         $("#cajaCheck").on( 'change', function() {
                             if( $(this).is(':checked') ) {
                                 // Hacer algo si el checkbox ha sido seleccionado
-
+                                $('#cant_caja').show()
                                 $('#price').val(pricebox.toFixed(2))
                             } else {
                                 // Hacer algo si el checkbox ha sido deseleccionado
+                                $('#cant_caja').hide()
                                 $('#price').val(price.toFixed(2))
                             }
                         });
                     })
+
+
+
+
                 });
 
 

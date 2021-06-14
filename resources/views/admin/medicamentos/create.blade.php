@@ -40,13 +40,18 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputUsername">Número De Caja</label>
-                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número de caja">
+                                        <label class="form-label" for="inputUsername">Número por Caja</label>
+                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número por caja">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Laboratorio</label>
                                         <input type="text" name="lab" class="form-control" id="inputUsername" placeholder="Laboratorio">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Anaquel</label>
+                                        <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Laboratorio">
                                     </div>
 
                                 </div>
@@ -73,10 +78,10 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">S./</span>
                                               </div>
-                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio de Costo unitario">
+                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario">
                                         </div>
                                       </div>
-                                    
+
                                     <div class="col-sm-3 mb-3">
                                         <label class="form-label" for="utilidad">Porcentaje de Utilidad</label>
                                         <div class="input-group">
@@ -102,7 +107,7 @@
 
 
                                 <div class="row">
-                                    
+
                                       <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
                                         <div class="input-group">
@@ -115,9 +120,9 @@
                                       </div>
 
                                       <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="utilidad">Porcentaje de Utilidad por Caja</label>
+                                        <label class="form-label" for="utilidad_caja">Porcentaje de Utilidad por Caja</label>
                                         <div class="input-group">
-                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
+                                            <input type="number" name="utilidad_caja" class="form-control" id="utilidad_caja" placeholder="Utilidad">
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">%</span>
                                             </div>

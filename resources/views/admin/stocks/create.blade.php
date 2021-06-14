@@ -22,24 +22,37 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Medicamento</label>
-                                        <input type="text" class="form-control" id="search" placeholder="Buscar medicamento">
+                                        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Buscar medicamento">
                                         <table class="table table-hover table-sm">
                                             <tbody class="border border-primary" id="medicamentos_select">
                                             </tbody>
                                         </table>
                                         <input type="hidden" name="medicamento_id" id="medicamento_id">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Cantidad por caja</label>
+                                        <input type="number" class="form-control" id="cant_caja" placeholder="Cantidad por caja" readonly>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Cantidad de cajas</label>
-                                        <input type="number" name="cantidad" class="form-control" id="inputUsername" placeholder="Cantidad de cajas">
+                                        <input type="number" id="cajas" class="form-control" placeholder="Cantidad de cajas">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Cantidad en unidades</label>
+                                        <input type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad en unidades">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputUsername">Costo del Stock</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">S./</span>
+                                            <input type="number" name="costo" class="form-control" placeholder="Costo del stock">
+
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Lote</label>
                                         <input type="number" name="lote" class="form-control" id="inputUsername" placeholder="Nro de Lote">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="inputUsername">Anaquel</label>
-                                        <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Anaquel">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Fecha De Ingreso</label>
