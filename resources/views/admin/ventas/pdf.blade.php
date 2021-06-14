@@ -52,6 +52,39 @@
         .columna{
             text-align: center;
         }
+        .content-1{
+            position: relative;
+        }
+        .parte-1-izquierda{
+            float: left;
+            position: absolute;
+            top: 1%;
+        }
+        .parte-1-derecha{
+            float: right;
+            position: absolute;
+            top: 1%;
+        }
+        .content-2{
+            position: relative;
+        }
+        .parte-2-izquierda{
+            clear: both;
+            position: absolute;
+            top: 4%;
+            
+        }
+        .parte-2-derecha{
+            float: right;
+            position: absolute;
+            top: 4%;
+            
+        }
+        .content-3{
+            clear: both;
+        }
+        
+
     </style>
     <title>Document</title>
 </head>
@@ -85,12 +118,14 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="text-muted">Codigo No.</div>
-                                    <strong>B-00{{$venta->id}}</strong>
-                                </div>
-                                <div class="col-md-6 text-md-end">
-                                    <div class="text-muted">Fecha</div>
-                                    <strong>{{date('d/m/Y', strtotime($venta->fecha))}}</strong>
+                                    <div class="content-1">
+                                        <div class="parte-1-izquierda"><p>Codigo No. <strong>B-00{{$venta->id}}</strong></p></div>
+                                        
+                                        
+                                        <div class="parte-1-derecha"><p >Fecha: <strong>{{date('d/m/Y', strtotime($venta->fecha))}}</strong></p></div>
+                                            
+                                        
+                                    </div>
                                 </div>
                             </div>
 
@@ -98,19 +133,15 @@
 
                             <div class="row mb-4">
                                 <div class="col-md-6">
-                                    <div class="text-muted">Cliente</div>
-                                    <strong>
-                                        {{$cliente->name}}
-                                    </strong>
-
+                                    <div class="content-2">
+                                        <div class="parte-2-izquierda"><p >Cliente: <strong>{{$cliente->name}}</strong></p></div>
+                                        
+                                        <div class="parte-2-derecha"><p>Pagado a: <strong>Farmacia Excelentemente</strong></p></div>
+                                        
+                                    </div>
+                                    <div class="content-3"></div>
                                 </div>
-                                <div class="col-md-6 text-md-end">
-                                    <div class="text-muted">Pagado a:</div>
-                                    <strong>
-                                       Farmacia Excelentemente
-                                    </strong>
-
-                                </div>
+                               
                             </div>
 
                             <table class="table table-sm">

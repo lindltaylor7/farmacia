@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagene;
 use Illuminate\Http\Request;
+
 
 class PrincipalController extends Controller
 {
@@ -13,7 +15,8 @@ class PrincipalController extends Controller
      */
     public function index()
     {
-        return view('admin.principal.index');
+        $imagenes=Imagene::all();
+        return view('admin.principal.index', compact('imagenes'));
     }
 
     public function editar_1()
@@ -40,7 +43,13 @@ class PrincipalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imagen = $request->all();
+        if($request->hasFile('url')){
+            $imagen['url']=$request->file('url')->getClientOriginalName();
+            $request->file('url')->storeAs('public/imagenes', $imagen['url']);
+        }
+        Imagene::create($imagen);
+        return redirect()->route('principal.index');
     }
 
     /**
@@ -60,9 +69,9 @@ class PrincipalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Imagene $imagene)
     {
-        //
+        return view('admin.principal.edit', compact('imagene'));
     }
 
     /**
@@ -72,9 +81,14 @@ class PrincipalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Imagene $imagen)
     {
-        //
+        if($request->hasFile('url')){
+            $imagen['url']=$request->file('url')->getClientOriginalName();
+            $request->file('url')->storeAs('public/imagenes', $imagen['url']);
+        }
+        Imagene::create($imagen);
+        return redirect()->route('principal.index');
     }
 
     /**

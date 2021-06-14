@@ -51,6 +51,9 @@ Route::post('stock/update', [StockController::class, 'update'])->name('stock.upd
 Route::post('stock/infoedit', [StockController::class, 'infoedit']);
 
 Route::get('principal', [PrincipalController::class, 'index'])->name('principal.index');
+Route::post('principal/store', [PrincipalController::class, 'store'])->name('principal.store');
+Route::get('principal/edit', [PrincipalController::class, 'edit'])->name('principal.edit');
+Route::post('principal/update',[PrincipalController::class, 'update'])->name('principal.update');
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
 Route::get('principal/editar_2', [PrincipalController::class, 'editar_2'])->name('principal.editar_2');
 
