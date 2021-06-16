@@ -17,7 +17,10 @@
                     <div class="card-body">
                         <div class="col-sm-3 mb-3">
                             <label class="form-label" for="inputUsername">Imagen principal</label>
-                            <img class="form-control" id="inputUsername" src="{{asset('img/imagen_nav.png')}}">
+
+                            @foreach($imagenes as $imagen)
+                                <img class="form-control" id="inputUsername" src="{{Storage::url('imagenes/'.$imagen->url)}}">
+                            @endforeach
                                 <br>
                             <form action="{{route('principal.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -26,7 +29,7 @@
                                 <br>
                                 <input type="submit" class="form-control btn btn-primary mb-3" Value="Subir Imagen">
                             </form>
-                            <a type="button" class="form-control btn btn-success mb-3 w-25" href="{{route('principal.edit', $imagen->id)}}">Editar Imágenes</a> 
+                            <a type="button" class="form-control btn btn-success mb-3" href="{{route('principal.edit')}}">Editar Imágenes</a> 
                         </div>
 
                         <div class="row mb-3">

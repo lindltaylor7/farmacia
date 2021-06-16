@@ -46,7 +46,7 @@ class PrincipalController extends Controller
         $imagen = $request->all();
         if($request->hasFile('url')){
             $imagen['url']=$request->file('url')->getClientOriginalName();
-            $request->file('url')->storeAs('public/imagenes', $imagen['url']);
+            $request->file('url')->storeAs('imagenes', $imagen['url']);
         }
         Imagene::create($imagen);
         return redirect()->route('principal.index');

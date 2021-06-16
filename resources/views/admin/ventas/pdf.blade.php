@@ -33,11 +33,11 @@
 
         th, td{
             border: solid 1px black;
-            padding: 15px;
+            padding: 6px;
         }
 
         thead{
-            background-color:#246355;
+            background-color:#57689F;
             border-bottom: solid 1px black;
             color: white;
         }
@@ -46,7 +46,7 @@
             background-color: #ddd;
         }
         tr:hover td{
-            background-color:#369681;
+            background-color:#57689F;
             color: white;
         }
         .columna{
@@ -83,16 +83,23 @@
         .content-3{
             clear: both;
         }
-        
-
+        .card{
+            font-size:12px;
+        }
+        .titulo{
+            font-size:18px;
+        }
+        .slogan{
+            font-size:16px;
+        }
     </style>
-    <title>Document</title>
+    <title>Imprimir Pdf</title>
 </head>
 <body>
     <main class="container">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3">Boleta de venta</h1>
+            <h1 class="titulo">Botica Excelentemente</h1>
 
             <div class="row">
                 <div class="col-12">
@@ -136,7 +143,7 @@
                                     <div class="content-2">
                                         <div class="parte-2-izquierda"><p >Cliente: <strong>{{$cliente->name}}</strong></p></div>
                                         
-                                        <div class="parte-2-derecha"><p>Pagado a: <strong>Farmacia Excelentemente</strong></p></div>
+                                        <div class="parte-2-derecha"><p><strong>Boleta de Venta</strong></p></div>
                                         
                                     </div>
                                     <div class="content-3"></div>
@@ -148,6 +155,7 @@
                                 <thead>
                                     <tr>
                                         <th>Descripción</th>
+                                        <th>Nombre Comercial</th>
                                         <th>Cantidad</th>
                                         <th class="text-end">Costo</th>
                                     </tr>
@@ -156,7 +164,8 @@
                                    
                                     @foreach($details as $detail)
                                         <tr>
-                                            <td>{{$detail->medicamento->n_generico}}</td>
+                                            <td class="columna">{{$detail->medicamento->n_generico}}</td>
+                                            <td class="columna">{{$detail->medicamento->n_comercial}}</td>
                                             <td class="columna">{{$detail->cantidad}}</td>
                                             <td class="columna">S/{{number_format($detail->utilidad, 2, ".", '')}}</td>
                                         </tr>
@@ -164,10 +173,12 @@
                                     @endforeach
                                     <tr>
                                         <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
                                         <th>Subtotal </th>
                                         <th class="text-end">S/{{number_format($suma, 2, ".", '')}}</th>
                                     </tr>
                                     <tr>
+                                        <th>&nbsp;</th>
                                         <th>&nbsp;</th>
                                         <th>IGV(18%) </th>
                                         
@@ -175,16 +186,19 @@
                                     </tr>
                                     <tr>
                                         <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
                                         <th>Descuento </th>
                                         <th class="text-end">0%</th>
                                     </tr>
                                     <tr>
+                                        <th>&nbsp;</th>
                                         <th>&nbsp;</th>
                                         <th>Total </th>
                                         <th class="text-end">S/{{number_format($total, 2, ".", '')}}</th>
                                     </tr>
                                 </tbody>
                             </table>
+                            <p class="slogan">Botica Excelentemente Siempre Contigo</p>
                         </div>
                     </div>
                 </div>
@@ -192,5 +206,14 @@
 
         </div>
     </main>
+    
 </body>
+<script type="text/php">
+    if ( isset($pdf) ) {
+        $pdf->page_script('
+            $font = $fontMetrics->get_font("Arial, Helvetica, sans-serif", "normal");
+            $pdf->text(270, 400, "Página $PAGE_NUM de $PAGE_COUNT", $font, 10);
+        ');
+    }
+</script>
 </html>

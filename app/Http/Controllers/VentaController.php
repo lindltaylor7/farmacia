@@ -189,8 +189,10 @@ class VentaController extends Controller
         $details = Detail::where('venta_id', $id)->get();
         $cliente = Cliente::where('id',$venta->cliente_id)->first();
         $pdf = PDF::loadView('admin.ventas.pdf', compact('cliente', 'venta', 'details', 'id'));
-        //$pdf->setPaper('a4', 'landscape');
+        $pdf->setPaper('a5', 'landscape');
+       
         return $pdf->stream('mi-archivo.pdf');
+
     }
 
 
