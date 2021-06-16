@@ -8,8 +8,7 @@ use App\Models\Stock;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
-
-
+use Illuminate\Support\Facades\DB;
 
 class VentaController extends Controller
 {
@@ -151,7 +150,7 @@ class VentaController extends Controller
 
 
         $upd_med = Venta::where('id', $id)->update(['utilidad'=>$request->get('total'),'status'=>1]);
-        return redirect()->route('ventas.invoice',['id'=> $id]);
+        return redirect()->route('ventas.index');
 
 
     }

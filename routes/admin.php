@@ -47,6 +47,9 @@ Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.inde
 Route::get('reportes/top', [ReporteController::class, 'top'])->name('reportes.top');
 Route::get('reportes/bot', [ReporteController::class, 'bot'])->name('reportes.bot');
 Route::get('reportes/ven', [ReporteController::class, 'ven'])->name('reportes.ven');
+Route::post('reportes/top/day', [ReporteController::class, 'topDay']);
+Route::post('reportes/bot/day', [ReporteController::class, 'botDay']);
+
 
 Route::get('stock', [StockController::class, 'index'])->name('stock.index');
 Route::get('stock/create', [StockController::class, 'create'])->name('stock.create');

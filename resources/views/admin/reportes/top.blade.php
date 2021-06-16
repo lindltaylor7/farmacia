@@ -12,10 +12,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <select class="form-control" name="" id="">
-                            <option value="">Día</option>
-                            <option value="">Mes</option>
-                            <option value="">Año</option>
+                        <select class="form-control" name="" id="time">
+                            <option value="">Seleccione una opcion de tiempo</option>
+                            <option value="1">Día</option>
+                            <option value="2">Mes</option>
+                            <option value="3">Año</option>
                         </select>
                     </div>
                     <div class="card-body">
@@ -26,7 +27,7 @@
                                     <th class="d-none d-md-table-cell">Total de Vendidas</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="row-report">
                                 @foreach($tops as $top)
                                     <tr>
                                         <td>{{$top->medicamento->n_generico}}</td>
@@ -42,4 +43,7 @@
 
     </div>
 </main>
+@endsection
+@section('javascript')
+    <script src="{{ asset('js/reportes/top.js') }}"></script>
 @endsection

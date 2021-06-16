@@ -90,7 +90,7 @@
 
                             </div>
                             <div class="col-md-6">
-                                <form action="{{route('ventas.index')}}" method="post" class="form-inline">
+                                <form action="{{route('ventas.update',$id)}}" method="post" class="form-inline">
                                     @csrf
                                     <label for="total" class="mx-sm-3">TOTAL</label>
                                     <div class="input-group mx-sm-3 mb-2">
