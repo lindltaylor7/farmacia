@@ -14,10 +14,6 @@
                     <input type="number" name="cantidad" id="cantidad" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Anaquel</label>
-                    <input type="text" name="anaquel" id="anaquel" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="">Fecha de Ingreso</label>
                     <input type="date" name="f_ingreso" id="f_ingreso" class="form-control">
                 </div>

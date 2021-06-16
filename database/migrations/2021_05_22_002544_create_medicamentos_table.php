@@ -20,6 +20,7 @@ class CreateMedicamentosTable extends Migration
             $table->string('concent',50);
             $table->string('present',50);
             $table->string('lab',50);
+            $table->string('anaquel',50);
             $table->string('img',250);
             $table->integer('nro_caja');
             $table->timestamps();

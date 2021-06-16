@@ -10,7 +10,10 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('', [InicioController::class, 'index'])->name('inicio.index');
+
+
+
+Route::get('/', [InicioController::class, 'index'])->middleware('auth')->name('inicio.index');
 Route::post('all', [InicioController::class, 'all'])->name('inicio.all');
 
 Route::get('medicamentos', [MedicamentoController::class, 'index'])->name('medicamentos.index');
@@ -44,6 +47,9 @@ Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.inde
 Route::get('reportes/top', [ReporteController::class, 'top'])->name('reportes.top');
 Route::get('reportes/bot', [ReporteController::class, 'bot'])->name('reportes.bot');
 Route::get('reportes/ven', [ReporteController::class, 'ven'])->name('reportes.ven');
+Route::post('reportes/top/day', [ReporteController::class, 'topDay']);
+Route::post('reportes/bot/day', [ReporteController::class, 'botDay']);
+
 
 Route::get('stock', [StockController::class, 'index'])->name('stock.index');
 Route::get('stock/create', [StockController::class, 'create'])->name('stock.create');

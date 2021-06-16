@@ -50,8 +50,6 @@ $(document).ready(function () {
                         '</td><td class="d-none d-md-table-cell">' +
                         value.cantidad +
                         '</td><td class="d-none d-md-table-cell">' +
-                        value.anaquel +
-                        '</td><td class="d-none d-md-table-cell">' +
                         formatDate(value.f_ingreso) +
                         '</td><td class="d-none d-md-table-cell">' +
                         formatDate(value.f_vencimiento) +

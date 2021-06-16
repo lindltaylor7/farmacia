@@ -18,8 +18,9 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        $ventas=Venta::all();
-        return view('admin.reportes.index', compact('ventas'));
+        $ventas = Venta::all();
+        $stocks = Stock::all();
+        return view('admin.reportes.index', compact('ventas','stocks'));
     }
 
     /**
@@ -102,6 +103,64 @@ class ReporteController extends Controller
     public function ven(){
         $vens=Stock::select('medicamento_id','f_vencimiento')->where('f_vencimiento', '>', 'now()')->orderBy('f_vencimiento', 'asc')->get();
         return view('admin.reportes.ven', compact('vens'));
+    }
+
+    public function topDay(Request $request){
+
+        if($request->get('id') == 1){
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('DATE(CURDATE()) = DATE(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','desc')
+                            ->get();
+        }else if($request->get('id') == 2){
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('MONTH(CURDATE()) = MONTH(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','desc')
+                            ->get();
+        }else{
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('YEAR(CURDATE()) = YEAR(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','desc')
+                            ->get();
+        }
+
+        return $details;
+
+    }
+
+    public function botDay(Request $request){
+
+        if($request->get('id') == 1){
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('DATE(CURDATE()) = DATE(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','asc')
+                            ->get();
+        }else if($request->get('id') == 2){
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('MONTH(CURDATE()) = MONTH(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','asc')
+                            ->get();
+        }else{
+            $details = Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                            ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                            ->whereRaw('YEAR(CURDATE()) = YEAR(details.created_at)')
+                            ->groupBy('details.medicamento_id')
+                            ->orderBy('total','asc')
+                            ->get();
+        }
+
+        return $details;
+
     }
 
 

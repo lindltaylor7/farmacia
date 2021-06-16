@@ -25,6 +25,7 @@ $(document).ready(function(){
                 $('#concent').val(value.concent);
                 $('#present').val(value.present);
                 $('#lab').val(value.lab);
+                $('#anaquel').val(value.anaquel);
                 $('#nro_caja').val(value.nro_caja);
                })
             }
@@ -41,6 +42,7 @@ $(document).ready(function(){
         $('#concent').val('');
         $('#present').val('');
         $('#lab').val('');
+        $('#anaquel').val('');
         $('#nro_caja').val('');
         console.log('limpieza hecha')
     })

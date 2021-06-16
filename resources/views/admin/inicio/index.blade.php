@@ -10,10 +10,13 @@
             <div class="d-flex justify-content-between">
                 <input type="text" class="d-inline form-control mb-3 w-75" id="search_index" placeholder="Buscar">
                 <div class="buttons-space">
-                    <a href="{{route('medicamentos.create')}}" title="Añadir Medicamento" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="box"></i></a>
-                    <a href="{{route('ventas.index')}}" data-bs-toggle="modal" data-bs-target="#clientModal" title="Vender" class="d-inline h-75 btn btn-success btn-lg"><i class="align-middle" data-feather="dollar-sign"></i></a>
+                    @can('nullSell')
                     <a href="{{route('stock.create')}}" title="Agregar Stock" class="d-inline h-75 btn btn-secondary btn-lg"><i class="align-middle" data-feather="bar-chart"></i></a>
-                    <a href="{{route('reportes.ven')}}" title="Agregar Stock" class="d-inline h-75 btn btn-info btn-lg"><i class="align-middle" data-feather="book"></i></a>
+                    <a href="{{route('medicamentos.create')}}" title="Añadir Medicamento" class="d-inline h-75 btn btn-primary btn-lg"><i class="align-middle" data-feather="box"></i></a>
+                    @endcan
+
+                    <a href="{{route('ventas.index')}}" data-bs-toggle="modal" data-bs-target="#clientModal" title="Vender" class="d-inline h-75 btn btn-success btn-lg"><i class="align-middle" data-feather="dollar-sign"></i></a>
+                    <a href="{{route('reportes.ven')}}" title="Reporte de Vencimiento" class="d-inline h-75 btn btn-info btn-lg"><i class="align-middle" data-feather="book"></i></a>
                 </div>
             </div>
 

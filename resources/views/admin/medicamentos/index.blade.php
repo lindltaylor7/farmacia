@@ -30,6 +30,7 @@
                                         <th class="d-none d-md-table-cell">Presentación</th>
                                         <th class="d-none d-md-table-cell">Laboratorio</th>
                                         <th class="d-none d-md-table-cell">Nro por Caja</th>
+                                        <th class="d-none d-md-table-cell">Anaquel</th>
                                         <th class="d-none d-md-table-cell">Opciones</th>
                                     </tr>
 
@@ -44,6 +45,7 @@
                                             <td>{{ $medicamento->present }}</td>
                                             <td>{{ $medicamento->lab }}</td>
                                             <td>{{ $medicamento->nro_caja }}</td>
+                                            <td><span class="badge bg-primary">{{ $medicamento->anaquel }}</span></td>
                                             <td>
                                                 <a href="#" class="btn-price" id="{{ $medicamento->id }}"
                                                     data-bs-toggle="modal" data-bs-target="#priceModal"><i

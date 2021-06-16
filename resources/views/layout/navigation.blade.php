@@ -14,18 +14,21 @@
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Inicio</span>
                 </a>
             </li>
-
+            @can('admin.medicamentos')
             <li class="sidebar-item {{ request()->routeIs('medicamentos.*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('medicamentos.index') }}">
                     <i class="align-middle" data-feather="box"></i> <span class="align-middle">Medicamentos</span>
                 </a>
             </li>
+            @endcan
 
+            @can('admin.stocks')
             <li class="sidebar-item {{ request()->routeIs('stock.*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('stock.index') }}">
                     <i class="align-middle" data-feather="bar-chart"></i> <span class="align-middle">Stocks</span>
                 </a>
             </li>
+            @endcan
 
             <li class="sidebar-item {{ request()->routeIs('ventas.*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('ventas.index') }}">
@@ -39,11 +42,11 @@
                 </a>
             </li>
 
-            <li class="sidebar-item {{ request()->routeIs('principal.*') ? 'active' : '' }}">
+            {{-- <li class="sidebar-item {{ request()->routeIs('principal.*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('principal.index') }}">
                     <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Principal</span>
                 </a>
-            </li>
+            </li> --}}
 
         </ul>
 

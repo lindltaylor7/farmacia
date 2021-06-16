@@ -32,7 +32,7 @@ $(document).ready(function(){
 
                 $.each(res, function(index, value){
                     if(value.sumatoria != null){
-                        list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" data-cant="'+value.sumatoria+'" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+'</a></td></tr>'
+                        list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" data-cant="'+value.sumatoria+'" data-box="'+value.p_venta_caja+'" data-price="'+value.p_unitario+'" data-bs-toggle="modal" data-bs-target="#ventaModal" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.concent+' - '+value.present+' - Precio unitario: S./'+value.p_unitario+' -Precio de Caja: S./'+value.p_venta_caja+'</a></td></tr>'
                         $('#medicamentos_select').append(list);
                     }
 

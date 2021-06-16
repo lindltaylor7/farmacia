@@ -24,7 +24,7 @@ $(document).ready(function(){
                 $('#dynamic-row').html('');
 
                 $.each(res, function(index, value){
-                    tableRow = '<tr id=row'+value.id+'><td class="d-none d-md-table-cell">'+value.n_generico+'</td><td class="d-none d-md-table-cell">'+value.n_comercial+'</td><td class="d-none d-md-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">'+value.present+'</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell">'+value.nro_caja+'</td><td><a href="#" class="btn-editar" id='+value.id+' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="align-middle" data-feather="edit-2"></i></a><a href="#" class="btn-eliminar" id='+value.id+'><i class="align-middle" data-feather="trash"></i></a></td></tr>';
+                    tableRow = '<tr id=row'+value.id+'><td class="d-none d-md-table-cell">'+value.n_generico+'</td><td class="d-none d-md-table-cell">'+value.n_comercial+'</td><td class="d-none d-md-table-cell">'+value.concent+'</td><td class="d-none d-md-table-cell">'+value.present+'</td><td class="d-none d-md-table-cell">'+value.lab+'</td><td class="d-none d-md-table-cell">'+value.nro_caja+'</td><td class="d-none d-md-table-cell"><span class="badge bg-primary">'+value.anaquel+'</span></td><td><a href="#" class="btn-price" id="'+value.id+'" data-bs-toggle="modal" data-bs-target="#priceModal"><i class="align-middle" data-feather="dollar-sign"></i></a><a href="#" class="btn-editar" id='+value.id+' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="align-middle" data-feather="edit-2"></i></a><a href="#" class="btn-eliminar" id='+value.id+'><i class="align-middle" data-feather="trash"></i></a></td></tr>';
                     $('#dynamic-row').append(tableRow);
                     feather.replace();
 
@@ -54,6 +54,7 @@ $(document).ready(function(){
                                 $('#present').val(value.present);
                                 $('#lab').val(value.lab);
                                 $('#nro_caja').val(value.nro_caja);
+                                $('#anaquel').val(value.anaquel);
                                })
                             }
                         });
@@ -81,6 +82,55 @@ $(document).ready(function(){
                             });
                        }
                     });
+
+                    $('.btn-price').on("click", function (){
+
+                        var id = $(this).attr('id')
+
+                        $.ajax({
+                            url:"../admin/medicamentos/precios",
+                            type: "POST",
+                            dataType: 'json',
+                            data:{
+                                id: id
+                            },
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            success:function(res){
+
+                                console.log(res)
+                                $('#id_precio').val(res.id);
+                                $('#p_costo').val(res.p_costo);
+                                $('#p_unitario').val(res.p_unitario);
+                                $('#p_caja').val(res.p_caja);
+                                $('#utilidad_caja').val(res.utilidad_caja);
+                                $('#p_venta_caja').val(res.p_venta_caja);
+
+                                $('#utilidad').on('keyup', function(){
+                                    var p_costo= $('#p_costo').val()
+                                    var utilidad = $('#utilidad').val()
+
+                                    var p_venta = parseFloat(p_costo) + parseFloat(utilidad*p_costo/100)
+
+                                    $('#p_unitario').val(p_venta.toFixed(2));
+                                    console.log(p_venta)
+                                });
+
+                                $('#utilidad_caja').on('keyup', function(){
+                                    var p_caja= $('#p_caja').val();
+                                    var utilidad_caja = $('#utilidad_caja').val()
+
+                                    var p_venta_caja = parseFloat(p_caja) + parseFloat(utilidad_caja*p_caja/100)
+
+                                    $('#p_venta_caja').val(p_venta_caja.toFixed(2));
+                                    console.log(p_venta_caja)
+                                });
+                            }
+                        });
+
+
+                    })
                 });
 
 

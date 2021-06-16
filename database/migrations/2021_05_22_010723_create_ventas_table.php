@@ -16,8 +16,9 @@ class CreateVentasTable extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->string('codigo',10);
-            $table->double('utilidad',4,2);
+            $table->double('utilidad',4,2)->nullable();
             $table->date('fecha');
+            $table->boolean('status');
             $table->unsignedBigInteger('cliente_id')->nullable();
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
