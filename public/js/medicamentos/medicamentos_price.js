@@ -20,10 +20,8 @@ $(document).ready(function(){
                 console.log(res)
                 $('#id_precio').val(res.id);
                 $('#p_costo').val(res.p_costo);
-                $('#utilidad').val(res.utilidad);
                 $('#p_unitario').val(res.p_unitario);
                 $('#p_caja').val(res.p_caja);
-                $('#utilidad_caja').val(res.utilidad_caja);
                 $('#p_venta_caja').val(res.p_venta_caja);
 
                 $('#utilidad').on('keyup', function(){

@@ -30,7 +30,7 @@ $(document).ready(function(){
                 $('#medicamentos_select').html('');
 
                 $.each(res, function(index, value){
-                    list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+'</a></td></tr>'
+                    list = '<tr><td><a class="search-link" data-nbox="'+value.nro_caja+'" id="'+value.id+'">'+value.n_generico+' - '+value.n_comercial+' - '+value.lab+'</a></td></tr>'
                     $('#medicamentos_select').append(list);
                 });
 

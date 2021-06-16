@@ -63,7 +63,7 @@
                                      @php
                                      $sum = $sum + $detail->utilidad;
                                      @endphp
-                                     @if ($venta->utilidad == null)
+                                     @if ($venta->utilidad == 0.00)
                                      <td class="d-none d-md-table-cell">
 
                                         <button class="btn btn-primary" id="btn-edit-detail" data-cant="{{$detail->cantidad}}" data-price="{{$detail->medicamento->precio->p_unitario}}" value="{{$detail->id}}" data-bs-toggle="modal" data-bs-target="#editModal"><i class="align-middle" data-feather="edit-2"></i></button>
@@ -90,7 +90,7 @@
 
                             </div>
                             <div class="col-md-6">
-                                <form action="{{route('ventas.update',$id)}}" method="post" class="form-inline">
+                                <form action="{{route('ventas.index')}}" method="post" class="form-inline">
                                     @csrf
                                     <label for="total" class="mx-sm-3">TOTAL</label>
                                     <div class="input-group mx-sm-3 mb-2">
@@ -102,7 +102,7 @@
                                         <button type="submit" class="btn btn-primary mx-3">Finalizar Venta</button>
                                     @endif
 
-                                    <a href="{{route('generarpdf.reporte',$id)}}" class="btn btn-success">Ver Boleta</a>
+                                    <a target="_blank" href="{{route('generarpdf.reporte',$id)}}" class="btn btn-success">Ver Boleta</a>
                                 </form>
 
                             </div>

@@ -10,7 +10,10 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('', [InicioController::class, 'index'])->name('inicio.index');
+
+
+
+Route::get('/', [InicioController::class, 'index'])->middleware('auth')->name('inicio.index');
 Route::post('all', [InicioController::class, 'all'])->name('inicio.all');
 
 Route::get('medicamentos', [MedicamentoController::class, 'index'])->name('medicamentos.index');

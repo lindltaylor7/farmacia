@@ -9,38 +9,33 @@
 
 
     <div class="row">
+        <select class="form-control mb-3" name="" id="">
+            <option value="">Día</option>
+            <option value="">Semana</option>
+            <option value="">Mes</option>
+            <option value="">Año</option>
+        </select>
         <div class="col-xl-12 col-xxl-5 d-flex">
             <div class="w-100">
                 <div class="row">
                     <div class="col-sm-6">
+
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title mb-4">Ingresos</h5>
-                                <?php
-                                $i=0;
-                                $suma=0;
-                                ?>
-                                @foreach($ventas as $venta)
-                                    <?php
-
-                                        $i=$venta->utilidad;
-                                        $suma=$suma+$i;
-                                    ?>
-                                @endforeach
-                                <h1 class="mt-1 mb-3">S./<?php echo number_format($suma, 2, ".", '')?></h1>
+                                <h1 class="mt-1 mb-3">S./{{number_format($ventas->sum('utilidad'), 2, ".", '')}}</h1>
                                 <div class="mb-1">
                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
                                     <span class="text-muted">Esta Semana</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title mb-4">Egresos</h5>
-                                <h1 class="mt-1 mb-3">S./21.300</h1>
+                                <h1 class="mt-1 mb-3">S./{{number_format($stocks->sum('costo'), 2, ".", '')}}</h1>
                                 <div class="mb-1">
                                     <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
                                     <span class="text-muted">Esta Semana</span>

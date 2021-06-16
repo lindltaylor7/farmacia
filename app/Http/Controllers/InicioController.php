@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Medicamento;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class InicioController extends Controller
 {
@@ -18,6 +20,8 @@ class InicioController extends Controller
     public function index()
     {
 
+        $data = User::where('id',session('LoggedUser'))->first();
+
         $medicamentos = Medicamento::select('medicamentos.*','precios.p_unitario',DB::raw('sum(stocks.cantidad) as total'))
                                     ->leftJoin('precios','precios.medicamento_id','=','medicamentos.id')
                                     ->leftJoin('stocks','stocks.medicamento_id','=','medicamentos.id')
@@ -26,7 +30,7 @@ class InicioController extends Controller
                                     ->orderBy('medicamentos.n_generico')
                                     ->get();
 
-        return view('admin.inicio.index', compact('medicamentos'));
+        return view('admin.inicio.index', compact('medicamentos','data'));
     }
 
     /**
@@ -127,7 +131,9 @@ class InicioController extends Controller
         ]);
 
        $request->merge([
-           'password' => Hash::make($request->get('password'))
+           'password' => Hash::make($request->get('password')),
+           'email_verified_at' => now(),
+           'remember_token' => Str::random(10)
        ]);
 
        $user = User::create($request->all());
@@ -135,25 +141,22 @@ class InicioController extends Controller
     }
 
     public function check(Request $request){
-        $request->validate([
-            'email'=>'required',
-            'password'=>'required'
-        ]);
+        $credentials =  request()->only('email','password');
+        if(Auth::attempt($credentials)){
+            request()->session()->regenerate();
 
-        $user = User::where('email',$request->get('email'))->first();
+            return redirect()->route('inicio.index');
+        };
 
-        if($user){
-            if(Hash::check($request->get('password'), $user->password)){
-                return redirect()->route('inicio.index');
-            }else{
-                return back()->withInput()->with('info','Contraseña incorrecta');
-            }
-        }else{
-            return back()->withInput()->with('info','Este usuario no ha sido registrado');
-        }
+        return redirect()->route('login')->with('info','Credenciales fallidas');
     }
 
-    public function logout(){
-        return redirect()->route('index');
+    public function logout(Request $request){
+
+        $request->session()->invalidate();
+        $request->session()->regenerate();
+        Auth::logout();
+        return redirect()->route('login')->with('info','Hasta luego');
+
     }
 }

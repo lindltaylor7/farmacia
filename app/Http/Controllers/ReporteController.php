@@ -18,8 +18,9 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        $ventas=Venta::all();
-        return view('admin.reportes.index', compact('ventas'));
+        $ventas = Venta::all();
+        $stocks = Stock::all();
+        return view('admin.reportes.index', compact('ventas','stocks'));
     }
 
     /**

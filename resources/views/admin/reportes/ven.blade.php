@@ -12,6 +12,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
+                        <select class="form-control" name="" id="">
+                            <option value="">Día</option>
+                            <option value="">Mes</option>
+                            <option value="">Año</option>
+                        </select>
                     </div>
                     <div class="card-body">
                         <table class="table table-hover my-0">

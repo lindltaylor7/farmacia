@@ -51,11 +51,6 @@
 
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-
-                                        <label class="form-label" for="inputUsername">Número de cajas</label>
-                                        <input type="number" name="numero" class="form-control" id="inputUsername" placeholder="Número de cajas">
-                                    </div>
 
                                     <div class="mb-3">
 
@@ -71,9 +66,10 @@
                                         <input type="date" name="f_vencimiento" class="form-control" id="inputUsername" placeholder="">
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Agregar</button>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Agregar</button>
+
                         </form>
 
                     </div>

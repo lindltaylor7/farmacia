@@ -51,7 +51,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Anaquel</label>
-                                        <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Laboratorio">
+                                        <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Anaquel">
                                     </div>
 
                                 </div>

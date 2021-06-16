@@ -33,6 +33,10 @@
                         <label for="">Número por Caja</label>
                         <input type="text" name="nro_caja" id="nro_caja" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="">Anaquel</label>
+                        <input type="text" name="anaquel" id="anaquel" class="form-control">
+                    </div>
                     <div class="d-grid gap-2 mt-2">
                         <input type="submit" value="Editar" class="btn btn-primary">
                     </div>

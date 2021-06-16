@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medicamento extends Model
 {
-    protected $fillable=['n_generico','n_comercial', 'concent', 'present', 'lab', 'img', 'nro_caja'];
+    protected $fillable=['n_generico','n_comercial', 'concent','anaquel', 'present', 'lab', 'img', 'nro_caja'];
 
     public function stocks(){
         return $this->hasMany('App\Models\Stock');

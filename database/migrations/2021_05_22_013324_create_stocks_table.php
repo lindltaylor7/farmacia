@@ -16,9 +16,11 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->integer('cantidad');
-            $table->string('anaquel',20);
             $table->date('f_vencimiento');
             $table->date('f_ingreso');
+            $table->double('costo',5,2);
+            $table->string('lote',5);
+            $table->boolean('status');
             $table->unsignedBigInteger('medicamento_id')->nullable();
             $table->foreign('medicamento_id')->references('id')->on('medicamentos')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
