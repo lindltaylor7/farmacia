@@ -19,7 +19,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        $ventas=Venta::all();
+        $ventas=Venta::where('status',1)->get();
         return view('admin.ventas.index', compact('ventas'));
 
     }
@@ -189,9 +189,23 @@ class VentaController extends Controller
         $cliente = Cliente::where('id',$venta->cliente_id)->first();
         $pdf = PDF::loadView('admin.ventas.pdf', compact('cliente', 'venta', 'details', 'id'));
         $pdf->setPaper('a5', 'landscape');
-       
+
         return $pdf->stream('mi-archivo.pdf');
 
+    }
+
+    public function anular($id){
+        $venta = Venta::where('id', $id)->first();
+
+        $details = Detail::where('venta_id',$venta->id)->get();
+
+        foreach($details as $detail){
+            $last_stock = Stock::where('medicamento_id',$detail->medicamento_id)->orderBy('f_vencimiento','asc')->first();
+            $last_stock->update(['cantidad' => $last_stock->cantidad+$detail->cantidad,'status'=>1]);
+        }
+
+        $venta = Venta::where('id', $id)->update(['status' => 0]);
+        return redirect()->route('ventas.index');
     }
 
 

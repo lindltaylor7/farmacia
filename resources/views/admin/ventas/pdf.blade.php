@@ -72,13 +72,13 @@
             clear: both;
             position: absolute;
             top: 4%;
-            
+
         }
         .parte-2-derecha{
             float: right;
             position: absolute;
             top: 4%;
-            
+
         }
         .content-3{
             clear: both;
@@ -117,7 +117,7 @@
                                     @endforeach
                                     @php
                                         $igv=($suma*18)/100;
-                                    
+
                                         $total=$suma+$igv;
                                     @endphp
                                 <br /> Este es el recibo por el pago de <strong>S/.{{number_format($total, 2, ".", '')}}</strong> (PEN).
@@ -127,11 +127,11 @@
                                 <div class="col-md-6">
                                     <div class="content-1">
                                         <div class="parte-1-izquierda"><p>Codigo No. <strong>B-00{{$venta->id}}</strong></p></div>
-                                        
-                                        
+
+
                                         <div class="parte-1-derecha"><p >Fecha: <strong>{{date('d/m/Y', strtotime($venta->fecha))}}</strong></p></div>
-                                            
-                                        
+
+
                                     </div>
                                 </div>
                             </div>
@@ -142,13 +142,13 @@
                                 <div class="col-md-6">
                                     <div class="content-2">
                                         <div class="parte-2-izquierda"><p >Cliente: <strong>{{$cliente->name}}</strong></p></div>
-                                        
+
                                         <div class="parte-2-derecha"><p><strong>Boleta de Venta</strong></p></div>
-                                        
+
                                     </div>
                                     <div class="content-3"></div>
                                 </div>
-                               
+
                             </div>
 
                             <table class="table table-sm">
@@ -161,7 +161,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
+
                                     @foreach($details as $detail)
                                         <tr>
                                             <td class="columna">{{$detail->medicamento->n_generico}}</td>
@@ -169,7 +169,7 @@
                                             <td class="columna">{{$detail->cantidad}}</td>
                                             <td class="columna">S/{{number_format($detail->utilidad, 2, ".", '')}}</td>
                                         </tr>
-                                        
+
                                     @endforeach
                                     <tr>
                                         <th>&nbsp;</th>
@@ -181,7 +181,7 @@
                                         <th>&nbsp;</th>
                                         <th>&nbsp;</th>
                                         <th>IGV(18%) </th>
-                                        
+
                                         <th class="text-end">S/{{number_format($igv, 2, ".", '')}}</th>
                                     </tr>
                                     <tr>
@@ -198,7 +198,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="slogan">Botica Excelentemente Siempre Contigo</p>
+                            <p class="slogan">Tu bienestar personal es lo mas importante</p>
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
 
         </div>
     </main>
-    
+
 </body>
 <script type="text/php">
     if ( isset($pdf) ) {

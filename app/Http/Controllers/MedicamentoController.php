@@ -58,12 +58,10 @@ class MedicamentoController extends Controller
                 'img' => $url
             ]);
 
-
-
+            $medicamento = Medicamento::create($request->all());
+        }else{
             $medicamento = Medicamento::create($request->all());
         }
-
-        $medicamento = Medicamento::create($request->all());
 
         $request->merge([
             'medicamento_id' => $medicamento->id

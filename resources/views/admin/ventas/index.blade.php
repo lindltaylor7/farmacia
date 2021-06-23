@@ -39,7 +39,7 @@
 
                                 @foreach($ventas as $venta)
                                     <tr>
-                                        <td>{{$venta->id}}</td>
+                                        <td>B-000{{$venta->id}}</td>
                                         <td>{{$venta->cliente->name}}</td>
                                         <td>{{date('d/m/Y', strtotime($venta->fecha))}}</td>
 
@@ -56,7 +56,7 @@
                                         <td><a href="{{route('ventas.show', $venta->id)}}">Ver más</a></td>
 
                                         @can('nullSell')
-                                        <td><a href=""class="btn btn-danger">Anular</a></td>
+                                        <td><a href="{{route('ventas.anular',$venta->id)}}"class="btn btn-danger">Anular</a></td>
                                         @endcan
 
                                     </tr>
