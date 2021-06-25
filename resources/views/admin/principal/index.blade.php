@@ -18,7 +18,7 @@
                         <div class="col-sm-3 mb-3">
                             <label class="form-label" for="inputUsername">Imagen principal</label>
 
-                            @foreach($imagenes as $imagen)
+                            @foreach($imagene as $imagen)
                                 <img class="form-control" id="inputUsername" src="{{Storage::url('imagenes/'.$imagen->url)}}">
                             @endforeach
                                 <br>
@@ -29,7 +29,9 @@
                                 <br>
                                 <input type="submit" class="form-control btn btn-primary mb-3" Value="Subir Imagen">
                             </form>
-                            <a type="button" class="form-control btn btn-success mb-3" href="{{route('principal.edit')}}">Editar Imágenes</a> 
+                            @foreach($imagene as $imagen)
+                                <a type="button" class="form-control btn btn-success mb-3" href="{{route('principal.edit',$imagen->id)}}">Editar Imagen</a>
+                            @endforeach 
                         </div>
 
                         <div class="row mb-3">

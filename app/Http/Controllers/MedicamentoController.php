@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
 use App\Models\Precio;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
 
 class MedicamentoController extends Controller
 {
@@ -43,11 +45,20 @@ class MedicamentoController extends Controller
         $request->validate([
             'n_generico' => 'required',
             'nro_caja'   => 'required',
+            'anaquel'    => 'required',
             'p_unitario' => 'required',
             'p_costo'    => 'required',
             'p_caja'     => 'required',
-            'utilidad'   => 'required'
+            'utilidad'   => 'required',
+            'utilidad_caja' => 'required',
+            'p_venta_caja'  => 'required',
+
+            'cantidad'   => 'required',
+            'f_vencimiento' => 'required',
+            'f_ingreso'    => 'required',
         ]);
+
+        
 
         if ($request->file('foto')) {
             $url = Storage::put('medicamentos', $request->file('foto'));
@@ -58,16 +69,25 @@ class MedicamentoController extends Controller
                 'img' => $url
             ]);
 
+        
             $medicamento = Medicamento::create($request->all());
-        }else{
+            
+
+        }
+
+        else{
             $medicamento = Medicamento::create($request->all());
         }
+
+
 
         $request->merge([
             'medicamento_id' => $medicamento->id
         ]);
 
         $precio = Precio::create($request->all());
+
+        $stock = Stock::create($request->all());
 
         return redirect(route('medicamentos.index'));
     }

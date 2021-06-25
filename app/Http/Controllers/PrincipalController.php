@@ -15,8 +15,8 @@ class PrincipalController extends Controller
      */
     public function index()
     {
-        $imagenes=Imagene::all();
-        return view('admin.principal.index', compact('imagenes'));
+        $imagene=Imagene::all();
+        return view('admin.principal.index', compact('imagene'));
     }
 
     public function editar_1()
@@ -47,6 +47,7 @@ class PrincipalController extends Controller
         if($request->hasFile('url')){
             $imagen['url']=$request->file('url')->getClientOriginalName();
             $request->file('url')->storeAs('imagenes', $imagen['url']);
+            
         }
         Imagene::create($imagen);
         return redirect()->route('principal.index');
@@ -69,9 +70,9 @@ class PrincipalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Imagene $imagene)
+    public function edit(Imagene $imagen)
     {
-        return view('admin.principal.edit', compact('imagene'));
+        return view('admin.principal.edit', compact('imagen'));
     }
 
     /**
@@ -86,6 +87,9 @@ class PrincipalController extends Controller
         if($request->hasFile('url')){
             $imagen['url']=$request->file('url')->getClientOriginalName();
             $request->file('url')->storeAs('public/imagenes', $imagen['url']);
+            if($imagen->url!=''){
+                unlink(storage_path('app/public/imagenes'.$imagen->id.'/'.$imagen->url));
+            }
         }
         Imagene::create($imagen);
         return redirect()->route('principal.index');

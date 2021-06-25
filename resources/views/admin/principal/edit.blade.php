@@ -18,10 +18,10 @@
                     <div class="card-body">
                         <div class="col-sm-3 mb-3">
                             <label class="form-label" for="inputUsername">Imagen principal</label>
-                            <img class="form-control" id="inputUsername" src="{{asset('img/imagen_nav.png')}}">
                                 <br>
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('principal.update', $imagen->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('put')
                                 <input type="file" name="url" accept="image/*">
                                 <br>
                                 <br>
