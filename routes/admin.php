@@ -41,6 +41,9 @@ Route::get('ventas/{id}', [VentaController::class, 'show'])->name('ventas.show')
 Route::post('ventas/update/{id}', [VentaController::class, 'update'])->name('ventas.update');
 Route::get('ventas/reporte/{id}', [VentaController::class, 'vista'])->name('vistapdf.vista');
 Route::get('ventas/reporte/pdf/{id}', [VentaController::class, 'generarPdf'])->name('generarpdf.reporte');
+Route::get('ventas/ticket/{id}', [VentaController::class, 'ticket'])->name('vistaticket.ventas');
+Route::get('ventas/ticket/pdf/{id}', [VentaController::class, 'generar_ticeketPdf'])->name('generar_pdfticket.ventas');
+
 
 
 Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.index');
@@ -62,8 +65,8 @@ Route::post('stock/infoedit', [StockController::class, 'infoedit']);
 
 Route::get('principal', [PrincipalController::class, 'index'])->name('principal.index');
 Route::post('principal/store', [PrincipalController::class, 'store'])->name('principal.store');
-Route::get('principal/edit', [PrincipalController::class, 'edit'])->name('principal.edit');
-Route::post('principal/update',[PrincipalController::class, 'update'])->name('principal.update');
+Route::get('principal/{id}/edit', [PrincipalController::class, 'edit'])->name('principal.edit');
+//Route::put('principal/update/{}',[PrincipalController::class, 'update'])->name('principal.update');
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
 Route::get('principal/editar_2', [PrincipalController::class, 'editar_2'])->name('principal.editar_2');
 

@@ -194,5 +194,23 @@ class VentaController extends Controller
 
     }
 
+    public function ticket($id)
+    {
+        $venta = Venta::where('id',$id)->first();
+        $details = Detail::where('venta_id', $id)->get();
+        $cliente = Cliente::where('id',$venta->cliente_id)->first();
+        return view('admin.ventas.ticket', compact('cliente', 'venta', 'details', 'id'));
+    }
+
+    public function generar_ticeketPdf($id){
+        $venta = Venta::where('id',$id)->first();
+        $details = Detail::where('venta_id', $id)->get();
+        $cliente = Cliente::where('id',$venta->cliente_id)->first();
+        $pdf = PDF::loadView('admin.ventas.ticket', compact('cliente', 'venta', 'details', 'id'));
+        $pdf->setPaper('a7');
+       
+        return $pdf->stream('mi-ticket.pdf');
+
+    }
 
 }

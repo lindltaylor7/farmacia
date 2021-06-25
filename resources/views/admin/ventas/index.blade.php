@@ -28,6 +28,7 @@
                                     <th class="d-none d-xl-table-cell">Fecha</th>
                                     <th class="d-none d-md-table-cell">Utilidad</th>
                                     <th class="d-none d-md-table-cell">Boleta</th>
+                                    <th class="d-none d-md-table-cell">Ticket</th>
                                     <th class="d-none d-md-table-cell">Detalle</th>
                                     @can('nullSell')
                                     <th class="d-none d-md-table-cell">Opciones</th>
@@ -52,6 +53,9 @@
                                             @else
                                                 <a target="_blank" href="{{route('generarpdf.reporte', $venta->id)}}"><span class="badge bg-danger">Anulada</span></a>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a target="_blank" href="{{route('generar_pdfticket.ventas', $venta->id)}}">Ver Ticket</a>
                                         </td>
                                         <td><a href="{{route('ventas.show', $venta->id)}}">Ver más</a></td>
 
