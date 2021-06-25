@@ -80,6 +80,7 @@ class MedicamentoController extends Controller
         }
 
 
+
         $request->merge([
             'medicamento_id' => $medicamento->id
         ]);

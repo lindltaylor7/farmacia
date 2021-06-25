@@ -41,9 +41,13 @@ Route::get('ventas/{id}', [VentaController::class, 'show'])->name('ventas.show')
 Route::post('ventas/update/{id}', [VentaController::class, 'update'])->name('ventas.update');
 Route::get('ventas/reporte/{id}', [VentaController::class, 'vista'])->name('vistapdf.vista');
 Route::get('ventas/reporte/pdf/{id}', [VentaController::class, 'generarPdf'])->name('generarpdf.reporte');
+
 Route::get('ventas/ticket/{id}', [VentaController::class, 'ticket'])->name('vistaticket.ventas');
 Route::get('ventas/ticket/pdf/{id}', [VentaController::class, 'generar_ticeketPdf'])->name('generar_pdfticket.ventas');
 
+
+
+Route::get('ventas/anular/{id}', [VentaController::class, 'anular'])->name('ventas.anular');
 
 
 Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.index');
