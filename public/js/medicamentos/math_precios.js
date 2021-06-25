@@ -1,4 +1,12 @@
 $(document).ready(function(){
+    $('#p_caja').on('keyup',function(){
+       var nro_caja = $('#nro_caja').val();
+       $('#p_costo').val(($(this).val()/nro_caja).toFixed(2));
+
+    });
+
+
+
     $('#utilidad').on('keyup', function(){
         var p_costo= $('#p_costo').val()
         var utilidad = $('#utilidad').val()

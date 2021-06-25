@@ -35,6 +35,7 @@
                                     <th class="d-none d-md-table-cell">Presentación</th>
                                     <th class="d-none d-md-table-cell">Concentración</th>
                                     <th class="d-none d-md-table-cell">Precio</th>
+                                    <th class="d-none d-md-table-cell">Utilidad</th>
                                     <th class="d-none d-md-table-cell">Cantidad</th>
                                     <th class="d-none d-md-table-cell">Laboratorio</th>
                                     <th class="d-none d-md-table-cell">Anaquel</th>
@@ -49,6 +50,7 @@
                                         <td>{{$medicamento->present}}</td>
                                         <td>{{$medicamento->concent}}</td>
                                         <td>S./{{number_format($medicamento->precio->p_unitario, 2, ".", '')}}</td>
+                                        <td>S./{{number_format($medicamento->precio->p_costo*$medicamento->precio->utilidad/100,2,".",'')}}</td>
                                         <td>{{$medicamento->total}}</td>
                                         <td>{{$medicamento->lab}}</td>
                                         <td><span class="badge bg-primary">{{$medicamento->anaquel}}</span></td>

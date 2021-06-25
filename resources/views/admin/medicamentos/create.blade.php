@@ -22,6 +22,9 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Nombre Genérico</label>
                                         <input type="text" name="n_generico" class="form-control" id="inputUsername" placeholder="Nombre Genérico">
+                                        @error('n_generico')
+                                            <p class="text-danger">Este campo es obligatorio</p>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Nombre Comercial</label>
@@ -41,7 +44,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Número por Caja</label>
-                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número por caja">
+                                        <input type="number" name="nro_caja" class="form-control" id="nro_caja" placeholder="Número por caja">
                                     </div>
 
                                     <div class="mb-3">
@@ -72,13 +75,49 @@
                                 </div>
 
                                 <div class="row">
+
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
+                                      <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="basic-addon1">S./</span>
+                                            </div>
+                                            <input type="number" step="any" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
+
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-3 mb-3">
+                                      <label class="form-label" for="utilidad_caja">Porcentaje de Utilidad por Caja</label>
+                                      <div class="input-group">
+
+                                          <input type="number" name="utilidad_caja" class="form-control" id="utilidad_caja" placeholder="Utilidad por caja">
+
+                                          <div class="input-group-append">
+                                              <span class="input-group-text" id="basic-addon2">%</span>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-label" for="p_venta_caja">Precio de Venta por Caja</label>
+                                      <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text" id="basic-addon1">S./</span>
+                                          </div>
+                                            <input type="number" step="any" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
+                                      </div>
+                                    </div>
+                              </div>
+
+                                <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_costo">Precio de Costo Unitario</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">S./</span>
                                               </div>
-                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario">
+                                            <input type="number" step="any" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario" readonly>
                                         </div>
                                       </div>
 
@@ -98,7 +137,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">S./</span>
                                             </div>
-                                              <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
+                                              <input type="number" step="any" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
                                         </div>
                                     </div>
 
@@ -106,43 +145,7 @@
 
 
 
-                                <div class="row">
 
-                                      <div class="col-md-3 mb-3">
-                                        <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">S./</span>
-                                              </div>
-                                              <input type="number" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
-
-                                        </div>
-                                      </div>
-
-                                      <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="utilidad_caja">Porcentaje de Utilidad por Caja</label>
-                                        <div class="input-group">
-
-                                            <input type="number" name="utilidad_caja" class="form-control" id="utilidad_caja" placeholder="Utilidad por caja">
-
-
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">%</span>
-                                            </div>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-3 mb-3">
-                                        <label class="form-label" for="p_venta_caja">Precio de Venta por Caja</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">S./</span>
-                                            </div>
-                                              <input type="number" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
-                                        </div>
-                                      </div>
-                                </div>
 
                             </div>
                             <br>
