@@ -14,6 +14,10 @@
         html {
             scroll-behavior: smooth;
         }
+        .links{
+            color:black;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -35,11 +39,11 @@
                 <p>Botica</p>
             </div>
             <div class="nav-links">
-                <p class="texto-nav-1"><a href="#">Inicio</a></p>
-                <p class="texto-nav-3"><a href="#ofertas">Ofertas</a></p>
-                <p class="texto-nav-2"><a href="#top-ventas">Más Vendidos</a></p>
-                <p class="texto-nav-4"><a href="#footer">Contacto</a></p>
-                <a href="{{route('login')}}">
+                <p class="texto-nav-1"><a class="links" href="#">Inicio</a></p>
+                <p class="texto-nav-3"><a class="links" href="#ofertas">Ofertas</a></p>
+                <p class="texto-nav-2"><a class="links" href="#top-ventas">Más Vendidos</a></p>
+                <p class="texto-nav-4"><a class="links" href="#footer">Contacto</a></p>
+                <a class="links" href="{{route('login')}}">
                     <p class="texto-nav-4">Admin</p>
                 </a>
             </div>
