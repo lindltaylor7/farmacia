@@ -45,14 +45,12 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputUsername">Número por Caja</label>
-<<<<<<< HEAD
+
                                         <input type="number" name="nro_caja" class="form-control" id="nro_caja" placeholder="Número por caja">
-=======
-                                        <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número por caja">
                                         @error('nro_caja')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                         @enderror
->>>>>>> e8d6d862b710421eb5f77ccdf6797c6b95306774
+
                                     </div>
 
                                     <div class="mb-3">
@@ -66,7 +64,7 @@
                                         <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Anaquel">
                                     </div>
                                     @error('anaquel')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                         @enderror
                                 </div>
 
@@ -86,98 +84,7 @@
                                 </div>
 
                                 <div class="row">
-
                                     <div class="col-md-3 mb-3">
-                                      <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
-                                      <div class="input-group">
-                                          <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon1">S./</span>
-                                            </div>
-                                            <input type="number" step="any" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
-
-                                      </div>
-                                    </div>
-
-                                    <div class="col-sm-3 mb-3">
-                                      <label class="form-label" for="utilidad_caja">Porcentaje de Utilidad por Caja</label>
-                                      <div class="input-group">
-
-                                          <input type="number" name="utilidad_caja" class="form-control" id="utilidad_caja" placeholder="Utilidad por caja">
-
-                                          <div class="input-group-append">
-                                              <span class="input-group-text" id="basic-addon2">%</span>
-                                          </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-md-3 mb-3">
-                                      <label class="form-label" for="p_venta_caja">Precio de Venta por Caja</label>
-                                      <div class="input-group">
-                                          <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon1">S./</span>
-                                          </div>
-                                            <input type="number" step="any" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
-                                      </div>
-                                    </div>
-                              </div>
-
-                                <div class="row">
-                                    <div class="col-md-3 mb-3">
-                                        <label class="form-label" for="p_costo">Precio de Costo Unitario</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">S./</span>
-                                              </div>
-<<<<<<< HEAD
-                                            <input type="number" step="any" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario" readonly>
-=======
-                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario">
-                                            @error('p_costo')
-                                            <p class="alert alert-danger">{{$message}}</p>
-                                            @enderror
->>>>>>> e8d6d862b710421eb5f77ccdf6797c6b95306774
-                                        </div>
-                                      </div>
-
-                                    <div class="col-sm-3 mb-3">
-                                        <label class="form-label" for="utilidad">Porcentaje de Utilidad</label>
-                                        <div class="input-group">
-                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">%</span>
-                                            </div>
-                                            @error('utilidad')
-                                                <p class="alert alert-danger">{{$message}}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 mb-3">
-                                        <label class="form-label" for="p_unitario">Precio de Venta Unitario</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">S./</span>
-                                            </div>
-<<<<<<< HEAD
-                                              <input type="number" step="any" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
-=======
-                                              <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
-                                              @error('p_unitario')
-                                                <p class="alert alert-danger">{{$message}}</p>
-                                              @enderror
->>>>>>> e8d6d862b710421eb5f77ccdf6797c6b95306774
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-
-<<<<<<< HEAD
-=======
-                                      <div class="col-md-3 mb-3">
                                         <label class="form-label" for="p_caja">Precio de Costo por Caja</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -185,7 +92,7 @@
                                               </div>
                                               <input type="number" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
                                               @error('p_caja')
-                                              <p class="alert alert-danger">{{$message}}</p>
+                                              <p class="text-danger">{{$message}}</p>
                                               @enderror
                                         </div>
                                       </div>
@@ -200,7 +107,7 @@
                                                 <span class="input-group-text" id="basic-addon2">%</span>
                                             </div>
                                             @error('utilidad_caja')
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="text-danger">{{$message}}</p>
                                             @enderror
                                         </div>
                                       </div>
@@ -213,10 +120,59 @@
                                             </div>
                                               <input type="number" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
                                               @error('p_venta_caja')
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="text-danger">{{$message}}</p>
                                               @enderror
                                         </div>
                                       </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label" for="p_costo">Precio de Costo Unitario</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                              </div>
+
+                                            <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario" readonly>
+                                            @error('p_costo')
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
+
+                                        </div>
+                                      </div>
+
+                                    <div class="col-sm-3 mb-3">
+                                        <label class="form-label" for="utilidad">Porcentaje de Utilidad</label>
+                                        <div class="input-group">
+                                            <input type="number" name="utilidad" class="form-control" id="utilidad" placeholder="Utilidad">
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">%</span>
+                                            </div>
+                                            @error('utilidad')
+                                                <p class="text-danger">{{$message}}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label" for="p_unitario">Precio de Venta Unitario</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">S./</span>
+                                            </div>
+
+                                              <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
+                                              @error('p_unitario')
+                                                <p class="text-danger">{{$message}}</p>
+                                              @enderror
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
                                 </div>
 
                                 <div class="mb-3">
@@ -232,10 +188,10 @@
                                     <label class="form-label" for="inputUsername">Cantidad en unidades</label>
                                     <input type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad en unidades">
                                     @error('cantidad')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
->>>>>>> e8d6d862b710421eb5f77ccdf6797c6b95306774
+
 
                                 <div class="mb-3">
                                     <label class="form-label" for="inputUsername">Costo del Stock</label>
@@ -243,7 +199,7 @@
                                         <span class="input-group-text" id="basic-addon1">S./</span>
                                         <input type="number" name="costo" class="form-control" placeholder="Costo del stock">
                                         @error('costo')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                          @enderror
                                     </div>
                                 </div>
@@ -258,14 +214,14 @@
                                     <label class="form-label" for="inputUsername">Fecha De Ingreso</label>
                                     <input type="date" name="f_ingreso" class="form-control" id="inputUsername" placeholder="">
                                     @error('f_ingreso')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                     @enderror
 
                                 <div class="mb-3">
                                     <label class="form-label" for="inputUsername">Fecha De Vencimiento</label>
                                     <input type="date" name="f_vencimiento" class="form-control" id="inputUsername" placeholder="">
                                     @error('f_vencimiento')
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
                             </div>
