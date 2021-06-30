@@ -163,5 +163,18 @@ class ReporteController extends Controller
 
     }
 
+    public function topFecha(Request $request){
+
+        
+        $tops=Detail::select('medicamentos.n_generico','details.medicamento_id', DB::raw('SUM(details.cantidad) as total'))
+                    ->leftJoin('medicamentos','details.medicamento_id','=','medicamentos.id')
+                    ->where('details.created_at', 'like', $request->get('fecha').'%')
+                    ->groupBy('details.medicamento_id')
+                    ->orderBy('total','asc')
+                    ->get();
+        
+        return $tops;
+
+    }
 
 }

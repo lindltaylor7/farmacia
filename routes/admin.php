@@ -56,6 +56,7 @@ Route::get('reportes/bot', [ReporteController::class, 'bot'])->name('reportes.bo
 Route::get('reportes/ven', [ReporteController::class, 'ven'])->name('reportes.ven');
 Route::post('reportes/top/day', [ReporteController::class, 'topDay']);
 Route::post('reportes/bot/day', [ReporteController::class, 'botDay']);
+Route::post('reportes/top/fecha', [ReporteController::class, 'topFecha']);
 
 
 Route::get('stock', [StockController::class, 'index'])->name('stock.index');
@@ -73,6 +74,8 @@ Route::get('principal/{id}/edit', [PrincipalController::class, 'edit'])->name('p
 //Route::put('principal/update/{}',[PrincipalController::class, 'update'])->name('principal.update');
 Route::get('principal/editar_1', [PrincipalController::class, 'editar_1'])->name('principal.editar_1');
 Route::get('principal/editar_2', [PrincipalController::class, 'editar_2'])->name('principal.editar_2');
+
+
 
 
 

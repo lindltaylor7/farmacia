@@ -29,6 +29,7 @@
                                     <th class="d-none d-md-table-cell">Utilidad</th>
                                     <th class="d-none d-md-table-cell">Boleta</th>
                                     <th class="d-none d-md-table-cell">Ticket</th>
+                                    <th class="d-none d-md-table-cell">Vendedor</th>
                                     <th class="d-none d-md-table-cell">Detalle</th>
                                     @can('nullSell')
                                     <th class="d-none d-md-table-cell">Opciones</th>
@@ -57,6 +58,11 @@
                                         <td>
                                             <a target="_blank" href="{{route('generar_pdfticket.ventas', $venta->id)}}">Ver Ticket</a>
                                         </td>
+
+                                        <td>
+                                            {{$venta->vendedor}}
+                                        </td>
+
                                         <td><a href="{{route('ventas.show', $venta->id)}}">Ver más</a></td>
 
                                         @can('nullSell')

@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use App\Models\Detail;
 use App\Models\Stock;
+use App\Models\User;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 
 class VentaController extends Controller
 {
@@ -17,10 +20,12 @@ class VentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $ventas=Venta::where('status',1)->get();
         return view('admin.ventas.index', compact('ventas'));
+
+        
 
     }
 
@@ -40,14 +45,24 @@ class VentaController extends Controller
             ]);
 
             $request->merge([
-                "cliente_id" => $cliente->id
+                "cliente_id" => $cliente->id,
+                "vendedor" => Auth::user()->name
             ]);
+
+        
 
             $venta = Venta::create($request->all());
         }else{
+
+            $request->merge([
+                "vendedor" => Auth::user()->name
+            ]);
+
             $venta = Venta::create($request->all());
+
         }
 
+        
 
 
 
@@ -228,6 +243,10 @@ class VentaController extends Controller
         return redirect()->route('ventas.index');
     }
 
+    public function insertarVendedor(Request $request){
+
+        
+    }
 
 
 }

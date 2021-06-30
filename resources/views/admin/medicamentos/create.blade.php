@@ -23,7 +23,7 @@
                                         <label class="form-label" for="inputUsername">Nombre Genérico</label>
                                         <input type="text" name="n_generico" class="form-control" id="inputUsername" placeholder="Nombre Genérico">
                                         @error('n_generico') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">El nombre genérico es obligatorio</p>
                                         @enderror
                                     </div>
                                     <div class="mb-3">
@@ -46,7 +46,7 @@
                                         <label class="form-label" for="inputUsername">Número por Caja</label>
                                         <input type="number" name="nro_caja" class="form-control" id="inputUsername" placeholder="Número por caja">
                                         @error('nro_caja') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">El número por caja es obligatorio</p>
                                         @enderror
                                     </div>
 
@@ -61,7 +61,7 @@
                                         <input type="text" name="anaquel" class="form-control" id="inputUsername" placeholder="Anaquel">
                                     </div>
                                     @error('anaquel') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">El campo anaquel es obligatorio</p>
                                         @enderror
                                 </div>
 
@@ -89,7 +89,7 @@
                                               </div>
                                             <input type="number" name="p_costo" class="form-control" id="p_costo" placeholder="Precio unitario">
                                             @error('p_costo') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">El precio de costo unitario es obligatorio</p>
                                             @enderror
                                         </div>
                                       </div>
@@ -103,7 +103,7 @@
                                                 <span class="input-group-text" id="basic-addon2">%</span>
                                             </div>
                                             @error('utilidad') 
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="alert alert-danger">El porcentaje de utilidad es obligatorio</p>
                                             @enderror
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                                             </div>
                                               <input type="number" name="p_unitario" class="form-control" id="p_unitario" placeholder="Precio de Venta" readonly>
                                               @error('p_unitario') 
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="alert alert-danger">El precio de venta unitario es obligatorio</p>
                                               @enderror
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                               </div>
                                               <input type="number" name="p_caja" class="form-control" id="p_caja" placeholder="Precio por caja">
                                               @error('p_caja') 
-                                              <p class="alert alert-danger">{{$message}}</p>
+                                              <p class="alert alert-danger">El precio de caja es obligatorio</p>
                                               @enderror
                                         </div>
                                       </div>
@@ -150,7 +150,7 @@
                                                 <span class="input-group-text" id="basic-addon2">%</span>
                                             </div>
                                             @error('utilidad_caja') 
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="alert alert-danger">El porcentaje de utilidad por caja es obligatorio</p>
                                             @enderror
                                         </div>
                                       </div>
@@ -163,7 +163,7 @@
                                             </div>
                                               <input type="number" name="p_venta_caja" class="form-control" id="p_venta_caja" placeholder="Precio de Venta caja" readonly>
                                               @error('p_venta_caja') 
-                                                <p class="alert alert-danger">{{$message}}</p>
+                                                <p class="alert alert-danger">El precio de venta por caja es obligatorio</p>
                                               @enderror
                                         </div>
                                       </div>
@@ -173,7 +173,7 @@
                                     <label class="form-label" for="inputUsername">Cantidad de cajas</label>
                                     <input type="number" id="cajas" class="form-control" placeholder="Cantidad de cajas">
                                     @error('cajas') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">La cantidad por cajas es obligatorio</p>
                                     @enderror
                                 </div>
 
@@ -182,7 +182,7 @@
                                     <label class="form-label" for="inputUsername">Cantidad en unidades</label>
                                     <input type="number" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad en unidades">
                                     @error('cantidad') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">La cantidad de unidades es obligatorio</p>
                                     @enderror
                                 </div>
 
@@ -192,7 +192,7 @@
                                         <span class="input-group-text" id="basic-addon1">S./</span>
                                         <input type="number" name="costo" class="form-control" placeholder="Costo del stock">
                                         @error('costo') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">El costo del Stock es obligatorio</p>
                                          @enderror
                                     </div>
                                 </div>
@@ -207,14 +207,14 @@
                                     <label class="form-label" for="inputUsername">Fecha De Ingreso</label>
                                     <input type="date" name="f_ingreso" class="form-control" id="inputUsername" placeholder="">
                                     @error('f_ingreso') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">La fecha de ingreso es obligatorio</p>
                                     @enderror
                                 
                                 <div class="mb-3">
                                     <label class="form-label" for="inputUsername">Fecha De Vencimiento</label>
                                     <input type="date" name="f_vencimiento" class="form-control" id="inputUsername" placeholder="">
                                     @error('f_vencimiento') 
-                                            <p class="alert alert-danger">{{$message}}</p>
+                                            <p class="alert alert-danger">La fecha de vencimiento es obligatorio</p>
                                     @enderror
                                 </div>
                             </div>
